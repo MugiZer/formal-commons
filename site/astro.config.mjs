@@ -5,15 +5,15 @@ export default defineConfig({
   site: 'https://ohara.mugizer.workers.dev',
   integrations: [starlight({
     title: 'Ohara',
-    description: 'Reusable formal knowledge, with inspectable evidence and explicit assumptions.',
+    description: 'Formal statements and verification projects with pinned sources and review status.',
     customCss: ['./src/styles/ohara.css'],
     components: { Footer: './src/components/Footer.astro' },
     sidebar: [
-      { label: 'Start here', link: '/' },
+      { label: 'Catalogue', link: '/' },
       { label: 'Artifacts', link: '/artifacts/' },
       { label: 'Projects', link: '/projects/' },
       { label: 'Connect an agent', link: '/guides/agents/' },
-      { label: 'Understand the evidence', link: '/guides/evidence/' },
+      { label: 'Evidence labels', link: '/guides/evidence/' },
       { label: 'Contribute', link: '/contribute/' },
       { label: 'Operations & limits', link: '/guides/operations/' },
     ],

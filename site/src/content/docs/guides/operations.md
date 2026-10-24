@@ -1,6 +1,7 @@
 ---
 title: Operations and limits
 description: Publication, trust boundaries, corrections, and rollback.
+tableOfContents: false
 ---
 
 The repository is the canonical registry. Validated records and maintainer decisions produce a deterministic snapshot bundled with the Worker and Starlight site. Requests do not depend on GitHub availability, a database, or live upstream builds.

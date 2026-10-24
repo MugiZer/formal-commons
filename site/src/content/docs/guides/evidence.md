@@ -1,5 +1,5 @@
 ---
-title: Read the evidence before reusing
+title: Evidence labels
 description: Mechanical checks, semantic review, implementation correspondence, and freshness are separate claims.
 ---
 
