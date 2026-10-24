@@ -8,7 +8,7 @@ const records = latestRecords(snapshot as Catalogue)
   .sort((a, b) => Number(a.kind === 'project') - Number(b.kind === 'project'));
 const proofSystems = [...new Set(records.map((r) => r.proof_system))].sort();
 ---
-<section data-catalogue aria-label={mode === 'projects' ? 'Project catalogue' : mode === 'all' ? 'Knowledge catalogue' : 'Artifact catalogue'}>
+<section class="not-content" data-catalogue aria-label={mode === 'projects' ? 'Project catalogue' : mode === 'all' ? 'Knowledge catalogue' : 'Artifact catalogue'}>
   <form class="filters" role="search">
     <div class="filter-fields">
       <label class="query">Search records<input type="search" name="query" placeholder={mode === 'projects' ? 'kernel, semantics' : mode === 'all' ? 'filter, Lean, kernel' : 'filter, membership'} maxlength="256" /></label>
@@ -24,7 +24,7 @@ const proofSystems = [...new Set(records.map((r) => r.proof_system))].sort();
   <div class="record-list">
     {records.map((record) => <article class="record-row" data-record data-search={[record.id, record.title, record.title.replaceAll(' — ', ': '), record.source.symbol ?? '', record.source.statement ?? '', record.summary, record.proof_system, ...record.tags].join(' ').toLowerCase()} data-proof={record.proof_system} data-evidence={record.evidence.mechanical.status}>
       <div class="record-body">
-        <div class="record-meta"><span>{record.kind.replaceAll('_', ' ')}</span><span>{record.proof_system}</span></div>
+        <div class="record-meta"><span>{record.kind.replaceAll('_', ' ')}</span>{' '}<span>{record.proof_system}</span></div>
         <h2><a href={`/records/${record.id}/${record.record_digest}/`}>{record.source.symbol ? <code>{record.source.symbol}</code> : record.title.replaceAll(' — ', ': ')}</a></h2>
         {record.source.statement && <p class="record-statement"><code>{record.source.statement}</code></p>}
         <p>{record.summary}</p>
