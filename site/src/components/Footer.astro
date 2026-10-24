@@ -1,7 +1,5 @@
 ---
-import DefaultFooter from '@astrojs/starlight/components/Footer.astro';
 import snapshot from '../../../generated/catalogue.json';
 ---
-<DefaultFooter />
-<p class="snapshot">Catalogue snapshot <a href="/registry.json"><code>{snapshot.snapshot_id.slice(0, 12)}</code></a> · source <code>{snapshot.source_commit.slice(0, 12)}</code><br />Discovery supplies evidence. Applicability remains yours to establish.</p>
-<style>.snapshot { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--sl-color-gray-5); color: var(--sl-color-gray-3); font-size: .8rem; overflow-wrap: anywhere; }</style>
+<footer class="snapshot"><a href="/registry.json">Snapshot <code>{snapshot.snapshot_id.slice(0, 12)}</code></a><span>Source <code>{snapshot.source_commit.slice(0, 12)}</code></span></footer>
+<style>.snapshot { display: flex; flex-wrap: wrap; gap: .4rem 1.5rem; margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--sl-color-gray-5); color: var(--sl-color-gray-3); font-size: .8rem; overflow-wrap: anywhere; }</style>
