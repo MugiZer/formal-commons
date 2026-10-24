@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "id": "lean/core",
+  "record_version": 1,
+  "kind": "project",
+  "title": "Lean 4 core library",
+  "summary": "Reusable definitions and theorems for lists, arrays, natural numbers, and other core Lean data structures.",
+  "tags": [
+    "lists",
+    "filter",
+    "data structures",
+    "proof library"
+  ],
+  "proof_system": "Lean 4",
+  "source": {
+    "repository": "https://github.com/leanprover/lean4",
+    "revision": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+    "path": "src/Init/Data/List/Lemmas.lean",
+    "symbol": null,
+    "statement": null
+  },
+  "assumptions": [
+    "Lean's logical foundations and the assumptions of each referenced theorem."
+  ],
+  "limitations": [
+    "This is a discovery entry for Lean v4.35.0, not an independent audit of the whole Lean system.",
+    "Applicability to implementations in other languages is unknown."
+  ],
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/leanprover/lean4/blob/eb6cafb7290e8bd5f2937522d8d804f58f02bafc/LICENSE",
+    "attribution": "Lean 4 contributors."
+  },
+  "owners": [
+    "leanprover"
+  ],
+  "project": "lean/core",
+  "updated": "2026-10-23",
+  "reuse": "Inspect individual theorem statements and pin the Lean toolchain before importing.",
+  "project_details": {
+    "status": "active",
+    "issues": "https://github.com/leanprover/lean4/issues",
+    "contributing": "https://github.com/leanprover/lean4/blob/eb6cafb7290e8bd5f2937522d8d804f58f02bafc/CONTRIBUTING.md",
+    "opportunities": [
+      "Review or report core library issues upstream.",
+      "Contribute formal lemmas following upstream guidance."
+    ]
+  }
+}

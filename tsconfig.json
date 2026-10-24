@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "types": ["node"]
+  },
+  "include": ["registry/**/*.ts", "scripts/**/*.ts", "mcp/**/*.ts", "tests/**/*.ts"]
+}

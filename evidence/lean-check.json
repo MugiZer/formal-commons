@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "scope": "The maintained Contracts and Consumer modules were checked using pinned Lean and its imported core library. List.mem_filter axioms were inspected; upstream core was not independently rebuilt. No human semantic review or correspondence to non-Lean implementations.",
+  "checker": "Lean (version 4.35.0, x86_64-w64-windows-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+  "package_digest": "80719e26d40bb94f297dfc324d43fe05fda4626ef953328b7b6c7fbc4ab03cde",
+  "axioms": {
+    "List.mem_filter": [
+      "propext"
+    ],
+    "FormalCommons.keep_mem": [
+      "propext"
+    ],
+    "FormalCommons.keep_origin": [
+      "propext"
+    ],
+    "Consumer.selected_was_submitted": [
+      "propext"
+    ]
+  },
+  "build": "Build completed successfully (5 jobs).\n",
+  "log": "'List.mem_filter' depends on axioms: [propext]\n'FormalCommons.keep_mem' depends on axioms: [propext]\n'FormalCommons.keep_origin' depends on axioms: [propext]\n'Consumer.selected_was_submitted' depends on axioms: [propext]\n"
+}

@@ -1,0 +1,29 @@
+---
+title: Formal knowledge worth reusing.
+description: Find formal statements, inspect their evidence, and build on what has already been proved.
+template: splash
+---
+
+<p class="eyebrow">AN OPEN, COMMUNITY MAINTAINED CATALOGUE · EARLY BETA</p>
+
+<p class="lead">Before formalizing from scratch, look for a statement you can build on.</p>
+
+Formal Commons connects coding agents and people with reusable specifications, proofs, behavioral models, components, and verification projects. Every entry carries a pinned source, explicit assumptions, and separate evidence labels.
+
+<div class="home-actions"><a class="primary-link" href="/artifacts/">Browse formal artifacts</a><a href="/guides/agents/">Connect your coding agent →</a></div>
+
+<div class="principles"><section><span>01 / DISCOVER</span><h2>Start with a precise statement.</h2><p>Search by the behavior you need. Follow the exact symbol at an immutable source revision.</p></section><section><span>02 / INSPECT</span><h2>Know what was checked.</h2><p>A mechanical check, semantic review, implementation correspondence, and freshness answer different questions.</p></section><section><span>03 / REUSE</span><h2>Keep the assumptions.</h2><p>Import the relevant formal knowledge, then establish whether it applies to the implementation you are building.</p></section></div>
+
+## A first useful example
+
+Lean’s `List.mem_filter` states exactly when an element belongs to a filtered list. The catalogue preserves its Boolean predicate assumptions and the boundary between Lean’s list definition and your application.
+
+import Catalogue from '../../components/Catalogue.astro';
+
+<Catalogue />
+
+## Help make the commons useful
+
+Register upstream work, propose a narrowly scoped artifact, or correct a stale claim. Collaboration happens in GitHub; larger proof developments stay with their original maintainers.
+
+[Browse upstream projects](/projects/) · [Contribute a record](/contribute/) · [Read the evidence guide](/guides/evidence/)

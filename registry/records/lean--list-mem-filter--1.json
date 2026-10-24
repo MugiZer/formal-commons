@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "id": "lean/list-mem-filter",
+  "record_version": 1,
+  "kind": "theorem",
+  "title": "List filtering preserves exactly matching members",
+  "summary": "An element belongs to a filtered Lean list exactly when it belongs to the input and the Boolean predicate holds. Useful for membership and input-origin arguments.",
+  "tags": [
+    "list",
+    "filter",
+    "membership",
+    "subset",
+    "selection",
+    "predicate"
+  ],
+  "proof_system": "Lean 4",
+  "source": {
+    "repository": "https://github.com/leanprover/lean4",
+    "revision": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+    "path": "src/Init/Data/List/Lemmas.lean",
+    "symbol": "List.mem_filter",
+    "statement": "x ∈ List.filter p as ↔ x ∈ as ∧ p x"
+  },
+  "assumptions": [
+    "p : α → Bool; as : List α; x : α, with Lean's List membership and Boolean-to-proposition coercion.",
+    "The statement concerns the pure Lean List.filter definition at the pinned revision."
+  ],
+  "limitations": [
+    "Membership equivalence does not by itself specify order, multiplicity, execution time, or termination of an unrelated implementation.",
+    "No correspondence to JavaScript Array.filter or any caller's code has been established."
+  ],
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/leanprover/lean4/blob/eb6cafb7290e8bd5f2937522d8d804f58f02bafc/LICENSE",
+    "attribution": "Lean 4 contributors; source theorem List.mem_filter."
+  },
+  "owners": [
+    "leanprover"
+  ],
+  "project": "lean/core",
+  "updated": "2026-10-23",
+  "reuse": "With leanprover/lean4:v4.35.0, import Init.Data.List.Lemmas and refer to List.mem_filter. Check the instantiated statement and any implementation correspondence yourself."
+}

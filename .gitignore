@@ -1,0 +1,11 @@
+node_modules/
+.astro/
+.wrangler/
+site/dist/
+generated/
+.env*
+.dev.vars*
+*.log
+playwright-report/
+examples/lean-contracts/.lake/
+release/

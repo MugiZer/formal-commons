@@ -1,0 +1,142 @@
+[
+  {
+    "id": "isabelle/sel4",
+    "record_version": 1,
+    "record_digest": "03d672b659bad37f60e18899eb2bb6045ba7016c485a657e15f77ea723324155",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated bootstrap curation (user-authorized)",
+      "date": "2026-10-23",
+      "url": "https://github.com/seL4/l4v/blob/3ba5789a044aba2d41afe0b108649132c506f81b/README.md",
+      "notes": "Accepted for discovery after inspecting pinned upstream metadata. This is automated catalogue curation, not human semantic review or independent proof checking."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-23",
+      "notes": "Metadata inspected at the pinned revision; newer upstream commits may exist."
+    },
+    "mechanical": {
+      "status": "not_checked_by_us",
+      "reference": null,
+      "checker": null,
+      "source_revision": null,
+      "proof_digest": null,
+      "axioms": null
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "No independently evidenced correspondence to a caller implementation."
+    }
+  },
+  {
+    "id": "lean/core",
+    "record_version": 1,
+    "record_digest": "26729e5e75392bf24f4e4efdc49276df84b3d04dfc92fe88b54a71582eda5c4d",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated bootstrap curation (user-authorized)",
+      "date": "2026-10-23",
+      "url": "https://github.com/leanprover/lean4/blob/eb6cafb7290e8bd5f2937522d8d804f58f02bafc/src/Init/Data/List/Lemmas.lean",
+      "notes": "Accepted for discovery after inspecting pinned upstream metadata. This is automated catalogue curation, not human semantic review or independent proof checking."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-23",
+      "notes": "Metadata inspected at the pinned revision; newer upstream commits may exist."
+    },
+    "mechanical": {
+      "status": "not_checked_by_us",
+      "reference": null,
+      "checker": null,
+      "source_revision": null,
+      "proof_digest": null,
+      "axioms": null
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "No independently evidenced correspondence to a caller implementation."
+    }
+  },
+  {
+    "id": "lean/cslib",
+    "record_version": 1,
+    "record_digest": "d0f352aa17d4ee6355f37fad04f7b6662998a79e21f066203ceaf28841236f9b",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated bootstrap curation (user-authorized)",
+      "date": "2026-10-23",
+      "url": "https://github.com/leanprover/cslib/blob/6ff325e870ed89f86be10515f0e7297fa5a32845/README.md",
+      "notes": "Accepted for discovery after inspecting pinned upstream metadata. This is automated catalogue curation, not human semantic review or independent proof checking."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-23",
+      "notes": "Metadata inspected at the pinned revision; newer upstream commits may exist."
+    },
+    "mechanical": {
+      "status": "not_checked_by_us",
+      "reference": null,
+      "checker": null,
+      "source_revision": null,
+      "proof_digest": null,
+      "axioms": null
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "No independently evidenced correspondence to a caller implementation."
+    }
+  },
+  {
+    "id": "lean/list-mem-filter",
+    "record_version": 1,
+    "record_digest": "2e656f9172382549a29609f1846887e5bbc820243a8f9ef133342f8054a830b3",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated bootstrap curation (user-authorized)",
+      "date": "2026-10-23",
+      "url": "https://github.com/leanprover/lean4/blob/eb6cafb7290e8bd5f2937522d8d804f58f02bafc/src/Init/Data/List/Lemmas.lean",
+      "notes": "Accepted for discovery after inspecting pinned upstream metadata. This is automated catalogue curation, not human semantic review or independent proof checking."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-23",
+      "notes": "Metadata inspected at the pinned revision; newer upstream commits may exist."
+    },
+    "mechanical": {
+      "status": "not_checked_by_us",
+      "reference": null,
+      "checker": null,
+      "source_revision": null,
+      "proof_digest": null,
+      "axioms": null
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "No independently evidenced correspondence to a caller implementation."
+    }
+  }
+]

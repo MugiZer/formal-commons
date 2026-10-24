@@ -1,0 +1,10 @@
+name = "formal-commons-contracts"
+version = "0.1.0"
+defaultTargets = ["Contracts", "Consumer"]
+moreLeanArgs = ["-DwarningAsError=true"]
+
+[[lean_lib]]
+name = "Contracts"
+
+[[lean_lib]]
+name = "Consumer"

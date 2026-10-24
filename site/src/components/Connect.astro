@@ -1,0 +1,11 @@
+<p>The read-only MCP endpoint for this running site is <code data-current-endpoint>/mcp</code>. No sign-in is needed for public discovery.</p>
+<label for="mcp-url">MCP endpoint</label><input id="mcp-url" class="endpoint" readonly value="/mcp" />
+<h2>Codex CLI</h2><pre><code data-codex-command>codex mcp add formal-commons --url http://localhost:8787/mcp</code></pre>
+<h2>Claude Code</h2><pre><code data-claude-command>claude mcp add --transport http formal-commons http://localhost:8787/mcp</code></pre>
+<script>
+  const endpoint = `${location.origin}/mcp`;
+  document.querySelector('[data-current-endpoint]')!.textContent = endpoint;
+  document.querySelector<HTMLInputElement>('#mcp-url')!.value = endpoint;
+  document.querySelector('[data-codex-command]')!.textContent = `codex mcp add formal-commons --url ${endpoint}`;
+  document.querySelector('[data-claude-command]')!.textContent = `claude mcp add --transport http formal-commons ${endpoint}`;
+</script>

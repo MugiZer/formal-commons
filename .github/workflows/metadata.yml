@@ -1,0 +1,73 @@
+name: Registry checks
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    name: Validate registry and build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: '24.11.0'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Preserve published record history
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: npx tsx scripts/check-history.ts "$BASE_SHA"
+      - run: npm run registry:build
+      - run: npm run schema
+      - run: git diff --exit-code -- schemas/
+      - run: npm run check
+      - run: npm test
+      - run: npm run build
+        env:
+          PUBLIC_REPOSITORY_URL: https://github.com/${{ github.repository }}
+      - run: npx wrangler deploy --dry-run --outdir release/worker
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        with:
+          name: approved-${{ github.sha }}
+          path: |
+            release/worker/
+            site/dist/
+            generated/catalogue.json
+            wrangler.jsonc
+            package.json
+            package-lock.json
+          retention-days: 30
+  publish:
+    name: Publish approved snapshot
+    needs: validate
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment: production
+    concurrency:
+      group: production
+      cancel-in-progress: false
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+        with:
+          name: approved-${{ github.sha }}
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: '24.11.0'
+      - run: npm ci --ignore-scripts
+      - name: Deploy the already-built code and assets together
+        run: npx wrangler deploy release/worker/worker.js --no-bundle
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

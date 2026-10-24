@@ -1,0 +1,23 @@
+---
+title: Connect a coding agent
+description: Use three bounded, read-only MCP tools to discover formal knowledge.
+---
+import Connect from '../../../components/Connect.astro';
+
+<Connect />
+
+## Available tools
+
+| Tool | Inputs | Result |
+| --- | --- | --- |
+| `search_artifacts` | `query`, optional `kind`, `proof_system`, `evidence_filter`, `limit`, `cursor` | Ranked artifact records with assumptions, pinned sources, evidence, and pagination. |
+| `get_artifact` | `id`, optional `revision` | Latest artifact or exact immutable source commit / record digest, including corrections and withdrawals. |
+| `search_projects` | `query`, optional `proof_system`, `status`, `limit`, `cursor` | Upstream project records and contribution opportunities. |
+
+Queries are limited to 256 characters; pages contain at most 25 records. Use the returned cursor with the same query, filters, limit and snapshot. Restart the search if the snapshot changes. Ranking uses deterministic behavior keywords; it is not a semantic proof of relevance.
+
+Try asking your agent: “Find a Lean theorem about list filtering and membership. Retrieve the pinned artifact, list its assumptions and limitations, and use it to prove that selected job IDs came from the submitted list.”
+
+The service does not execute proofs, download repositories, run commands, write records, or authorize your program as correct. The sample package demonstrates a separate local Lean check after retrieval.
+
+The website, `/registry.json`, `/health`, and the MCP return the same bundled snapshot ID. The public endpoint is rate limited to 60 requests per minute per IP at each Cloudflare location; this is an approximate abuse limit, not a global quota.

@@ -1,0 +1,7 @@
+---
+const repository = import.meta.env.PUBLIC_REPOSITORY_URL;
+const forms = [['specification.yml', 'Propose a specification', 'Describe permitted behavior, boundary cases, and assumptions.'], ['proof.yml', 'Propose a theorem or proof', 'Provide the exact statement, pinned environment, and check evidence.'], ['component.yml', 'Propose a verified component', 'Connect the implementation version to its formal property.'], ['project.yml', 'Register an existing project', 'Help people discover and contribute to upstream work.'], ['report.yml', 'Report an incorrect or stale claim', 'Identify the record and the scope or evidence that needs correction.']];
+---
+{!repository && <aside class="scope-note">Local preview: GitHub publication is pending. The proposal forms are included in <code>.github/ISSUE_TEMPLATE/</code>; live submission links appear when the repository is published.</aside>}
+<div class="contribute-list">{forms.map(([file, title, description]) => <section><h2>{repository ? <a href={`${repository}/issues/new?template=${file}`}>{title}</a> : title}</h2><p>{description}</p></section>)}</div>
+{repository && <p>Prefer a pull request? <a href={`${repository}/blob/main/CONTRIBUTING.md`}>Read the record and review guide</a>.</p>}

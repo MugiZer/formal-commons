@@ -1,0 +1,38 @@
+{
+  "name": "formal-commons",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24.11.0" },
+  "scripts": {
+    "registry:build": "tsx scripts/build-registry.ts",
+    "schema": "tsx scripts/schema.ts",
+    "lean:check": "tsx scripts/check-lean.ts",
+    "approve": "tsx scripts/approve.ts",
+    "links:check": "tsx scripts/check-links.ts",
+    "test": "tsx --test tests/*.test.ts",
+    "check": "tsc --noEmit",
+    "build": "npm run registry:build && astro build --root site",
+    "dev": "npm run build && wrangler dev",
+    "dev:site": "astro dev --root site",
+    "deploy": "npm run build && wrangler deploy",
+    "smoke": "tsx scripts/smoke.ts"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "0.42.7",
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "@modelcontextprotocol/server": "2.3.1",
+    "agents": "0.30.1",
+    "astro": "7.4.2",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "wrangler": "4.152.0"
+  },
+  "overrides": {
+    "miniflare": { "undici": "7.30.1" }
+  }
+}

@@ -1,0 +1,23 @@
+name: Report an incorrect or stale claim
+description: Correct evidence, assumptions, provenance, or version applicability.
+title: "[Correction] "
+body:
+  - type: input
+    id: record
+    attributes:
+      label: Record ID and revision or digest
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is incorrect or stale?
+      description: Include the claimed behavior, omitted assumption, or evidence mismatch. Do not post private source code or secrets.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting source or proposed correction
+    validations:
+      required: true

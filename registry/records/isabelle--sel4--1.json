@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "id": "isabelle/sel4",
+  "record_version": 1,
+  "kind": "project",
+  "title": "seL4 verification proofs",
+  "summary": "The upstream l4v repository contains Isabelle/HOL specifications and proofs for the seL4 microkernel. Consult upstream documentation for configurations and proof coverage.",
+  "tags": [
+    "kernel",
+    "operating systems",
+    "refinement",
+    "isabelle",
+    "hardware"
+  ],
+  "proof_system": "Isabelle/HOL",
+  "source": {
+    "repository": "https://github.com/seL4/l4v",
+    "revision": "3ba5789a044aba2d41afe0b108649132c506f81b",
+    "path": "README.md",
+    "symbol": null,
+    "statement": null
+  },
+  "assumptions": [
+    "Proof claims depend on the architecture, configuration, specifications, and trusted components documented upstream."
+  ],
+  "limitations": [
+    "The commons has not independently reproduced the l4v proof builds.",
+    "A project link does not establish verification of every seL4 configuration, driver, hardware platform, or caller."
+  ],
+  "license": {
+    "spdx": "CC-BY-SA-4.0",
+    "url": "https://github.com/seL4/l4v/blob/3ba5789a044aba2d41afe0b108649132c506f81b/LICENSE.md",
+    "attribution": "README and license documentation: Copyright 2020 Data61, CSIRO, CC-BY-SA-4.0. Proofs and tools have per-file licenses, typically GPL-2.0-only or BSD-2-Clause; inspect file headers before reuse."
+  },
+  "owners": [
+    "seL4 Foundation",
+    "l4v contributors"
+  ],
+  "project": "isabelle/sel4",
+  "updated": "2026-10-23",
+  "reuse": "Start with the pinned upstream README and proof coverage documentation; retain all configuration assumptions and inspect per-file license notices.",
+  "project_details": {
+    "status": "active",
+    "issues": "https://github.com/seL4/l4v/issues",
+    "contributing": "https://github.com/seL4/l4v/blob/3ba5789a044aba2d41afe0b108649132c506f81b/CONTRIBUTING.md",
+    "opportunities": [
+      "Report proof or documentation issues upstream.",
+      "Use seL4's documented contributor process for changes."
+    ]
+  }
+}

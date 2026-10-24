@@ -1,0 +1,9 @@
+{
+  "endpoint": "http://127.0.0.1:8787/mcp",
+  "body_timeout_status": 408,
+  "body_timeout_ms": 6032,
+  "rate_limit_status": 429,
+  "requests_until_limited": 61,
+  "retry_after": 60,
+  "scope": "Actual local Cloudflare Worker runtime, using reserved test IP addresses; not a production quota or load test."
+}

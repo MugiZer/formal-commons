@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "id": "lean/cslib",
+  "record_version": 1,
+  "kind": "project",
+  "title": "CSLib — Lean Computer Science Library",
+  "summary": "An upstream Lean library formalizing computer science theories and tools, with reusable APIs for software verification and certified software.",
+  "tags": [
+    "computer science",
+    "formal languages",
+    "semantics",
+    "software verification"
+  ],
+  "proof_system": "Lean 4",
+  "source": {
+    "repository": "https://github.com/leanprover/cslib",
+    "revision": "6ff325e870ed89f86be10515f0e7297fa5a32845",
+    "path": "README.md",
+    "symbol": null,
+    "statement": null
+  },
+  "assumptions": [
+    "Each development has its own formal definitions and hypotheses; inspect those before reuse."
+  ],
+  "limitations": [
+    "The commons has not independently built or semantically audited this pinned CSLib revision.",
+    "Project registration makes no universal correctness claim about its contents."
+  ],
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/leanprover/cslib/blob/6ff325e870ed89f86be10515f0e7297fa5a32845/LICENSE",
+    "attribution": "CSLib contributors."
+  },
+  "owners": [
+    "leanprover",
+    "CSLib contributors"
+  ],
+  "project": "lean/cslib",
+  "updated": "2026-10-23",
+  "reuse": "Follow upstream's dependency and toolchain instructions using the pinned commit; review each formal statement before use.",
+  "project_details": {
+    "status": "active",
+    "issues": "https://github.com/leanprover/cslib/issues",
+    "contributing": "https://github.com/leanprover/cslib/blob/6ff325e870ed89f86be10515f0e7297fa5a32845/CONTRIBUTING.md",
+    "opportunities": [
+      "Use upstream contribution guidance to find suitable work.",
+      "Discuss reusable computer science formalizations with upstream maintainers."
+    ]
+  }
+}

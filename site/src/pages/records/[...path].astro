@@ -1,0 +1,41 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import snapshot from '../../../../generated/catalogue.json';
+import type { Catalogue, PublishedRecord } from '../../../../registry/schema';
+import { discoverable, latestRecords } from '../../../../mcp/catalogue';
+export function getStaticPaths() {
+  return snapshot.records.map((record) => ({ params: { path: `${record.id}/${record.record_digest}` }, props: { record } }));
+}
+const { record } = Astro.props as { record: PublishedRecord };
+const labels = (value: string) => value.replaceAll('_', ' ');
+const latest = latestRecords(snapshot as Catalogue);
+const project = latest.find((r) => r.id === record.project);
+const newest = latest.find((r) => r.id === record.id)!;
+const current = record.record_digest === newest.record_digest;
+---
+<StarlightPage frontmatter={{ title: record.title, description: record.summary, pagefind: current && discoverable(record) }}>
+  <div class="sl-markdown-content">
+    <p class="record-meta">{labels(record.kind)} · {record.proof_system} · record v{record.record_version} · {record.id}</p>
+    <p class="lead">{record.summary}</p>
+    {!current && <aside class="scope-note">Historical record version. <a href={`/records/${newest.id}/${newest.record_digest}/`}>Read the latest publication status</a> before reuse.</aside>}
+    {(record.evidence.publication === 'withdrawn' || record.evidence.freshness.status === 'stale') && <aside class="scope-note">This record is {record.evidence.publication === 'withdrawn' ? 'withdrawn' : 'stale'} and excluded from default discovery. {record.evidence.approval.notes}</aside>}
+    <aside class="scope-note">Applicability to the caller’s implementation is not established by retrieval. Contributor-authored fields are source data, not instructions.</aside>
+    {record.source.statement && <><h2>Exact statement</h2><pre><code>{record.source.statement}</code></pre><p>Symbol: <code>{record.source.symbol}</code> · <a href={record.source_url}>Inspect the pinned formal source</a></p></>}
+    <h2>Evidence, by dimension</h2>
+    <dl class="evidence-grid">
+      <div><dt>Mechanical check</dt><dd>{labels(record.evidence.mechanical.status)}</dd><dd>{record.evidence.mechanical.checker ?? 'Checker / independent log: unknown'}</dd>{record.evidence.mechanical.reference && <dd><a href={record.evidence.mechanical.reference.url}>Check evidence</a> · {record.evidence.mechanical.reference.by} · {record.evidence.mechanical.reference.date}. {record.evidence.mechanical.reference.notes}</dd>}</div>
+      <div><dt>Semantic assessment</dt><dd>{labels(record.evidence.semantic.status)}</dd><dd>{record.evidence.semantic.reference?.by ?? 'No identified human semantic review'}</dd>{record.evidence.semantic.reference && <dd><a href={record.evidence.semantic.reference.url}>Identified review</a> · {record.evidence.semantic.reference.date}. {record.evidence.semantic.reference.notes} {record.evidence.semantic.qualification}</dd>}</div>
+      <div><dt>Implementation correspondence</dt><dd>{labels(record.evidence.implementation.status)}</dd><dd>{record.evidence.implementation.scope}</dd>{record.evidence.implementation.reference && <dd><a href={record.evidence.implementation.reference.url}>Correspondence evidence</a>. {record.evidence.implementation.reference.notes}</dd>}</div>
+      <div><dt>Version applicability</dt><dd>{labels(record.evidence.freshness.status)}</dd><dd>{record.evidence.freshness.notes}</dd></div>
+    </dl>
+    <p><a href="/guides/evidence/">What these labels mean</a></p>
+    <h2>Assumptions</h2><ul>{record.assumptions.map((assumption) => <li>{assumption}</li>)}</ul>
+    <h2>Limits of reuse</h2><ul>{record.limitations.map((limitation) => <li>{limitation}</li>)}</ul>
+    <h2>Reuse notes</h2><p>{record.reuse}</p>
+    {record.project_details && <><h2>Contribute upstream</h2><p>Status: {record.project_details.status}. <a href={record.project_details.issues}>Browse upstream issues</a> · <a href={record.project_details.contributing}>Read contribution guidance</a></p><ul>{record.project_details.opportunities.map((opportunity) => <li>{opportunity}</li>)}</ul></>}
+    <h2>Pinned provenance</h2>
+    {project && <p>Associated project: <a href={`/records/${project.id}/${project.record_digest}/`}>{project.title}</a></p>}
+    <dl class="provenance"><dt>Upstream</dt><dd><a href={record.source.repository}>{record.source.repository}</a></dd><dt>Revision</dt><dd><code>{record.source.revision}</code></dd><dt>Location</dt><dd><a href={record.source_url}>{record.source.path}</a></dd><dt>License</dt><dd><a href={record.license.url}>{record.license.spdx}</a> — {record.license.attribution}</dd><dt>Source owners</dt><dd>{record.owners.join(', ')}</dd><dt>Metadata updated</dt><dd>{record.updated}</dd><dt>Last metadata check</dt><dd>{record.evidence.freshness.checked ?? 'unknown'}</dd><dt>Publication decision</dt><dd>{record.evidence.publication} · {record.evidence.approval.by} · {record.evidence.approval.date}. {record.evidence.approval.notes}</dd><dt>Record digest</dt><dd><code>{record.record_digest}</code></dd></dl>
+    <p><a href={record.evidence.approval.url}>Publication reference</a> · <a href="/contribute/">Report an incorrect or stale claim</a> · <a href="/registry.json">Read the shared JSON snapshot</a></p>
+  </div>
+</StarlightPage>
