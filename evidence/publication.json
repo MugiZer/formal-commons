@@ -1,0 +1,56 @@
+{
+  "observed_date": "2026-10-24T20:07:59.099Z",
+  "repository": "https://github.com/MugiZer/ohara",
+  "repository_id": 1432453989,
+  "public_url": "https://ohara.mugizer.workers.dev",
+  "worker_id": "b437784a45d8423fa517f50613199318",
+  "version_id": "a37da190-959e-46ca-b21e-cfff032aa31c",
+  "source_commit": "aad4b9c42022666a410fa1b70c72753d906e51d3",
+  "snapshot_id": "fc348a2252e79db4ef27390a13a9382f8d9b5d6daf6cb92e511352f7fe65f535",
+  "publication": {
+    "status": "success",
+    "run": "https://github.com/MugiZer/ohara/actions/runs/40127937632",
+    "validation_job": 120973267442,
+    "publication_job": 120973403985,
+    "public_sdk_smoke": "passed, including server identity ohara, tools, exact retrieval, assumptions, inputs, health parity, body bounds, methods and origin rejection",
+    "approval": "Owner-authorized agent operation; not independent human contribution or semantic review."
+  },
+  "trusted_lean": {
+    "status": "success",
+    "run": "https://github.com/MugiZer/ohara/actions/runs/40127961241",
+    "job": 120973342040,
+    "package_digest": "8e0738dfc2eb1167cd190ad3b7b97f778ee9c248b4f36f5c30ceddee0c07bfd9",
+    "public_client_example": "evidence/external-codex-public.lean compiled successfully in the same job"
+  },
+  "health_monitor": {
+    "status": "success",
+    "run": "https://github.com/MugiZer/ohara/actions/runs/40128095765",
+    "job": 120973747218,
+    "schedule": "Every 30 minutes",
+    "checks": "Public 200 responses, Ohara title, matching health/registry/site source and snapshot, nonzero record count",
+    "notifications": "Existing GitHub owner preferences; no separate paging integration"
+  },
+  "rename": {
+    "old_name": "formal-commons",
+    "new_name": "ohara",
+    "old_account_subdomain": "formal-commons",
+    "account_subdomain": "mugizer",
+    "identity_retained": true,
+    "bare_ohara_subdomain": "unavailable",
+    "old_workers_url": "No longer routes after account-subdomain rename"
+  },
+  "rollback": {
+    "scope": "Previously observed on this same immutable Worker before the rename; no redundant public rollback was repeated for branding.",
+    "restored_version": "4af22522-204e-4a35-8276-2172f2b503ab",
+    "restored_source_commit": "e5e3a1d9ceec5b7f175c236cb30c49bdd5550fc4",
+    "parity_readback": "passed"
+  },
+  "original_acceptance": {
+    "decision": "NO-GO",
+    "missing": [
+      "Independent newcomer proposal walkthrough",
+      "Valid independent contribution with identified maintainer review/approval/merge through enforced protection"
+    ],
+    "no_semantic_or_expert_claim": true
+  }
+}

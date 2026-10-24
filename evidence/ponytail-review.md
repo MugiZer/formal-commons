@@ -7,3 +7,9 @@ No complexity findings. The existing smoke client is shipped in the validated re
 Prior resolved findings remain in history/pre-ohara/ponytail-review.md. This review does not claim independent human review or authorize a merge. The configured Git hooks also run the required review before each commit and push.
 
 net: -0 lines possible.
+
+## Publication evidence follow-up
+
+Reviewed the current evidence/status-only follow-up before commit and push: actual GitHub run references, trusted Linux report, fresh public-client transcript/results and live screenshot. No application logic or proof source changes. Reused the successful assigned checks instead of running suites for documentation. No complexity findings; no dependencies or runtime code were added.
+
+net: -0 lines possible.
