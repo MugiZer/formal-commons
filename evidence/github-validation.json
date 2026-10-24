@@ -1,0 +1,61 @@
+{
+  "repository": "https://github.com/MugiZer/formal-commons",
+  "source_commit": "abf7b6cc0d76f1cffca775f2811e1822a88c0e89",
+  "validation": {
+    "run": "https://github.com/MugiZer/formal-commons/actions/runs/40119764378",
+    "jobs": [
+      {
+        "name": "Validate registry and build",
+        "conclusion": "success",
+        "status": "completed",
+        "url": "https://github.com/MugiZer/formal-commons/actions/runs/40119764378/job/120948539218"
+      },
+      {
+        "name": "Publish approved snapshot",
+        "conclusion": null,
+        "status": "waiting",
+        "url": "https://github.com/MugiZer/formal-commons/actions/runs/40119764378/job/120948685487"
+      }
+    ]
+  },
+  "trusted_lean": {
+    "run": "https://github.com/MugiZer/formal-commons/actions/runs/40119845402",
+    "jobs": [
+      {
+        "name": "check",
+        "conclusion": "success",
+        "status": "completed",
+        "url": "https://github.com/MugiZer/formal-commons/actions/runs/40119845402/job/120948802103"
+      }
+    ]
+  },
+  "malformed_pr": {
+    "pull_request": "https://github.com/MugiZer/formal-commons/pull/1",
+    "run": "https://github.com/MugiZer/formal-commons/actions/runs/40120566579",
+    "outcome": "Rejected missing metadata and unsupported verified field; closed without merging.",
+    "jobs": [
+      {
+        "name": "Validate registry and build",
+        "conclusion": "failure",
+        "status": "completed",
+        "url": "https://github.com/MugiZer/formal-commons/actions/runs/40120566579/job/120950993134"
+      },
+      {
+        "name": "Publish approved snapshot",
+        "conclusion": "skipped",
+        "status": "completed",
+        "url": "https://github.com/MugiZer/formal-commons/actions/runs/40120566579/job/120951109010"
+      }
+    ],
+    "scope": "Owner-run PR rehearsal; not an independent outsider or human semantic review."
+  },
+  "production": {
+    "required_reviewers": [
+      "MugiZer"
+    ],
+    "branches": [
+      "main"
+    ],
+    "status": "Deployment remains gated; Cloudflare credentials are not configured."
+  }
+}
