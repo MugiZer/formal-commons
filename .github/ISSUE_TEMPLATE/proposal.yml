@@ -1,12 +1,24 @@
-name: Propose a theorem or proof
-description: Share a formal proposition with exact source and check evidence.
-title: "[theorem/proof] "
+name: Propose formal knowledge or a project
+description: Share a specification, theorem, model, component, or upstream project.
+title: "[Proposal] "
 body:
   - type: markdown
     attributes:
       value: "This is a proposal, not automatic approval. Unknown evidence stays unknown. Please submit only public material you are entitled to share."
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Proposal kind
+      options:
+        - Formal specification
+        - Theorem or proof
+        - Behavioral model
+        - Verified component
+        - Existing project
+    validations:
+      required: true
   - type: input
-    id: title
+    id: artifact-title
     attributes:
       label: Artifact or project title
       placeholder: A specific behavior or upstream project
