@@ -1,6 +1,6 @@
 {"version": "1.3.0",
  "packagesDir": ".lake/packages",
  "packages": [],
- "name": "«formal-commons-contracts»",
+ "name": "«ohara-contracts»",
  "lakeDir": ".lake",
  "fixedToolchain": false}

@@ -3,10 +3,11 @@ import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
 
 const endpoint = new URL(process.argv[2] ?? 'http://localhost:8787/mcp');
-const client = new Client({ name: 'formal-commons-independent-smoke-client', version: '0.1.0' });
+const client = new Client({ name: 'ohara-independent-smoke-client', version: '0.1.0' });
 const transport = new StreamableHTTPClientTransport(endpoint);
 await client.connect(transport);
 try {
+  assert.equal(client.getServerVersion()?.name, 'ohara');
   const tools = await client.listTools();
   assert.deepEqual(tools.tools.map((t) => t.name).sort(), ['get_artifact', 'search_artifacts', 'search_projects']);
   const search = await client.callTool({ name: 'search_artifacts', arguments: { query: 'filter membership' } });

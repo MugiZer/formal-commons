@@ -1,6 +1,6 @@
 # Operate the beta
 
-The local implementation and committed configuration do not imply that hosting, account authorization, protection, alerts or CI have been enabled. Consult `STATUS.md` for the observed state.
+Ohara is published at https://ohara.mugizer.workers.dev from https://github.com/MugiZer/ohara. Consult `STATUS.md` for observed publication, protection and monitoring evidence. Configuration alone does not establish enabled account controls.
 
 ## Establish publication authority
 
@@ -51,7 +51,7 @@ Read health and smoke the endpoint again. Worker code and assets are versioned t
 
 ## Monitor
 
-The Worker emits structured path, response status, duration and error-code logs with 10% platform sampling. Check Cloudflare request errors / latency and GitHub failed validation, publication and trusted-proof runs. Configure actual account alerts or an existing uptime monitor for `/health` and its expected snapshot. No alert integration is claimed until configured and tested. Application logs omit queries and source code; platform metadata retention is controlled by the hosting account.
+The Worker emits structured path, response status, duration and error-code logs with 10% platform sampling. Check Cloudflare request errors / latency and GitHub failed validation, publication and trusted-proof runs. The `Public health` workflow runs every 30 minutes and on manual dispatch, checking `/health`, `/registry.json` and the site for matching source/snapshot identifiers and Ohara branding. GitHub reports failed runs through the owner's existing notification preferences; a separate paging integration is not configured. Record a successful workflow run before claiming the monitor operational. Application logs omit queries and source code; platform metadata retention is controlled by the hosting account.
 
 Rate limiting is 60 requests per minute per IP per Cloudflare location. It is approximate and can group users behind the same NAT. The five-second body deadline and 16 KiB body limit bound parsing; search runs against bundled data with no network requests. Observe traffic before adjusting limits. There is no availability SLA or certification in this public beta.
 

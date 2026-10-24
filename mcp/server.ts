@@ -6,7 +6,7 @@ import { CatalogueError, search, getArtifact, searchArtifactsSchema, searchProje
 
 export const catalogue = snapshot as Catalogue;
 export function createServer() {
-  const server = new McpServer({ name: 'formal-commons', version: '0.1.0' });
+  const server = new McpServer({ name: 'ohara', version: '0.1.0' });
   for (const tool of [
     { name: 'search_artifacts', schema: searchArtifactsSchema, description: 'Find approved formal artifacts by behavior. Read-only discovery; each result includes pinned provenance, assumptions, evidence and reuse limits.', run: (args: unknown) => search(catalogue, 'artifacts', args) },
     { name: 'get_artifact', schema: getArtifactSchema, description: 'Read one published artifact at its latest or exact source/digest revision, including withdrawn records and explicit applicability limits.', run: (args: unknown) => getArtifact(catalogue, args) },

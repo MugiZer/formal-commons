@@ -25,6 +25,9 @@ jobs:
           lint: false
           use-github-cache: false
       - run: npm run lean:check
+      - name: Check the public coding-agent reuse example
+        working-directory: examples/lean-contracts
+        run: lean -DwarningAsError=true ../../evidence/external-codex-public.lean
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: lean-check-${{ github.sha }}

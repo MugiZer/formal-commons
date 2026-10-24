@@ -4,7 +4,7 @@ import { resolve, delimiter } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { hash } from './build-registry.ts';
 
-export const auditedDeclarations = ['List.mem_filter', 'FormalCommons.keep_mem', 'FormalCommons.keep_origin', 'Consumer.selected_was_submitted'];
+export const auditedDeclarations = ['List.mem_filter', 'Ohara.keep_mem', 'Ohara.keep_origin', 'Consumer.selected_was_submitted'];
 const allowedAxioms = new Set(['propext', 'Quot.sound', 'Classical.choice']);
 export function inspectAxioms(log: string) {
   const inspected: Record<string, string[]> = {};

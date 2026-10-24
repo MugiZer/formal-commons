@@ -1,0 +1,35 @@
+name: Public health
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *'
+permissions: {}
+jobs:
+  health:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: '24.11.0'
+      - name: Verify public site and shared snapshot
+        run: |
+          node --input-type=module <<'JS'
+          import assert from 'node:assert/strict';
+          const origin = 'https://ohara.mugizer.workers.dev';
+          const responses = await Promise.all(['/health', '/registry.json', '/'].map(path => fetch(origin + path, { signal: AbortSignal.timeout(15000) })));
+          for (const response of responses) assert.equal(response.status, 200, response.url);
+          const health = await responses[0].json();
+          const registry = await responses[1].json();
+          const html = await responses[2].text();
+          assert.equal(health.status, 'ok');
+          assert.match(html, /<title>[^<]*Ohara/);
+          assert.match(health.source_commit, /^[a-f0-9]{40}$/);
+          assert.equal(health.source_commit, registry.source_commit);
+          assert.match(health.snapshot_id, /^[a-f0-9]{64}$/);
+          assert.equal(health.snapshot_id, registry.snapshot_id);
+          assert.ok(health.records > 0 && health.records === registry.records.length);
+          assert.ok(html.includes(health.snapshot_id.slice(0, 12)) && html.includes(health.source_commit.slice(0, 12)));
+          console.log(JSON.stringify({ status: 'ok', snapshot_id: health.snapshot_id, source_commit: health.source_commit }));
+          JS

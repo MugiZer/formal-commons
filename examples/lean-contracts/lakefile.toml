@@ -1,4 +1,4 @@
-name = "formal-commons-contracts"
+name = "ohara-contracts"
 version = "0.1.0"
 defaultTargets = ["Contracts", "Consumer"]
 moreLeanArgs = ["-DwarningAsError=true"]

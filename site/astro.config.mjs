@@ -2,10 +2,11 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
 export default defineConfig({
+  site: 'https://ohara.mugizer.workers.dev',
   integrations: [starlight({
-    title: 'Formal Commons',
+    title: 'Ohara',
     description: 'Reusable formal knowledge, with inspectable evidence and explicit assumptions.',
-    customCss: ['./src/styles/commons.css'],
+    customCss: ['./src/styles/ohara.css'],
     components: { Footer: './src/components/Footer.astro' },
     sidebar: [
       { label: 'Start here', link: '/' },

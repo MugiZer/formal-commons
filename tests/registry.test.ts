@@ -69,7 +69,7 @@ test('withdrawal and stale flags remove latest records from default discovery bu
   assert.equal(search(stale, 'artifacts', { query: 'filter' }).total, 0);
 });
 test('a broken publication preserves the last good snapshot; restoration reproduces it', async () => {
-  const directory = await mkdtemp(join(tmpdir(), 'formal-commons-'));
+  const directory = await mkdtemp(join(tmpdir(), 'ohara-'));
   try {
     await cp('registry', join(directory, 'registry'), { recursive: true });
     await cp('reviews', join(directory, 'reviews'), { recursive: true });

@@ -1,6 +1,8 @@
-# Formal Commons
+# Ohara
 
-[Public repository](https://github.com/MugiZer/formal-commons) · [Delivery status](STATUS.md)
+[Live catalogue](https://ohara.mugizer.workers.dev) · [Public MCP](https://ohara.mugizer.workers.dev/mcp)
+
+[Public repository](https://github.com/MugiZer/ohara) · [Delivery status](STATUS.md)
 
 An open formal knowledge catalogue for coding agents and people. Discover a precise statement, inspect its pinned evidence and assumptions, then establish applicability to your own implementation.
 
@@ -38,7 +40,7 @@ Install Lean using its [official instructions](https://lean-lang.org/install/), 
 npm run lean:check
 ```
 
-For a portable toolchain, set `LEAN_BIN` to its `bin` directory. The script requires the pinned version, builds both modules, rejects proof placeholders, inspects every listed theorem's axioms, and writes `evidence/lean-check.json`. The committed report records an actual local check. Core `List.mem_filter` is imported and its axioms inspected; the whole upstream core was not independently rebuilt. Normal Lean logical axioms are explicitly allowlisted. No semantic or expert label follows from this check.
+For a portable toolchain, set `LEAN_BIN` to its `bin` directory. The script requires the pinned version, builds both modules, rejects proof placeholders, inspects every listed theorem's axioms, and writes `evidence/lean-check.json`. Current reports and historical check scope are described in [evidence](evidence/README.md). Core `List.mem_filter` is imported and its axioms inspected; the whole upstream core was not independently rebuilt. Normal Lean logical axioms are explicitly allowlisted. No semantic or expert label follows from this check.
 
 ## Registry and authority
 
@@ -85,7 +87,7 @@ scripts/        validation, snapshot, review, Lean and smoke commands
 mcp/            Cloudflare stateless MCP service and shared search
 site/           accessible Astro Starlight catalogue and guides
 examples/       pinned Lean contract and importing consumer
-evidence/       actual local check reports
+evidence/       observed checks and preserved historical reports
 .github/        proposal forms, review ownership and safe workflows
 ```
 

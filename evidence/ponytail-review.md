@@ -1,15 +1,9 @@
-# Current-diff ponytail review
+# Ohara current-diff review
 
-Applied the required `ponytail-review` skill before the initial local commit. Reviewed registry authority, snapshot generation, three MCP tools, bounded HTTP handling, static rendering, contribution forms, Lean checking, acceptance tests, and publication workflows.
+Applied the required ponytail-review skill to the staged Ohara rename before commit. Reviewed package/MCP/Lean callers, configuration, site copy and stylesheet move, preserved historical evidence, public post-deploy smoke, scheduled health parity, and the public-client Lean example in the existing trusted job. Existing passing TypeScript, registry tests and build evidence were reused; deployment and renamed Lean checks remain separate observed gates.
 
-Resolved findings:
+No complexity findings. The existing smoke client is shipped in the validated release artifact and reused after deployment. GitHub's native schedule supplies monitoring without a new service or dependency. The trusted Lean job checks the actual client example without another proof runner. Registry records, publication authority and evidence dimensions are unchanged. Historical file moves retain identical bytes.
 
-1. `reuse:` duplicated validation/build steps in separate publishing and metadata workflows. Publication now depends on the existing validation job and deploys its already-built artifact.
-2. `reuse:` repeated latest-version selection in artifact pages. Pages now use the shared `latestRecords` helper used by discovery.
-3. `delete:` a duplicate static Lean audit command listing. The trusted checker generates its own fixed audit input, with duplicate-output rejection.
-
-4. `reuse:` the Git hook found four identical proposal form bodies. One proposal form now retains every evidence/source/scope/license field, adds a required kind selector, and serves the four distinct site entry points with appropriate issue title prefixes. The separate correction form remains.
-
-No remaining complexity findings. No speculative database, account system, proof-execution service, embedding service, frontend framework, or general theorem-search engine was added. This review does not authorize a merge or assert production security.
+Prior resolved findings remain in history/pre-ohara/ponytail-review.md. This review does not claim independent human review or authorize a merge. The configured Git hooks also run the required review before each commit and push.
 
 net: -0 lines possible.
