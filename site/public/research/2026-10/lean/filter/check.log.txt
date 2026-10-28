@@ -1,0 +1,15 @@
+$ rtk proxy <user-home>\Documents\Codex\2026-10-23\ohara\work\toolchains\lean-4.35.0-windows\bin\lean.exe --version
+Lean (version 4.35.0, x86_64-w64-windows-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
+
+exit_status=null; elapsed_ms=1089.6829000000002; error=Error: spawnSync rtk ETIMEDOUT
+
+$ rtk proxy <user-home>\Documents\Codex\2026-10-23\ohara\work\toolchains\lean-4.35.0-windows\bin\lean.exe -o <workspace>\outputs\ohara-ingest-artifact\evaluation\swarm-2026-10-25\holdout\filter-fusion\Consumer.olean <workspace>\outputs\ohara-ingest-artifact\evaluation\swarm-2026-10-25\holdout\filter-fusion\Consumer.lean
+@List.filter_filter : ∀ {α : Type u_1} {p q : α → Bool} {l : List α},
+  List.filter p (List.filter q l) = List.filter (fun a => p a && q a) l
+theorem List.filter_filter.{u_1} : ∀ {α : Type u_1} {p q : α → Bool} {l : List α},
+  List.filter p (List.filter q l) = List.filter (fun a => p a && q a) l :=
+fun {α} {p q} x => List.brecOn x List.filter_filter._f
+'List.filter_filter' depends on axioms: [propext]
+'FilterFusionHoldout.consumer' depends on axioms: [propext]
+
+exit_status=0; elapsed_ms=6326.770999999999; error=null

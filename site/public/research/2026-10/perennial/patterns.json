@@ -1,0 +1,122 @@
+{
+  "patterns": [
+    {
+      "id": "tchajed/perennial-mutex-ownership",
+      "title": "Mutex acquisition and release transfer an Iris resource",
+      "property": "Given is_lock lk R, successful acquisition establishes locked lk ∗ R, so the holder receives both the exclusive held-lock token and the protected proposition. The companion release contract requires is_lock lk R ∗ locked lk ∗ ▷ R and returns True while restoring the unlocked lock invariant. The lock invariant stores R only in the unlocked state; locked lk is represented by fractional heap ownership of the lock flag.",
+      "symbol": "wp_Mutex__Lock",
+      "companion_symbols": ["wp_Mutex__Unlock", "lock_inv", "is_lock", "locked", "alloc_lock", "locked_exclusive"],
+      "source_path": "src/goose_lang/lib/lock/lock.v",
+      "source_revision": "b84d676ee32389225ff13927a72383eb79d1d337",
+      "source_sha256": "4a2d2abb7de00e177e5fe573b6d8ab9508b57b315c75740dd13e63577b19f46a",
+      "source_git_blob": "369009a765cabad232fdf5d54a9f286e2144099a",
+      "hypotheses": [
+        "The proof section is instantiated with heapGS Σ and lock namespace N; R is an iProp Σ.",
+        "Acquisition requires is_lock lk R.",
+        "Acquisition postcondition is locked lk ∗ R.",
+        "Release requires is_lock lk R ∗ locked lk ∗ ▷ R and returns True.",
+        "alloc_lock requires full ownership of a free lock and ▷ R to associate the lock with its invariant."
+      ],
+      "normal_postconditions": {
+        "acquire": "locked lk ∗ R",
+        "release": "True"
+      },
+      "source_to_proof_to_check": {
+        "property": "wp_Mutex__Lock maps is_lock lk R to locked lk ∗ R; wp_Mutex__Unlock returns the held resource to the invariant and establishes True.",
+        "proof_root": "wp_Mutex__Lock and wp_Mutex__Unlock",
+        "definitions_and_supporting_lemmas": [
+          "lock_inv stores a bool flag with fractional heap ownership and R in the unlocked state.",
+          "is_lock packages the lock location and invariant; locked packages the held flag and its 3/4 points-to fraction.",
+          "wp_Mutex__Lock is derived from wp_Mutex__Lock' and wp_Mutex__TryLock, which retries until the compare-exchange succeeds.",
+          "wp_Mutex__Unlock is derived from wp_Mutex__Unlock', whose compare-exchange changes the flag to false and restores lock_inv.",
+          "locked_exclusive rules out two simultaneous held-lock resources."
+        ],
+        "implementation_connection": "The selected file exports the Goose lock implementation from lock.impl. The proof operates on its Mutex__Lock and lock.release expressions; the lock implementation source itself was not part of the retained six-file source bundle.",
+        "dependencies": [
+          "Iris proof mode, invariants and algebra",
+          "stdpp namespaces",
+          "Perennial weakest-precondition and Goose language modules",
+          "Perennial typed_mem and Goose lock.impl"
+        ],
+        "check": {
+          "origin": "upstream GitHub Actions metadata",
+          "run_id": 21281438220,
+          "job_ids": [61252151166, 61252151164],
+          "job_names": ["build (9.1)", "build (dev)"],
+          "job_conclusions": ["success", "success"],
+          "run_conclusion": "failure",
+          "selected_steps": [],
+          "logs": [],
+          "result": "inconclusive",
+          "interpretation": "The successful build job summaries do not establish that this theorem was built: retained jobs have empty step arrays and there is no job log with source, theorem or configuration markers. The overall run failed in check-goose and check-grackle."
+        }
+      },
+      "reuse_use_case": "Use the contract when verifying a Goose program whose mutex protects an Iris resource: prove the invariant before acquisition, reason with R while holding locked lk, and return R before release.",
+      "proposal_path": "mutex-ownership-proposal.json",
+      "publication_tasks_path": "mutex-ownership-publication-tasks.json",
+      "gaps": [
+        "Exact theorem coverage in the retained CI run is inconclusive because no job steps or logs were retained.",
+        "No local Rocq replay or axiom/trust audit was performed.",
+        "The selected source files import surrounding Iris, Perennial and Goose modules that are absent from the six-file retained source bundle; no standalone consumer package was prepared."
+      ],
+      "handoff_path": null
+    },
+    {
+      "id": "tchajed/perennial-crash-critical-section",
+      "title": "Crash-aware critical section preserves normal and crash resources",
+      "property": "For a non-value expression e and a crash lock carrying R/Rcrash, with_lock_spec runs e while holding the lock. On normal completion, e establishes Φc ∧ Φ #() and returns R; on crash, e establishes Φc ∗ Rcrash. The enclosing WPC concludes with Φ normally and Φc on crash.",
+      "symbol": "with_lock_spec",
+      "companion_symbols": ["use_crash_locked", "wp_Mutex__Lock", "wp_Mutex__Unlock", "is_crash_lock", "crash_locked", "partial_crash_locked", "with_lock"],
+      "source_path": "src/goose_lang/lib/lock/crash_lock.v",
+      "source_revision": "b84d676ee32389225ff13927a72383eb79d1d337",
+      "source_sha256": "679f4e1cd084d38f62e598833725a0aca4bd785624e3614fdcaadd360ebb9332",
+      "source_git_blob": "de5fc97af8d90afaacd06333afe9bcbadaddc398",
+      "hypotheses": [
+        "The proof section is instantiated with heapGS Σ, stagedG Σ and lock namespace Nlock.",
+        "The critical-section expression satisfies to_val e = None.",
+        "is_crash_lock lk R Rcrash stores crash_borrow R Rcrash in the lock invariant.",
+        "The supplied WPC for e requires R and has normal postcondition (Φc ∧ Φ #()) ∗ R and crash postcondition Φc ∗ Rcrash.",
+        "The enclosing WPC for with_lock lk e has normal postcondition Φ and crash postcondition Φc."
+      ],
+      "normal_postcondition": "Φc ∧ Φ #() for the critical section, retaining R; Φ for the enclosing with_lock WPC.",
+      "crash_postcondition": "Φc ∗ Rcrash for the critical section; Φc for the enclosing with_lock WPC.",
+      "source_to_proof_to_check": {
+        "property": "with_lock_spec preserves the exact supplied WPC outcomes while sequencing lock.acquire, e, and lock.release.",
+        "proof_root": "with_lock_spec",
+        "definitions_and_supporting_lemmas": [
+          "is_crash_lock is an ordinary lock whose protected proposition is crash_borrow R Rcrash.",
+          "crash_locked contains the crash borrow, lock invariant and locked token.",
+          "use_crash_locked opens the crash borrow for e and returns the borrow on the normal path or Rcrash on the crash path.",
+          "with_lock is lock.acquire followed by e and lock.release; with_lock_spec composes wp_Mutex__Lock, use_crash_locked and wp_Mutex__Unlock."
+        ],
+        "dependencies": [
+          "Iris proof mode, invariants and algebra",
+          "Perennial weakestpre, crash_weakestpre, na_crash_inv and crash_borrow",
+          "Perennial Goose language, typed_mem and lock modules",
+          "stdpp namespaces"
+        ],
+        "check": {
+          "origin": "upstream GitHub Actions metadata",
+          "run_id": 21281438220,
+          "job_ids": [61252151166, 61252151164],
+          "job_names": ["build (9.1)", "build (dev)"],
+          "job_conclusions": ["success", "success"],
+          "run_conclusion": "failure",
+          "selected_steps": [],
+          "logs": [],
+          "result": "inconclusive",
+          "interpretation": "The successful build job summaries do not establish that with_lock_spec was built: retained jobs have empty step arrays and no source, theorem or configuration markers are available in a job log. The overall run failed in check-goose and check-grackle."
+        }
+      },
+      "reuse_use_case": "Reuse the specification when reasoning about a Goose critical section that holds a mutex across crash-safe state changes. Choose R for the protected normal state and Rcrash for the recovery state, then prove the stated WPC for the section.",
+      "proposal_path": "crash-critical-section-proposal.json",
+      "publication_tasks_path": "crash-critical-section-publication-tasks.json",
+      "gaps": [
+        "Exact theorem coverage in the retained CI run is inconclusive because no job steps or logs were retained.",
+        "No local Rocq replay or axiom/trust audit was performed.",
+        "The crash-lock theorem depends on Perennial crash-logic and Iris/Goose imports absent from the six-file retained source bundle; no standalone consumer package was prepared."
+      ],
+      "handoff_path": null
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "result": "pass",
+  "scope": "Finite two-process variant of DijkstraMutex.Safety-4-processors. The TLA source is unchanged; generated MC.tla and MC.cfg were changed from four named processes to workerA and workerB.",
+  "invariant": "MutualExclusion",
+  "source_revision": "0cab2b3fbfefc6d48a9f84a432f5bb5498738d46",
+  "working_directory": "local-check",
+  "command": "java.exe -Xmx512m -cp <workspace>/outputs/ohara-ingest-artifact/evaluation/expanded-swarm-2026-10-26/tools/tla2tools-1.7.4.jar tlc2.TLC -workers 1 -config MC.cfg MC.tla -metadir meta",
+  "started_at_utc": "2026-10-26T02:34:02.6888482Z",
+  "finished_at_utc": "2026-10-26T02:34:05.3336111Z",
+  "wall_time_seconds": 2.645,
+  "exit_code": 0,
+  "toolchain": {
+    "distribution": "tla2tools 1.7.4",
+    "jar_sha256": "936a262061c914694dfd669a543be24573c45d5aa0ff20a8b96b23d01e050e88",
+    "cli_version": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)",
+    "toolchain_revision": "5a47802b5c391f59ecdd44117981f4ff8c0656ba",
+    "java": "Java 1.8.0_401, 64-bit",
+    "heap": "512 MiB",
+    "workers": 1
+  },
+  "model_instance": {
+    "Proc": [
+      "workerA",
+      "workerB"
+    ],
+    "variant_file_changes": [
+      "MC.tla",
+      "MC.cfg"
+    ]
+  },
+  "state_space": {
+    "states_generated": 1322,
+    "distinct_states": 660,
+    "queue_remaining": 0,
+    "complete_graph_depth": 29,
+    "fingerprint_collision_probability": "2.4E-14"
+  },
+  "output": {
+    "stdout": "local-check/tlc.stdout.txt",
+    "stderr": "local-check/tlc.stderr.txt",
+    "message": "Model checking completed. No error has been found."
+  },
+  "scope_limits": [
+    "This is a finite two-process check, not a proof for arbitrary Proc sizes.",
+    "No implementation correspondence is present."
+  ],
+  "files": {
+    "DijkstraMutex.tla": {
+      "sha256": "b0033a7059170cda363091b64da3e01ba78822ed348592a3c979575fb10dff6d",
+      "bytes": 18106
+    },
+    "MC.tla": {
+      "sha256": "849abcbacd1830754c894528dcb703e5b103c4094e971e280ece738865ffa355",
+      "bytes": 562
+    },
+    "MC.cfg": {
+      "sha256": "1528c2a04cef8a8e51d4f6c805a799d674ab745436b9895692e99c71f26c0b1f",
+      "bytes": 383
+    },
+    "tlc.stdout.txt": {
+      "sha256": "20f221842a7ba34bd28c7f0067f4ee863431b19da7da26557845c2f20c895fd8",
+      "bytes": 2152
+    },
+    "tlc.stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  }
+}

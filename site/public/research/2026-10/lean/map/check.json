@@ -1,0 +1,35 @@
+{
+  "command": "rtk proxy <user-home>/Documents/Codex/2026-10-23/ohara/work/toolchains/lean-4.35.0-windows/bin/lean.exe Consumer.lean",
+  "cwd": "<workspace>/outputs/ohara-ingest-artifact/evaluation/swarm-2026-10-25/round-1/modular-index/",
+  "initial": {
+    "chunk_id": "faf59c",
+    "wall_time_seconds": 10.0012281,
+    "session_id": 76546,
+    "original_token_count": 0,
+    "output": ""
+  },
+  "polls": [
+    {
+      "chunk_id": "6ea01f",
+      "wall_time_seconds": 5.0148223,
+      "session_id": 76546,
+      "original_token_count": 0,
+      "output": ""
+    },
+    {
+      "chunk_id": "2bd4b6",
+      "wall_time_seconds": 5.0032975,
+      "session_id": 76546,
+      "original_token_count": 0,
+      "output": ""
+    },
+    {
+      "chunk_id": "47ea30",
+      "wall_time_seconds": 0.0000309,
+      "exit_code": 0,
+      "original_token_count": 375,
+      "output": "@List.map_map : ∀ {β : Type u_1} {γ : Type u_2} {α : Type u_3} {g : β → γ} {f : α → β} {l : List α},\n  List.map g (List.map f l) = List.map (g ∘ f) l\ntheorem List.map_map.{u_1, u_2, u_3} : ∀ {β : Type u_1} {γ : Type u_2} {α : Type u_3} {g : β → γ} {f : α → β}\n  {l : List α}, List.map g (List.map f l) = List.map (g ∘ f) l :=\nfun {β} {γ} {α} {g} {f} {l} =>\n  List.rec\n    (of_eq_true\n      (Eq.trans (congr (congrArg Eq (Eq.trans (congrArg (List.map g) List.map_nil) List.map_nil)) List.map_nil)\n        (eq_self [])))\n    (fun head tail tail_ih =>\n      of_eq_true\n        (Eq.trans\n          (congr\n            (congrArg Eq\n              (Eq.trans (Eq.trans (congrArg (List.map g) List.map_cons) List.map_cons)\n                (congrArg (List.cons (g (f head))) tail_ih)))\n            List.map_cons)\n          (eq_self (g (f head) :: List.map (g ∘ f) tail))))\n    l\n@[implicit_reducible] def List.map.{u_1, u_2} : {α : Type u_1} → {β : Type u_2} → (α → β) → List α → List β :=\nfun {α} {β} f x => List.brecOn x (List.map._f f)\ntheorem List.map_nil.{u, v} : ∀ {α : Type u} {β : Type v} {f : α → β}, List.map f [] = [] :=\nfun {α} {β} {f} => id rfl\ntheorem List.map_cons.{u, v} : ∀ {α : Type u} {β : Type v} {f : α → β} {a : α} {l : List α},\n  List.map f (a :: l) = f a :: List.map f l :=\nfun {α} {β} {f} {a} {l} => id rfl\n'List.map_map' depends on axioms: [propext]\n'ModularIndexConsumer.fuse' depends on axioms: [propext]\n"
+    }
+  ]
+}
+

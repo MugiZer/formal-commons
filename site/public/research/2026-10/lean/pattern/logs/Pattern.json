@@ -1,0 +1,15 @@
+{
+  "origin": "fresh local check",
+  "command": [
+    "<user-home>/Documents/Codex/2026-10-23/ohara/work/toolchains/lean-4.35.0-windows/bin/lean.exe",
+    "-o",
+    "Pattern.olean",
+    "Pattern.lean"
+  ],
+  "invoked_through": "rtk proxy",
+  "exit_status": 0,
+  "elapsed_ms": 3723.8412,
+  "stdout": "theorem OharaPattern.comp_involutive.{u} : ∀ {α : Sort u} (f g : α → α),\n  Involutive f → Involutive g → (∀ (x : α), g (f x) = f (g x)) → Involutive (f ∘ g) :=\nfun {α} f g hf hg commute x =>\n  id\n    (Eq.mpr (id (congrArg (fun _a => f _a = x) (commute (g x))))\n      (Eq.mpr (id (congrArg (fun _a => f (f _a) = x) (hg x)))\n        (Eq.mpr (id (congrArg (fun _a => _a = x) (hf x))) (Eq.refl x))))\n'OharaPattern.comp_involutive' does not depend on any axioms\n",
+  "stderr": "",
+  "receipt_note": "Transcribed from the initial exec result; compilation was not repeated."
+}

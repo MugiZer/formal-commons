@@ -1,0 +1,6 @@
+Command: rtk proxy <user-home>\Documents\Codex\2026-10-23\ohara\work\toolchains\lean-4.35.0-windows\bin\lake.exe build
+Working directory: component-extract
+Exit: 0
+✔ [4/5] Built Consumer (10s)
+Build completed successfully (5 jobs).
+Reason for rerun: initial consumer emitted unnecessarySimpa warnings; replaced simp-based consumers with named theorems that directly rewrite by OharaHashMap.lookup_insert. HashMapInsert was unchanged and reused from the first build.

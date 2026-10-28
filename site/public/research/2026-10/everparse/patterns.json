@@ -1,0 +1,133 @@
+{
+  "source": {
+    "repository": "https://github.com/project-everest/everparse",
+    "revision": "0d740eace6c18c383c0a9b276c49e089e77bd59c"
+  },
+  "patterns": [
+    {
+      "id": "project-everest/lowparse-dependent-length",
+      "title": "Header-derived, length-bounded payload parser",
+      "property": "parse_deplen_data_t refines (h,payload) with U32.v(dlf h) == Seq.length(serialize ps payload). parse_deplen_unfold2 characterizes the parser as header parsing followed by an exact, header-sized payload slice; parsing succeeds only if the payload parser and serializer both agree on that length.",
+      "root": {
+        "path": "lib/everparse/lowparse/LowParse.Spec.DepLen.fst",
+        "symbol": "parse_deplen_unfold2",
+        "type": "F* Lemma"
+      },
+      "hypotheses": [
+        "min <= max < 4294967296",
+        "dlf : ht -> bounded_int32 min max",
+        "hp : parser hk ht",
+        "pp : parser pk pt",
+        "ps : serializer pp"
+      ],
+      "source_proof_check": {
+        "intake_result": "pass",
+        "scope": "Upstream F* check of the LowParse target; selected modules are identified in the job log.",
+        "run_id": 40171202516,
+        "run_url": "https://github.com/project-everest/everparse/actions/runs/40171202516",
+        "job_id": 121102226785,
+        "job_name": "test-lowparse",
+        "step": "Build LowParse",
+        "step_conclusion": "success",
+        "checked_modules": [
+          "LowParse.Spec.DepLen",
+          "LowParse.PulseParse.DepLen"
+        ],
+        "log_lines": {
+          "source_revision": [
+            125,
+            155
+          ],
+          "target_and_config": [
+            538,
+            543,
+            545,
+            966,
+            971,
+            972,
+            973
+          ]
+        },
+        "z3_version": "5.3.0",
+        "fstar_executable": "/mnt/everparse/opt/FStar/out/bin/fstar.exe",
+        "admission_review": "The full selected job log contains neither ADMIT=1 nor --admit_smt_queries true. A distinct job with those admission flags is retained as compilation-only evidence.",
+        "prechecked_dependencies": "--already_cached PulseCore,Pulse,*,-LowParse,-EverParse3d,-ASN1,-CBOR,-CDDL,Prims,FStar,LowStar",
+        "evidence_path": "evidence.json",
+        "local_replay": "not run"
+      },
+      "trace": [
+        {
+          "property": "The header-derived length equals the serialized payload length.",
+          "source": {
+            "path": "lib/everparse/lowparse/LowParse.Spec.DepLen.fst",
+            "lines": "42-51",
+            "symbols": [
+              "parse_deplen_data_t"
+            ]
+          }
+        },
+        {
+          "obligation": "parse_deplen is built from the header parser and a payload parser refined by the header tag.",
+          "source": {
+            "path": "lib/everparse/lowparse/LowParse.Spec.DepLen.fst",
+            "lines": "167-192",
+            "symbols": [
+              "parse_deplen_kind",
+              "parse_deplen"
+            ]
+          }
+        },
+        {
+          "obligation": "The parse_deplen_unfold2 lemma rejects an incomplete frame, parses exactly the advertised payload slice, requires exact payload consumption and serializer length, and returns the total consumed offset.",
+          "source": {
+            "path": "lib/everparse/lowparse/LowParse.Spec.DepLen.fst",
+            "lines": "249-294",
+            "symbols": [
+              "parse_deplen_unfold2"
+            ]
+          }
+        },
+        {
+          "implementation": "The Pulse validator calls the unfolding lemma, bounds the payload length against remaining input, splits at payload_end, validates on the bounded slice, and succeeds only when the cursor reaches payload_end; failures restore the incoming cursor.",
+          "source": {
+            "path": "lib/everparse/lowparse/LowParse.PulseParse.DepLen.fst",
+            "lines": "26-89",
+            "symbols": [
+              "validate_deplen"
+            ]
+          }
+        },
+        {
+          "related_contract": "The serializer unfolds to serialized header bytes concatenated with serialized payload bytes.",
+          "source": {
+            "path": "lib/everparse/lowparse/LowParse.Spec.DepLen.fst",
+            "lines": "369-415",
+            "symbols": [
+              "serialize_deplen",
+              "serialize_deplen_unfold"
+            ]
+          }
+        },
+        {
+          "interface": "A parser returns an optional value and a consumed length bounded by input length; parser specs forbid lookahead past the returned offset.",
+          "source": {
+            "path": "lib/everparse/lowparse/LowParse.Spec.Base.fsti",
+            "lines": "9-32",
+            "symbols": [
+              "consumed_length",
+              "bare_parser",
+              "parse"
+            ]
+          }
+        }
+      ],
+      "use_case": "Use when a wire-format header selects the exact byte extent of a following payload and an implementation must reject truncation or a parser that consumes a different length.",
+      "draft_path": "artifact-proposal.json",
+      "gaps": [
+        "The F* release/revision pin in opt/hashes.Makefile was not acquired, so only the executable path and Z3 5.3.0 are known.",
+        "The source slice does not include the whole LowParse/Pulse/F* dependency closure; no self-contained replay handoff was made.",
+        "No local proof replay was performed; the evidence is the attributed upstream CI run."
+      ]
+    }
+  ]
+}

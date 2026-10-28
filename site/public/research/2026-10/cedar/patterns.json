@@ -1,0 +1,51 @@
+{
+  "patterns": [
+    {
+      "id": "cedar-policy/sound-policy-slice",
+      "title": "Authorization preservation under a sound policy slice",
+      "property": "For fixed request and entities, a slice satisfying IsSoundPolicySlice produces the same isAuthorized result as the original policy set.",
+      "symbol": "Cedar.Thm.isAuthorized_eq_for_sound_policy_slice",
+      "source_path": "cedar-lean/Cedar/Thm/PolicySlice.lean",
+      "source_revision": "301bdd22df134786a8a1312e24138afcd3f8bffe",
+      "hypotheses": [
+        "IsSoundPolicySlice req entities slice policies"
+      ],
+      "source_to_proof_to_check": {
+        "property": "isAuthorized req entities slice = isAuthorized req entities policies",
+        "proof_root": "Cedar.Thm.isAuthorized_eq_for_sound_policy_slice",
+        "concrete_instance": "Cedar.Thm.isAuthorized_eq_for_scope_based_policy_slice",
+        "supporting_lemmas": [
+          "Cedar.Thm.sound_bound_analysis_produces_sound_slices",
+          "Cedar.Thm.scope_bound_is_sound",
+          "Cedar.Thm.scope_analysis_is_sound"
+        ],
+        "dependencies": [
+          "Cedar.Slice.PolicySlice",
+          "Cedar.Thm.Authorization.Authorizer",
+          "Cedar.Thm.Authorization.PolicySlice"
+        ],
+        "check": {
+          "origin": "upstream GitHub Actions",
+          "run_id": 40010447089,
+          "job_id": 120609148419,
+          "targets_in_log": [
+            "Cedar.Thm.PolicySlice",
+            "Cedar.Thm.Authorization.PolicySlice",
+            "Cedar.Slice.PolicySlice"
+          ],
+          "result": "pass",
+          "interpretation": "Compilation coverage at the pinned source revision. No local independent replay or axiom/trust inspection is recorded."
+        }
+      },
+      "reuse_use_case": "A downstream policy analyzer can prove that its request-specific selected policies satisfy the source sound-slice predicate and then reuse the equality to justify evaluating only that slice.",
+      "proposal_path": "policy-slice-proposal.json",
+      "publication_tasks_path": "policy-slice-publication-tasks.json",
+      "gaps": [
+        "Independent replay was not performed.",
+        "Axiom/trust audit was not performed.",
+        "The result is indexed with the upstream Cedar Lean dependency closure; a standalone handoff package was not prepared."
+      ],
+      "handoff_path": null
+    }
+  ]
+}
