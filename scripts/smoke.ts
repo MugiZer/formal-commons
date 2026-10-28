@@ -17,7 +17,7 @@ try {
   assert.match(data.applicability, /not established by retrieval/);
   const detail = await client.callTool({ name: 'get_artifact', arguments: { id: data.results[0].id, revision: data.results[0].source.revision } });
   const artifact = (detail.structuredContent as { artifact: { assumptions: string[]; limitations: string[] } }).artifact;
-  assert.ok(Array.isArray(artifact.assumptions) && Array.isArray(artifact.limitations));
+  assert.ok(Array.isArray(artifact.assumptions) && artifact.assumptions.length > 0 && Array.isArray(artifact.limitations));
   for (const args of [{ query: 'x'.repeat(257) }, { query: '', limit: 100 }, { query: '', execute: 'whoami' }]) {
     const result = await client.callTool({ name: 'search_artifacts', arguments: args });
     assert.equal(result.isError, true);
