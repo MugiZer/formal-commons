@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "cedar-policy/sound-policy-slice",
+  "record_version": 1,
+  "kind": "theorem",
+  "title": "Authorization is preserved by a sound policy slice",
+  "summary": "For a request and entity set, any policy slice satisfying Cedar's sound-slice predicate preserves the authorization result of the original policy set.",
+  "tags": [
+    "authorization",
+    "policy-slicing",
+    "soundness",
+    "lean"
+  ],
+  "proof_system": "Lean 4",
+  "source": {
+    "repository": "https://github.com/cedar-policy/cedar-spec",
+    "revision": "301bdd22df134786a8a1312e24138afcd3f8bffe",
+    "path": "cedar-lean/Cedar/Thm/PolicySlice.lean",
+    "symbol": "Cedar.Thm.isAuthorized_eq_for_sound_policy_slice",
+    "statement": "(req : Request) (entities : Entities) (slice policies : Policies) : IsSoundPolicySlice req entities slice policies → isAuthorized req entities slice = isAuthorized req entities policies"
+  },
+  "assumptions": [
+    "IsSoundPolicySlice req entities slice policies"
+  ],
+  "limitations": [],
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/cedar-policy/cedar-spec/blob/301bdd22df134786a8a1312e24138afcd3f8bffe/LICENSE",
+    "attribution": "Cedar Contributors"
+  },
+  "owners": [
+    "cedar-policy"
+  ],
+  "project": "cedar-policy/cedar-spec",
+  "updated": "2026-10-28",
+  "reuse": "Given a policy set and a request-specific slice, prove the source IsSoundPolicySlice premise using the source definitions, then apply this theorem to replace authorization over the full policy set with authorization over the slice. Import Cedar.Thm.PolicySlice and its dependencies in the Cedar Lean package."
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "https://github.com/mit-plv/fiat-crypto",
+    "revision": "1e721c6f18c43b90922e7bc57fd64848e5cff2be"
+  },
+  "proposal_paths": [
+    "proposals/representation-range-preservation.json",
+    "proposals/generated-carry-operation-correctness.json"
+  ],
+  "patterns": [
+    {
+      "id": "fiat-crypto/wordbyword-addmod-validity",
+      "title": "Word-by-word Montgomery addition preserves validity and modular sum",
+      "exact_property": "addmod_correct proves both modular addition after Montgomery decoding and valid (addmod a b) for valid inputs.",
+      "root": {
+        "symbol": "addmod_correct",
+        "path": "src/Arithmetic/WordByWordMontgomery.v",
+        "statement": "(forall a (_ : valid a) b (_ : valid b), eval (from_montgomerymod (addmod a b)) mod m = (eval (from_montgomerymod a) + eval (from_montgomerymod b)) mod m) /\\ (forall a (_ : valid a) b (_ : valid b), valid (addmod a b))."
+      },
+      "hypotheses": [
+        "r = 2^bitwidth.",
+        "(r * r') mod m = 1.",
+        "(m * m') mod r = (-1) mod r.",
+        "0 < bitwidth; 1 < m; n <> 0; m < r^n.",
+        "valid a and valid b, where valid x := small x /\\ 0 <= eval x < m."
+      ],
+      "proof_slice_trace": [
+        "WordByWordMontgomery.addmod is defined as @add bitwidth n m_enc a b.",
+        "The root theorem addmod_correct splits into the decoded modular-sum equality and output validity.",
+        "The proof invokes the representation-level eval_add property for value preservation and small_add/add_bound plus the small N modulus encoding facts for the range side.",
+        "The shared representation invariant is valid x := small x /\\ 0 <= eval x < m; eval is the positional evaluator at uweight bitwidth.",
+        "The theorem is in Section modops, whose arithmetic parameters include the Montgomery inverse conditions and modulus/width bounds."
+      ],
+      "reuse_use_case": "Adapt the paired value-and-validity contract to another limb-based modular operation so downstream code can compose operations without re-proving input-range obligations.",
+      "draft_path": "proposals/representation-range-preservation.json",
+      "gaps": [
+        "No independent Coq replay was run.",
+        "The selected upstream CI run/job has successful `coq` and generated-file step summaries, but its job log fetch returned a transport error; target and configuration coverage is therefore inconclusive.",
+        "The contract is concrete to this WordByWordMontgomery implementation and add operation; no general theorem over alternate representations is proved here."
+      ]
+    },
+    {
+      "id": "fiat-crypto/carry-mulmod-congruence",
+      "title": "Carried limb multiplication preserves the modular product",
+      "exact_property": "eval_carry_mulmod states that the derived carry_mulmod program evaluates to the product of its inputs modulo s - Associational.eval c for length-n inputs.",
+      "root": {
+        "symbol": "eval_carry_mulmod",
+        "path": "src/Arithmetic/ModOps.v",
+        "statement": "forall (f g : list Z) (Hf : length f = n) (Hg : length g = n), (eval weight n (carry_mulmod f g)) mod (s - Associational.eval c) = (eval weight n f * eval weight n g) mod (s - Associational.eval c)."
+      },
+      "hypotheses": [
+        "0 < limbwidth_den <= limbwidth_num.",
+        "s - Associational.eval c <> 0; s <> 0; n <> 0.",
+        "length c = len_c; length idxs = len_idxs.",
+        "length f = n; length g = n."
+      ],
+      "proof_slice_trace": [
+        "ModOps defines weight i as 2^(-(-(limbwidth_num * i) / limbwidth_den)) and proves weight properties under limbwidth_good.",
+        "The root obligation is attached with Derive carry_mulmod SuchThat ... As eval_carry_mulmod.",
+        "Its proof rewrites through eval_mulmod for the abstract modular operation and eval_chained_carries for the configured idxs carry schedule, then relates the derived program definition to that schedule.",
+        "Arithmetic.Core supplies the positional and associational evaluators and carry lemmas used by the proof."
+      ],
+      "reuse_use_case": "Use this obligation pattern when deriving a fixed-width limb program from a modular arithmetic operation: preserve the weighted positional result modulo the declared modulus and account for each configured carry stage.",
+      "draft_path": "proposals/generated-carry-operation-correctness.json",
+      "gaps": [
+        "The theorem states modular congruence but does not state a range/validity property for the output representation.",
+        "No independent Coq replay was run.",
+        "The selected upstream CI run/job has successful `coq` and generated-file step summaries, but its job log fetch returned a transport error; target and configuration coverage is therefore inconclusive."
+      ]
+    }
+  ]
+}

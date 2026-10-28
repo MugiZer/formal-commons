@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "id": "cedar-policy/cedar-spec",
+  "record_version": 1,
+  "kind": "project",
+  "title": "Cedar Lean specification",
+  "summary": "Lean formalization of Cedar policy evaluation and authorization semantics, including sound policy slicing results.",
+  "tags": [
+    "authorization",
+    "policy",
+    "formal-semantics",
+    "lean"
+  ],
+  "proof_system": "Lean 4",
+  "source": {
+    "repository": "https://github.com/cedar-policy/cedar-spec",
+    "revision": "301bdd22df134786a8a1312e24138afcd3f8bffe",
+    "path": "cedar-lean/README.md",
+    "symbol": null,
+    "statement": null
+  },
+  "assumptions": [],
+  "limitations": [],
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/cedar-policy/cedar-spec/blob/301bdd22df134786a8a1312e24138afcd3f8bffe/LICENSE",
+    "attribution": "Cedar Contributors"
+  },
+  "owners": [
+    "cedar-policy"
+  ],
+  "project": "cedar-policy/cedar-spec",
+  "updated": "2026-10-28",
+  "reuse": "Use the pinned Lean specification as the source of Cedar authorization semantics and as a library of proved properties. For the Lean package, retain the checked-in lake-manifest.json, enter cedar-lean and run lake build Cedar with Lean 4.35.0.",
+  "project_details": {
+    "status": "active",
+    "issues": "https://github.com/cedar-policy/cedar-spec/issues",
+    "contributing": "https://github.com/cedar-policy/cedar-spec/blob/301bdd22df134786a8a1312e24138afcd3f8bffe/CONTRIBUTING.md",
+    "opportunities": [],
+    "contents": [
+      "Lean authorization semantics; policy slicing definitions and theorems; source tree and build configuration"
+    ],
+    "documentation": "https://cedar-policy.github.io/cedar-spec/docs/",
+    "setup": "Check out the pinned repository revision, retain its lake-manifest.json, then cd cedar-lean and run lake build Cedar with Lean 4.35.0."
+  }
+}

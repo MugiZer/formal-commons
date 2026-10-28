@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "project-everest/lowparse-dependent-length",
+  "record_version": 1,
+  "kind": "theorem",
+  "title": "Dependent-length parser composition",
+  "summary": "A parsed header selects a bounded payload length. The parser rejects short or mismatched payloads and returns the header plus a payload that consumes exactly the advertised number of bytes.",
+  "tags": [
+    "formal-parsing",
+    "dependent-length",
+    "parser-combinator"
+  ],
+  "proof_system": "F*",
+  "source": {
+    "repository": "https://github.com/project-everest/everparse",
+    "revision": "0d740eace6c18c383c0a9b276c49e089e77bd59c",
+    "path": "lib/everparse/lowparse/LowParse.Spec.DepLen.fst",
+    "symbol": "parse_deplen_unfold2",
+    "statement": "let parse_deplen_unfold2\n  (min: nat)\n  (max: nat { min <= max /\\ max < 4294967296 } )\n  (#hk: parser_kind)\n  (#ht: Type)\n  (hp: parser hk ht)\n  (dlf: ht -> Tot (bounded_int32 min max))\n  (#pk: parser_kind)\n  (#pt: Type)\n  (#pp: parser pk pt)\n  (ps: serializer pp)\n  (input : bytes)\n: Lemma\n  (parse (parse_deplen min max hp dlf ps) input ==\n    (match parse hp input with\n     | None -> None\n     | Some (h, consumed) ->\n       begin\n         if (U32.v (dlf h) + consumed) > (Seq.length input) then\n           None\n         else\n           let input' = Seq.slice input consumed (U32.v (dlf h) + consumed) in\n           match parse pp input' with\n           | None -> None\n           | Some (t, consumed') -> \n             if consumed' = U32.v (dlf h) && Seq.length (serialize ps t) = consumed' then\n               Some ((h, t), consumed + (U32.v (dlf h)))\n             else\n               None\n       end)\n  )"
+  },
+  "assumptions": [
+    "min <= max < 4294967296.",
+    "dlf maps each parsed header to bounded_int32 min max.",
+    "hp is a header parser, pp is a payload parser, and ps is a serializer for pp."
+  ],
+  "limitations": [],
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/project-everest/everparse/blob/0d740eace6c18c383c0a9b276c49e089e77bd59c/LICENSE",
+    "attribution": "See the repository root LICENSE, which applies Apache License 2.0."
+  },
+  "owners": [
+    "project-everest"
+  ],
+  "project": "project-everest/everparse",
+  "updated": "2026-10-28",
+  "reuse": "Instantiate min/max, the header parser hp, length function dlf, payload parser pp and serializer ps. Use parse_deplen as the specification, serialize_deplen as its wire encoder, and LowParse.PulseParse.DepLen.validate_deplen for the bounded stateful validator."
+}

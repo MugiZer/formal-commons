@@ -1,0 +1,198 @@
+{
+  "algorithm": "SHA-256",
+  "package_identity": "e5e77099cf9a19ba4245bcb67d1ff0cc61ab76cb60882c5bdd85aaba8fafecf6",
+  "package_identity_definition": "SHA-256 of UTF-8 JSON.stringify ordered array [{path,sha256}] below; each file digest uses exact bytes",
+  "local_proof_files": [
+    {
+      "path": "Pattern.lean",
+      "sha256": "e1cb64f0aa795cac9e7081094c2d1375af0e7318494a0fd1f4014b120afedb3d"
+    },
+    {
+      "path": "Concrete.lean",
+      "sha256": "d3bdb70f259f33145074a15ec74c249fc22cc2a5a73ff214bfedfa7a7928bd01"
+    },
+    {
+      "path": "Consumer.lean",
+      "sha256": "2c7e49b4d4b4e251b0e6b8423fdb2db8d495f67552b38a7f98bd6c6bcdea6600"
+    },
+    {
+      "path": "NegativePremises.lean",
+      "sha256": "8ccc7544cd8b1f7caaf5d40c31ac91fae64326a8ea0282cbd3598d3b247cbfae"
+    },
+    {
+      "path": "Negative.lean",
+      "sha256": "96cbea5032cbeb18db84a6886546e6c5e596160cdaa211a9e5c926642be52cff"
+    }
+  ],
+  "source_matches": [
+    {
+      "file": "Basic.lean",
+      "retained_sha256": "566e74dd5c3e72b2111af000b8bd1552f1aaffe29be317ba01bc91c9e5b55293",
+      "installed_sha256": "566e74dd5c3e72b2111af000b8bd1552f1aaffe29be317ba01bc91c9e5b55293",
+      "retained_normalized_sha256": "566e74dd5c3e72b2111af000b8bd1552f1aaffe29be317ba01bc91c9e5b55293",
+      "installed_normalized_sha256": "566e74dd5c3e72b2111af000b8bd1552f1aaffe29be317ba01bc91c9e5b55293"
+    },
+    {
+      "file": "Lemmas.lean",
+      "retained_sha256": "9365fb1c6da0313a4c73e8cf096377e69c28ece28d38290a0423e5f8cc1fdfdb",
+      "installed_sha256": "9365fb1c6da0313a4c73e8cf096377e69c28ece28d38290a0423e5f8cc1fdfdb",
+      "retained_normalized_sha256": "9365fb1c6da0313a4c73e8cf096377e69c28ece28d38290a0423e5f8cc1fdfdb",
+      "installed_normalized_sha256": "9365fb1c6da0313a4c73e8cf096377e69c28ece28d38290a0423e5f8cc1fdfdb"
+    }
+  ],
+  "proof_audit": [
+    {
+      "path": "Pattern.lean",
+      "matches": []
+    },
+    {
+      "path": "Concrete.lean",
+      "matches": []
+    },
+    {
+      "path": "Consumer.lean",
+      "matches": []
+    },
+    {
+      "path": "NegativePremises.lean",
+      "matches": []
+    },
+    {
+      "path": "Negative.lean",
+      "matches": []
+    }
+  ],
+  "upstream_files": [
+    {
+      "path": "upstream/Basic.lean",
+      "sha256": "566e74dd5c3e72b2111af000b8bd1552f1aaffe29be317ba01bc91c9e5b55293"
+    },
+    {
+      "path": "upstream/CMakeLists.txt",
+      "sha256": "0cc2ed9110836428d6d48d73c9042faa7980c3475f3943837de577fd5a04d1c4"
+    },
+    {
+      "path": "upstream/LICENSE",
+      "sha256": "7ef159fd8db5a7a9e8051aac48997353f26d744e25f730a0594a806c126d2114"
+    },
+    {
+      "path": "upstream/Lemmas.lean",
+      "sha256": "9365fb1c6da0313a4c73e8cf096377e69c28ece28d38290a0423e5f8cc1fdfdb"
+    },
+    {
+      "path": "upstream/build-template.yml",
+      "sha256": "418e2d9692e9ef333bd6294887347eb21fa2f6ede08b86195b32ae772dc4449e"
+    },
+    {
+      "path": "upstream/ci.yml",
+      "sha256": "2304df705c05d9f2e3c1c0a31bfc384b73267ef212a92da4f852dee49aed5845"
+    },
+    {
+      "path": "upstream/jobs.json",
+      "sha256": "4a3d442b03d6dba814a14cf824d898fb4c3ed616e70a5274f550259d47b68bb1"
+    },
+    {
+      "path": "upstream/lakefile-error.json",
+      "sha256": "541962a04b1743a860cec249747b9ed93465c096bb802b5305968775ae7577df"
+    },
+    {
+      "path": "upstream/lakefile.toml.in",
+      "sha256": "d65d1d11cc927843c9b082c008ee744d93287a2ea7ff563ea738e1d3734588cc"
+    },
+    {
+      "path": "upstream/lean-toolchain",
+      "sha256": "f2b21527ab474ed073d8da57aa075e92dc809951251d67d527abd2957e7061c4"
+    },
+    {
+      "path": "upstream/runs.json",
+      "sha256": "d91b9ea23ebdc88c770e2f5cc3650fa6379b7d616490e8f58177e097bd5b821a"
+    },
+    {
+      "path": "upstream/stdlib.make.in",
+      "sha256": "a9bedcee1428dec2019c85d17bd6aebad737b17617a10e75f9d7742e87d75d10"
+    }
+  ],
+  "evidence_files": [
+    {
+      "path": "logs/Concrete.json",
+      "sha256": "fb57f2803f229e29663d287165151f00643eebfd9fce283ac3f2162948483767"
+    },
+    {
+      "path": "logs/Consumer.json",
+      "sha256": "ea92605e181e7a1c28ac82d3c1024c99edc01e0fd172b3fb03efa129cc9e8aac"
+    },
+    {
+      "path": "logs/Negative.json",
+      "sha256": "9fdb3bbe3f9e8cc74a6cad45295e4ffedba87264d75d3ced0cb9229a6ed72b83"
+    },
+    {
+      "path": "logs/NegativePremises.json",
+      "sha256": "f410e9a5ff090c1f7516eca59b87ef83da5c1b23a28877b0784695e9697cf23c"
+    },
+    {
+      "path": "logs/Pattern.json",
+      "sha256": "c622af92b630ae71283318b6454d8f5d18e5e9f5916965a4e5b2181dad5ee13f"
+    },
+    {
+      "path": "logs/compiler-budget.json",
+      "sha256": "ea703fec107d60e32a7d3a702bd68ffaa9615345355558b9291458c51d0d449b"
+    },
+    {
+      "path": "logs/toolchain.json",
+      "sha256": "13e76b3c358511d8ede4db45b24062c02886753238c67030e08320772a0e9644"
+    },
+    {
+      "path": "logs/validation.json",
+      "sha256": "f95f090ce92cc4e04fff20f10b24600c4e9b56fffaa6a980bef412cb26110673"
+    }
+  ],
+  "checker_files": [
+    {
+      "path": "<user-home>/Documents/Codex/2026-10-23/ohara/work/toolchains/lean-4.35.0-windows/bin/lean.exe",
+      "sha256": "ec7a472d1c12a09b0c0c718f7427c2be527b3f5f07810fdbe076c2507c7a91ea"
+    },
+    {
+      "path": "<user-home>/Documents/Codex/2026-10-23/ohara/work/toolchains/lean-4.35.0-windows/lib/lean/Init/Data/List/Basic.olean",
+      "sha256": "d5d490ad14ec4ec2f2a2cee46b069ba2717b1aee1aff79355fe5dd98c107ed66"
+    },
+    {
+      "path": "<user-home>/Documents/Codex/2026-10-23/ohara/work/toolchains/lean-4.35.0-windows/lib/lean/Init/Data/List/Lemmas.olean",
+      "sha256": "937c8ea7fa7b7bd46f66afe75ec9f4ad127d9edd00a8289f66cc2d717f120bb7"
+    }
+  ],
+  "installed_import_edges": [
+    {
+      "path": "Init.lean",
+      "sha256": "28b57970b6f0adef586f14939a95362959b698a68463d4a803f81464ad8e0675",
+      "edges": [
+        {
+          "line": 19,
+          "text": "public import Init.Data"
+        }
+      ]
+    },
+    {
+      "path": "Init/Data.lean",
+      "sha256": "7e87266490ae1639240a32290c545d3b080caa2aebab6e3e31cf86c6761b8d81",
+      "edges": [
+        {
+          "line": 15,
+          "text": "public import Init.Data.List"
+        }
+      ]
+    },
+    {
+      "path": "Init/Data/List.lean",
+      "sha256": "9d4127179da53d3b7fa59204024db7cd5db60e12c24d7be9fb274befca80ce71",
+      "edges": [
+        {
+          "line": 17,
+          "text": "public import Init.Data.List.Lemmas"
+        }
+      ]
+    }
+  ],
+  "upstream_commit": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+  "local_proof_revision": null,
+  "pending_task": "Publish this exact local proof package in a real repository and commit; record owner, license and immutable evidence URL before canonical publication."
+}

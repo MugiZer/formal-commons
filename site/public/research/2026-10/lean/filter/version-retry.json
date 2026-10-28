@@ -1,0 +1,28 @@
+{
+  "purpose": "Single authorized diagnostic retry of the version probe; no proof compilation",
+  "command": [
+    "rtk",
+    "proxy",
+    "<user-home>/Documents/Codex/2026-10-23/ohara/work/toolchains/lean-4.35.0-windows/bin/lean.exe",
+    "--version"
+  ],
+  "timeout_ms": 4000,
+  "elapsed_ms": 463.3576999999999,
+  "exit_status": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "Lean (version 4.35.0, x86_64-w64-windows-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)\n",
+  "stderr": "",
+  "original_receipts_preserved": [
+    "check-receipt.json",
+    "check.log"
+  ],
+  "harness_configured_budget_ms": {
+    "version": 4000,
+    "consumer": 16000,
+    "total": 20000
+  },
+  "full_harness_rerun": false,
+  "consumer_recompiled": false,
+  "new_web_requests": 0
+}

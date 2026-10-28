@@ -1,0 +1,14 @@
+{
+  "scope": "Independent agent consumer, integrated using original checked source/object pairs after packaging correction",
+  "command": [
+    "<user-home>/Documents/Codex/2026-10-23/ohara/work/toolchains/lean-4.35.0-windows/bin/lean.exe",
+    "Use.lean"
+  ],
+  "elapsed_ms": 23253,
+  "exit_status": 0,
+  "error": null,
+  "signal": null,
+  "source_sha256": "f2316413effe5aa3c82eca633bc41bc602ac705ae742a01831ab538ffbd0e529",
+  "stdout": "'OharaHashMap.lookup_insert' depends on axioms: [propext, Classical.choice, Quot.sound]\n'OharaPattern.comp_involutive' does not depend on any axioms\n'IndependentConsumer.two_updates_same' depends on axioms: [propext, Classical.choice, Quot.sound]\n'IndependentConsumer.two_updates_other' depends on axioms: [propext, Classical.choice, Quot.sound]\n'IndependentConsumer.swap_involutive' does not depend on any axioms\n'IndependentConsumer.flip_involutive' does not depend on any axioms\n'IndependentConsumer.swap_flip_commute' does not depend on any axioms\n'IndependentConsumer.step_involutive' does not depend on any axioms\n'IndependentConsumer.restored' does not depend on any axioms\n",
+  "stderr": ""
+}

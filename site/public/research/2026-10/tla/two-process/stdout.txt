@@ -1,0 +1,27 @@
+TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
+Running breadth-first search Model-Checking with fp 31 and seed -2629727341611624081 with 1 worker on 8 cores with 455MB heap and 64MB offheap memory (Windows 11 10.0 amd64, Oracle Corporation 1.8.0_401 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file <workspace>\outputs\ohara-ingest-artifact\evaluation\expanded-swarm-2026-10-26\tla\local-check\MC.tla
+Parsing file <workspace>\outputs\ohara-ingest-artifact\evaluation\expanded-swarm-2026-10-26\tla\local-check\DijkstraMutex.tla
+Parsing file <user-home>\AppData\Local\Packages\sandbox.{0efa9b00-89a9-4849-88cd-f99f8d8bda09}\AC\Temp\TLC.tla
+Parsing file <user-home>\AppData\Local\Packages\sandbox.{0efa9b00-89a9-4849-88cd-f99f8d8bda09}\AC\Temp\Integers.tla
+Parsing file <user-home>\AppData\Local\Packages\sandbox.{0efa9b00-89a9-4849-88cd-f99f8d8bda09}\AC\Temp\Naturals.tla
+Parsing file <user-home>\AppData\Local\Packages\sandbox.{0efa9b00-89a9-4849-88cd-f99f8d8bda09}\AC\Temp\Sequences.tla
+Parsing file <user-home>\AppData\Local\Packages\sandbox.{0efa9b00-89a9-4849-88cd-f99f8d8bda09}\AC\Temp\FiniteSets.tla
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module DijkstraMutex
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module MC
+Starting... (2026-10-25 22:34:03)
+Computing initial states...
+Finished computing initial states: 2 distinct states generated at 2026-10-25 22:34:04.
+Model checking completed. No error has been found.
+  Estimates of the probability that TLC did not check all reachable states
+  because two distinct states had the same fingerprint:
+  calculated (optimistic):  val = 2.4E-14
+1322 states generated, 660 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 29.
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 2 and the 95th percentile is 2).
+Finished in 01s at (2026-10-25 22:34:04)

@@ -1,0 +1,99 @@
+{
+  "source": {
+    "repository": "https://github.com/microsoft/verified-storage",
+    "revision": "41cab95051229ebd457b4eed7fc111e3e7c9099c"
+  },
+  "run": {
+    "id": 39278323714,
+    "head_sha": "41cab95051229ebd457b4eed7fc111e3e7c9099c",
+    "status": "completed",
+    "conclusion": "success",
+    "run_attempt": 1
+  },
+  "job": {
+    "id": 118147951977,
+    "head_sha": "41cab95051229ebd457b4eed7fc111e3e7c9099c",
+    "status": "completed",
+    "conclusion": "success",
+    "run_attempt": 1,
+    "run_id": 39278323714,
+    "steps": [
+      {
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "name": "Checkout repository",
+        "conclusion": "success"
+      },
+      {
+        "name": "Initialize CodeQL",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run echo 'If you are using a \"manual\" build mode for one or more of the' \\",
+        "conclusion": "skipped"
+      },
+      {
+        "name": "Perform CodeQL Analysis",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Perform CodeQL Analysis",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Initialize CodeQL",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Checkout repository",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "name": "Checkout repository",
+      "conclusion": "success"
+    },
+    {
+      "name": "Perform CodeQL Analysis",
+      "conclusion": "success"
+    },
+    {
+      "name": "Complete job",
+      "conclusion": "success"
+    }
+  ],
+  "targets": [
+    {
+      "name": "CapybaraKV ListTable::append Verus contract",
+      "marker": "ListTable::append"
+    }
+  ],
+  "references": {
+    "run": "https://github.com/microsoft/verified-storage/actions/runs/39278323714",
+    "job": "https://github.com/microsoft/verified-storage/actions/runs/39278323714/job/118147951977"
+  },
+  "configuration": [
+    "nightly-2026-07-12",
+    "cargo verus verify --no-default-features"
+  ],
+  "result": "inconclusive",
+  "issues": [
+    "Target coverage missing: CapybaraKV ListTable::append Verus contract",
+    "Configuration coverage missing: nightly-2026-07-12",
+    "Configuration coverage missing: cargo verus verify --no-default-features"
+  ],
+  "receipts": [
+    "20ef5c31e5bf10c83477726434d28532a030115cddc71287c0d5b29fa9d04840",
+    "2feca901f60f43702ccc69b92073a66807ee2f51fd87431747cfe447c1a2d955",
+    "80ea1bfce16fb8e349c605c134e22dc272d5de2c9393c4acab26044eab1502c4"
+  ],
+  "summary": "Checkout repository: success; Perform CodeQL Analysis: success; Complete job: success. Target coverage missing: CapybaraKV ListTable::append Verus contract Configuration coverage missing: nightly-2026-07-12 Configuration coverage missing: cargo verus verify --no-default-features"
+}

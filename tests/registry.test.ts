@@ -31,7 +31,8 @@ test('approval is bound to exact record content', () => {
 test('checking and expert status require separate evidence', () => {
   assert.throws(() => decisionSchema.parse({ ...decision, mechanical: { ...decision.mechanical, status: 'checked_at_pinned_revision' } }));
   assert.throws(() => decisionSchema.parse({ ...decision, semantic: { status: 'qualified_expert_reviewed', reference: decision.approval, qualification: null } }));
-  const weak = buildCatalogue(records, decisions, 'test').records.find((r) => r.id === artifact.id)!;
+  const weakDecision = { ...decision, mechanical: { status: 'not_checked_by_us', reference: null, checker: null, source_revision: null, proof_digest: null, axioms: null } };
+  const weak = buildCatalogue(records, decisions.map((item) => item.id === artifact.id && item.record_version === decision.record_version ? weakDecision : item), 'test').records.find((r) => r.id === artifact.id)!;
   assert.equal(weak.evidence.semantic.status, 'unreviewed');
   assert.equal(weak.evidence.mechanical.status, 'not_checked_by_us');
 });
@@ -59,14 +60,15 @@ test('pagination is deterministic, bounded and tied to the query and snapshot', 
   assert.throws(() => searchArtifactsSchema.parse({ query: '', execute: 'rm -rf /' }));
 });
 test('withdrawal and stale flags remove latest records from default discovery but preserve explicit history', () => {
+  assert.ok(search(catalogue, 'artifacts', { query: '', limit: 25 }).results.some((record) => record.id === artifact.id));
   const newer = { ...artifact, record_version: 2, limitations: [...artifact.limitations, 'Withdrawn after correction.'] };
   const withdrawn: Decision = { ...decision, record_version: 2, record_digest: hash(newer), publication: 'withdrawn' };
   const updated = buildCatalogue([...records, newer], [...decisions, withdrawn], 'test');
-  assert.equal(search(updated, 'artifacts', { query: 'filter' }).total, 0);
+  assert.ok(!search(updated, 'artifacts', { query: '', limit: 25 }).results.some((record) => record.id === artifact.id));
   assert.equal(getArtifact(updated, { id: artifact.id }).artifact.evidence.publication, 'withdrawn');
   assert.equal(getArtifact(updated, { id: artifact.id, revision: hash(artifact) }).artifact.record_version, 1);
   const stale = buildCatalogue(records, decisions.map((d) => d.id === artifact.id ? { ...d, freshness: { ...d.freshness, status: 'stale' } } : d), 'test');
-  assert.equal(search(stale, 'artifacts', { query: 'filter' }).total, 0);
+  assert.ok(!search(stale, 'artifacts', { query: '', limit: 25 }).results.some((record) => record.id === artifact.id));
 });
 test('a broken publication preserves the last good snapshot; restoration reproduces it', async () => {
   const directory = await mkdtemp(join(tmpdir(), 'ohara-'));

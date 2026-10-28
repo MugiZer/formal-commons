@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "id": "lean/core",
+  "record_version": 3,
+  "kind": "project",
+  "title": "Lean 4 core and standard libraries",
+  "summary": "Core and standard-library definitions and theorems for Lean 4.35.0, including lists, arrays, natural numbers and HashMap operations.",
+  "tags": [
+    "lists",
+    "filter",
+    "data structures",
+    "proof library"
+  ],
+  "proof_system": "Lean 4",
+  "source": {
+    "repository": "https://github.com/leanprover/lean4",
+    "revision": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+    "path": "src/Init/Data/List/Lemmas.lean",
+    "symbol": null,
+    "statement": null
+  },
+  "assumptions": [],
+  "limitations": [],
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/leanprover/lean4/blob/eb6cafb7290e8bd5f2937522d8d804f58f02bafc/LICENSE",
+    "attribution": "Lean 4 contributors."
+  },
+  "owners": [
+    "leanprover"
+  ],
+  "project": "lean/core",
+  "updated": "2026-10-28",
+  "reuse": "Set lean-toolchain to leanprover/lean4:v4.35.0. Import the module containing the definitions or theorems you need; this example opens the list lemmas.",
+  "project_details": {
+    "status": "active",
+    "issues": "https://github.com/leanprover/lean4/issues",
+    "contributing": "https://github.com/leanprover/lean4/blob/eb6cafb7290e8bd5f2937522d8d804f58f02bafc/CONTRIBUTING.md",
+    "opportunities": [],
+    "contents": [
+      "Core definitions for lists, arrays and natural numbers.",
+      "Theorems about these data structures, including List.mem_filter.",
+      "Std.HashMap operations and their optional-lookup theorems."
+    ],
+    "documentation": "https://lean-lang.org/doc/reference/latest/",
+    "setup": "import Init.Data.List.Lemmas\n\n#check List.mem_filter"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "source": {
+    "repository": "https://github.com/cedar-policy/cedar-spec",
+    "revision": "301bdd22df134786a8a1312e24138afcd3f8bffe"
+  },
+  "run": {
+    "id": 40010447089,
+    "head_sha": "301bdd22df134786a8a1312e24138afcd3f8bffe",
+    "status": "completed",
+    "conclusion": "success",
+    "run_attempt": 1
+  },
+  "job": {
+    "id": 120609148419,
+    "head_sha": "301bdd22df134786a8a1312e24138afcd3f8bffe",
+    "status": "completed",
+    "conclusion": "success",
+    "run_id": 40010447089,
+    "steps": [
+      {
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "name": "Checkout",
+        "conclusion": "success"
+      },
+      {
+        "name": "Setup Pages",
+        "conclusion": "success"
+      },
+      {
+        "name": "Install Lean",
+        "conclusion": "success"
+      },
+      {
+        "name": "Download dependencies",
+        "conclusion": "success"
+      },
+      {
+        "name": "Build docs",
+        "conclusion": "success"
+      },
+      {
+        "name": "Move documentation to `docs/docs`",
+        "conclusion": "success"
+      },
+      {
+        "name": "Upload artifact",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Checkout",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "name": "Build docs",
+      "conclusion": "success"
+    }
+  ],
+  "targets": [
+    {
+      "name": "Cedar.Thm.PolicySlice",
+      "marker": "Cedar.Thm.PolicySlice"
+    }
+  ],
+  "references": {
+    "run": "https://github.com/cedar-policy/cedar-spec/actions/runs/40010447089",
+    "job": "https://github.com/cedar-policy/cedar-spec/actions/runs/40010447089/job/120609148419"
+  },
+  "configuration": [
+    "v4.35.0",
+    "66e469188fe07963e5cf666c7d4433f45b8131c5"
+  ],
+  "result": "pass",
+  "issues": [],
+  "receipts": [
+    "5f2993b4705420757b3f3e31930f3e8525a5fa273e736b627659b886bc95b3ff",
+    "77bdca4f220727d19fec6817f80e559b60ae4cca552414032b62d08a62b74a8f",
+    "db0a71b1b40879c4fd99fa3f6a9f09106d35b1dd7b5d4e65d8e5463fd5adeed4"
+  ],
+  "summary": "Build docs: success. Coverage markers matched: Cedar.Thm.PolicySlice; v4.35.0, 66e469188fe07963e5cf666c7d4433f45b8131c5."
+}

@@ -1,0 +1,16 @@
+{
+  "command": [
+    "<user-home>/Documents/Codex/2026-10-23/ohara/work/toolchains/lean-4.35.0-windows/bin/lean.exe",
+    "Negative.lean"
+  ],
+  "env": {
+    "LEAN_PATH": "<user-home>\\OneDrive\\Documents\\ChatGPT\\library\\outputs\\ohara-ingest-artifact\\evaluation\\swarm-2026-10-25\\round-1\\pattern-generalise"
+  },
+  "elapsed_ms": 2310.295899999999,
+  "exit_status": 1,
+  "signal": null,
+  "error": null,
+  "stdout": "OharaPattern.NegativeControl.swapAB_involutive : Involutive swapAB\nOharaPattern.NegativeControl.swapBC_involutive : Involutive swapBC\nOharaPattern.NegativeControl.noncommuting : swapBC (swapAB Three.a) ≠ swapAB (swapBC Three.a)\nOharaPattern.NegativeControl.composition_not_involutive : ¬Involutive (swapAB ∘ swapBC)\nNegative.lean:12:2: error: Tactic `rfl` failed: The left-hand side\n  (swapAB ∘ swapBC) ((swapAB ∘ swapBC) Three.a)\nis not definitionally equal to the right-hand side\n  Three.a\n\n⊢ (swapAB ∘ swapBC) ((swapAB ∘ swapBC) Three.a) = Three.a\n",
+  "stderr": "",
+  "expected_exit_status": 1
+}

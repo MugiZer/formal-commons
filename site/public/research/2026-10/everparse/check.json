@@ -1,0 +1,91 @@
+{
+  "source": {
+    "repository": "https://github.com/project-everest/everparse",
+    "revision": "0d740eace6c18c383c0a9b276c49e089e77bd59c"
+  },
+  "run": {
+    "id": 40171202516,
+    "head_sha": "0d740eace6c18c383c0a9b276c49e089e77bd59c",
+    "status": "completed",
+    "conclusion": "success",
+    "run_attempt": 1
+  },
+  "job": {
+    "id": 121102226785,
+    "head_sha": "0d740eace6c18c383c0a9b276c49e089e77bd59c",
+    "status": "completed",
+    "conclusion": "success",
+    "run_attempt": 1,
+    "run_id": 40171202516,
+    "steps": [
+      {
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/checkout@master",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/cache/restore@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Load deps image",
+        "conclusion": "success"
+      },
+      {
+        "name": "Upload EverParse in a container",
+        "conclusion": "success"
+      },
+      {
+        "name": "Build LowParse",
+        "conclusion": "success"
+      },
+      {
+        "name": "Remove container",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/checkout@master",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "steps": [
+    {
+      "name": "Build LowParse",
+      "conclusion": "success"
+    }
+  ],
+  "targets": [
+    {
+      "name": "LowParse.Spec.DepLen",
+      "marker": "LowParse.Spec.DepLen.fst"
+    },
+    {
+      "name": "LowParse.PulseParse.DepLen",
+      "marker": "LowParse.PulseParse.DepLen.fst"
+    }
+  ],
+  "references": {
+    "run": "https://github.com/project-everest/everparse/actions/runs/40171202516",
+    "job": "https://github.com/project-everest/everparse/actions/runs/40171202516/job/121102226785"
+  },
+  "configuration": [
+    "--z3version 5.3.0",
+    "--already_cached PulseCore,Pulse,*,-LowParse,-EverParse3d,-ASN1,-CBOR,-CDDL,Prims,FStar,LowStar"
+  ],
+  "result": "pass",
+  "issues": [],
+  "receipts": [
+    "497cb15d30b79c0ecbd1164f41bdbe3c4de630c5e262b5aa39586a4d345d7047",
+    "a693ab244c7a9d23b55035c685ea3208b40d2d43d9a9ec35ca1b58c228121d1f",
+    "6c2ad49c1c846595b9df0ff05aa35fa7c904dd3544cd307be950ec74ad1b4162"
+  ],
+  "summary": "Build LowParse: success. Coverage markers matched: LowParse.Spec.DepLen, LowParse.PulseParse.DepLen; --z3version 5.3.0, --already_cached PulseCore,Pulse,*,-LowParse,-EverParse3d,-ASN1,-CBOR,-CDDL,Prims,FStar,LowStar."
+}

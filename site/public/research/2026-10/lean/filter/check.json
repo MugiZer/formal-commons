@@ -1,0 +1,125 @@
+{
+  "operation": "index",
+  "new_web_requests": 0,
+  "manifest_sha256": "36ff49be47f9b98564061fd00a080f68e9c5e837d302f9a03d723d98c428373c",
+  "reused_receipts": [
+    {
+      "path": "shared/windows-job-114894001179.json",
+      "url": "https://api.github.com/repos/leanprover/lean4/actions/runs/38273603295/jobs",
+      "repository": "leanprover/lean4",
+      "source_revision": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+      "sha256": "b883562aeb081369aba521e6e7cd9b57167ec33b15a57180deb0fd66a8fda398",
+      "bytes": 6645,
+      "hash_verified": true,
+      "bytes_verified": true
+    },
+    {
+      "path": "shared/windows-job-114894001179.excerpt.log",
+      "url": "https://github.com/leanprover/lean4/actions/runs/38273603295/job/114894001179",
+      "repository": "leanprover/lean4",
+      "source_revision": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+      "sha256": "bf784a6c516a08cd0bb35980b35293705d3373e9f940fe4625ad2c3602492b93",
+      "bytes": 1860,
+      "hash_verified": true,
+      "bytes_verified": true
+    },
+    {
+      "path": "round-1/pattern-generalise/upstream/CMakeLists.txt",
+      "url": "https://raw.githubusercontent.com/leanprover/lean4/eb6cafb7290e8bd5f2937522d8d804f58f02bafc/src/CMakeLists.txt",
+      "repository": "leanprover/lean4",
+      "source_revision": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+      "sha256": "0cc2ed9110836428d6d48d73c9042faa7980c3475f3943837de577fd5a04d1c4",
+      "bytes": 53774,
+      "hash_verified": true,
+      "bytes_verified": true
+    },
+    {
+      "path": "round-1/pattern-generalise/upstream/lakefile.toml.in",
+      "url": "https://raw.githubusercontent.com/leanprover/lean4/eb6cafb7290e8bd5f2937522d8d804f58f02bafc/src/lakefile.toml.in",
+      "repository": "leanprover/lean4",
+      "source_revision": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+      "sha256": "d65d1d11cc927843c9b082c008ee744d93287a2ea7ff563ea738e1d3734588cc",
+      "bytes": 3522,
+      "hash_verified": true,
+      "bytes_verified": true
+    },
+    {
+      "path": "round-1/pattern-generalise/upstream/stdlib.make.in",
+      "url": "https://raw.githubusercontent.com/leanprover/lean4/eb6cafb7290e8bd5f2937522d8d804f58f02bafc/src/stdlib.make.in",
+      "repository": "leanprover/lean4",
+      "source_revision": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+      "sha256": "a9bedcee1428dec2019c85d17bd6aebad737b17617a10e75f9d7742e87d75d10",
+      "bytes": 12444,
+      "hash_verified": true,
+      "bytes_verified": true
+    },
+    {
+      "path": "round-1/pattern-generalise/upstream/Lemmas.lean",
+      "url": "https://raw.githubusercontent.com/leanprover/lean4/eb6cafb7290e8bd5f2937522d8d804f58f02bafc/src/Init/Data/List/Lemmas.lean",
+      "repository": "leanprover/lean4",
+      "source_revision": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+      "sha256": "9365fb1c6da0313a4c73e8cf096377e69c28ece28d38290a0423e5f8cc1fdfdb",
+      "bytes": 152724,
+      "hash_verified": true,
+      "bytes_verified": true
+    }
+  ],
+  "source_identity": {
+    "revision": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+    "source_sha256": "9365fb1c6da0313a4c73e8cf096377e69c28ece28d38290a0423e5f8cc1fdfdb",
+    "installed_source_path": "<user-home>\\Documents\\Codex\\2026-10-23\\ohara\\work\\toolchains\\lean-4.35.0-windows\\src\\lean\\Init\\Data\\List\\Lemmas.lean",
+    "installed_source_sha256": "9365fb1c6da0313a4c73e8cf096377e69c28ece28d38290a0423e5f8cc1fdfdb",
+    "normalized_source_equal": true,
+    "normalized_source_sha256": "9365fb1c6da0313a4c73e8cf096377e69c28ece28d38290a0423e5f8cc1fdfdb"
+  },
+  "local_consumer": {
+    "source_path": "<user-home>\\OneDrive\\Documents\\ChatGPT\\library\\outputs\\ohara-ingest-artifact\\evaluation\\swarm-2026-10-25\\holdout\\filter-fusion\\Consumer.lean",
+    "sha256": "8a88d774e0966f94e26cd07db54575051f68705251ddb927ea88865e40b78040",
+    "upstream_revision": null,
+    "publication_reference": null,
+    "trust_bypass_scan": "pass; no sorry, admit or axiom declarations"
+  },
+  "validation": {
+    "proposal_schema": "pass",
+    "canonical_metadata": "pass",
+    "canonical_issues": [],
+    "duplicate_count": 0,
+    "catalogue_record_versions_examined": 8,
+    "publication_readiness": "not approved; maintainer review and protected publication workflow pending"
+  },
+  "observations": [
+    {
+      "command": [
+        "rtk",
+        "proxy",
+        "<user-home>\\Documents\\Codex\\2026-10-23\\ohara\\work\\toolchains\\lean-4.35.0-windows\\bin\\lean.exe",
+        "--version"
+      ],
+      "timeout_ms": 1000,
+      "elapsed_ms": 1089.6829000000002,
+      "exit_status": null,
+      "signal": "SIGTERM",
+      "error": "Error: spawnSync rtk ETIMEDOUT",
+      "stdout": "Lean (version 4.35.0, x86_64-w64-windows-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "rtk",
+        "proxy",
+        "<user-home>\\Documents\\Codex\\2026-10-23\\ohara\\work\\toolchains\\lean-4.35.0-windows\\bin\\lean.exe",
+        "-o",
+        "<user-home>\\OneDrive\\Documents\\ChatGPT\\library\\outputs\\ohara-ingest-artifact\\evaluation\\swarm-2026-10-25\\holdout\\filter-fusion\\Consumer.olean",
+        "<user-home>\\OneDrive\\Documents\\ChatGPT\\library\\outputs\\ohara-ingest-artifact\\evaluation\\swarm-2026-10-25\\holdout\\filter-fusion\\Consumer.lean"
+      ],
+      "timeout_ms": 18000,
+      "elapsed_ms": 6326.770999999999,
+      "exit_status": 0,
+      "signal": null,
+      "error": null,
+      "stdout": "@List.filter_filter : ∀ {α : Type u_1} {p q : α → Bool} {l : List α},\n  List.filter p (List.filter q l) = List.filter (fun a => p a && q a) l\ntheorem List.filter_filter.{u_1} : ∀ {α : Type u_1} {p q : α → Bool} {l : List α},\n  List.filter p (List.filter q l) = List.filter (fun a => p a && q a) l :=\nfun {α} {p q} x => List.brecOn x List.filter_filter._f\n'List.filter_filter' depends on axioms: [propext]\n'FilterFusionHoldout.consumer' depends on axioms: [propext]\n",
+      "stderr": ""
+    }
+  ],
+  "scope": "Local consumer only; installed upstream modules are imported rather than rebuilt. The single inspected installed source file is not a full package digest. Reused CI observations remain attributed to upstream."
+}

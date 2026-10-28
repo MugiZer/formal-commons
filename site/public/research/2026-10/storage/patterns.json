@@ -1,0 +1,57 @@
+{
+  "patterns": [
+    {
+      "id": "microsoft/capybara-list-append",
+      "title": "Persistent list append with journal-scoped state mutation",
+      "property": "Under a valid table and journal, a tentative list entry and a matching permission factory, an append either yields a valid table whose tentative snapshot is extended by the new element and whose journal changes only within the table range, or returns one of the specified errors with the corresponding table, tentative-state and capacity guarantees.",
+      "symbol": "ListTable::append",
+      "source_path": "capybaraKV/capybarakv/src/kv2/lists/append_v.rs",
+      "source_revision": "41cab95051229ebd457b4eed7fc111e3e7c9099c",
+      "hypotheses": [
+        "old(self).valid(old(journal)@)",
+        "old(journal).valid()",
+        "old(self)@.tentative is Some",
+        "old(self)@.tentative.unwrap().m.contains_key(list_addr)",
+        "perm_factory.id() == old(journal)@.powerpm_id",
+        "old(self).perm_factory_permits_states_equivalent_for_me(old(journal)@, *perm_factory)"
+      ],
+      "source_to_proof_to_check": {
+        "property": "final(self)@.matches_except_in_range(old(journal)@, final(self)@.sm.start() as int, final(self)@.sm.end() as int); for Ok(new_list_addr), final(self)@ is the old ListTableView with tentative set to old(self)@.tentative.unwrap().append(list_addr, new_list_addr, new_element).",
+        "proof_root": "ListTable::append",
+        "concrete_transition": "The method rejects length overflow and invalid logical-range order/gaps before mutation. It pops a free row, calls write_tail_to_free_slot, then selects append_case_durable or append_case_modified based on the existing list entry.",
+        "supporting_lemmas": [
+          "ListTable::lemma_append_case_durable_works",
+          "ListTable::lemma_append_case_modified_works"
+        ],
+        "specification": "ListTableSnapshot::append removes old_list_addr, inserts new_list_addr and maps it to the old list sequence with new_element pushed.",
+        "recovery_trace": "ListRecoveryMapping::append updates the former tail's next pointer, inserts recovery information for the new tail row, extends list_info and list_elements. recover_v.rs proves recovery depends only on this table's byte range under valid metadata.",
+        "dependencies": [
+          "Journal<PM> and JournalView",
+          "ListTableStaticMetadata and ListTable validity invariant",
+          "PermissionFactory<Seq<u8>>",
+          "PersistentMemoryRegion, PmCopy, and LogicalRange",
+          "CapybaraKV list snapshot and recovery mappings"
+        ],
+        "check": {
+          "origin": "upstream GitHub Actions",
+          "run_id": 39278323714,
+          "job_id": 118147951977,
+          "targets_in_log": [],
+          "configuration_in_log": [],
+          "result": "inconclusive",
+          "interpretation": "The run and Analyze (rust) job succeeded, but they are CodeQL analysis. The retained log omits the selected method, Verus toolchain, and documented cargo verus verify command; derived-evidence.json records these missing markers."
+        }
+      },
+      "reuse_use_case": "A downstream CapybaraKV list operation can reuse the append transition to add an element while proving the table-local journal write boundary, list summary/tentative snapshot update, and recovery-mapping extension. A consumer still needs the full CapybaraKV crate and its journal, permission and persistent-memory model.",
+      "proposal_path": "append-proposal.json",
+      "publication_tasks_path": "append-publication-tasks.json",
+      "gaps": [
+        "The exact-SHA Actions evidence is CodeQL-only and does not verify the Verus target or command.",
+        "No local cargo verus verify replay was performed.",
+        "No axiom or trusted-code audit was performed; README directs an audit to trusted kv2/impl_t.rs and pmem power/pmemspec modules.",
+        "No standalone handoff was prepared because this method depends on the CapybaraKV crate, journal, persistent-memory abstractions, and local pmcopy crate."
+      ],
+      "handoff_path": null
+    }
+  ]
+} 

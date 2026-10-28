@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "status_scope": "Requested finite three-process consumer check only",
+  "configuration": {
+    "process_values": ["workerA", "workerB", "workerC"],
+    "proc_set": "{workerA, workerB, workerC}",
+    "tla_workers": 1,
+    "heap_argument": "-Xmx512m",
+    "invariant": "MutualExclusion",
+    "specification_alias_retained": true,
+    "invariant_alias_retained": true,
+    "source_module_unchanged": true
+  },
+  "tool": {
+    "jar": "../tools/tla2tools-1.7.4.jar",
+    "jar_sha256": "936a262061c914694dfd669a543be24573c45d5aa0ff20a8b96b23d01e050e88",
+    "reported_cli": "TLC 2.19, revision 5a47802",
+    "java": "Java 1.8.0_401, 64-bit"
+  },
+  "command": "rtk java -Xmx512m -cp \"<workspace>/outputs/ohara-ingest-artifact/evaluation/expanded-swarm-2026-10-26/tools/tla2tools-1.7.4.jar\" tlc2.TLC -workers 1 -config MC.cfg MC.tla",
+  "attempts": [
+    {
+      "attempt": 1,
+      "meaningful_check": true,
+      "completed": true,
+      "exit_code": 0,
+      "output_contains": "Model checking completed. No error has been found.",
+      "states_generated": 282810,
+      "distinct_states": 90882,
+      "states_left_on_queue": 0,
+      "complete_graph_search_depth": 54,
+      "computed_initial_states": 2,
+      "distinct_initial_states_generated": 3,
+      "tlc_elapsed": "03s",
+      "script_elapsed_ms": 6126,
+      "outer_command_wall_seconds": 8.1106,
+      "budget_seconds": 45,
+      "within_budget": true,
+      "stdout": "tlc.stdout.utf8.txt",
+      "stderr": "tlc.stderr.utf8.txt",
+      "stderr_bytes": 0
+    }
+  ],
+  "hashes_sha256": {
+    "input_package": {
+      "DijkstraMutex.tla": "b0033a7059170cda363091b64da3e01ba78822ed348592a3c979575fb10dff6d",
+      "MC.tla": "ed5b3aaaf9ffacc4f2821d646472f35e73faf5fed2148a31c468787a558046c4",
+      "MC.cfg": "79ddb5aa21a423288c73c129cbb8a4b74e6582f462e959a9a2927a0a43adb788",
+      "LICENSE.md": "9fce60dd2b6c2be72803e96fc67f0a34b91b073ead999cea21d00c33b8bce147"
+    },
+    "consumer": {
+      "DijkstraMutex.tla": "b0033a7059170cda363091b64da3e01ba78822ed348592a3c979575fb10dff6d",
+      "MC.tla": "26c461baaf6dcc8ee544712cdaf416eccb65d6f8fc8006b8b5031ddf8645004b",
+      "MC.cfg": "f8f70d3fcc4d1c11aff39578579e1f3b615010179ddc2aa8c55eb4546cd06902",
+      "LICENSE.md": "9fce60dd2b6c2be72803e96fc67f0a34b91b073ead999cea21d00c33b8bce147",
+      "tlc.stdout.utf8.txt": "3addf1d534fcd054d6cda2b046162ab2b1929735d05a6f3614c9a5048f1b477f"
+    },
+    "tool": {
+      "tla2tools-1.7.4.jar": "936a262061c914694dfd669a543be24573c45d5aa0ff20a8b96b23d01e050e88"
+    }
+  },
+  "limitations": [
+    "This is a finite check of the three-process instance only.",
+    "It does not establish safety for arbitrary process counts.",
+    "It does not establish correspondence to an implementation."
+  ],
+  "packaging_notes": "The README describes the supplied four-process config. TASK.md requests the three-process consumer copy; this expected adaptation was completed without changing package files or license.",
+  "nonblocking_setup_notes": [
+    "Initial rtk Get-ChildItem failed because the PowerShell cmdlet was not found as an executable; initial rtk ls failed because native ls was unavailable. File discovery succeeded with rtk rg --files and rtk read.",
+    "An auxiliary certutil hash request on the zero-byte stderr file returned ERROR_FILE_INVALID; stderr remains empty, and hashing logs was not a task criterion."
+  ]
+}

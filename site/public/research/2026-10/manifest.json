@@ -1,0 +1,470 @@
+{
+  "published": "2026-10-28",
+  "scope": "Retained source and check artifacts. Source files preserve exact bytes. Public log derivatives carry their original and public digests.",
+  "files": [
+    {
+      "path": "lean/map/Consumer.lean",
+      "source": "swarm-2026-10-25/round-1/modular-index/Consumer.lean",
+      "original_sha256": "b10b4660fa10d8f2bc0e3e5ed159b6a28aa39829ae730aaebfd02b39f7999733",
+      "sha256": "b10b4660fa10d8f2bc0e3e5ed159b6a28aa39829ae730aaebfd02b39f7999733",
+      "bytes": 662,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "lean/map/check.json",
+      "source": "swarm-2026-10-25/round-1/modular-index/consumer-check.log.json",
+      "original_sha256": "8b4ff3a59a3f855de3841e73df3795719a17faf881ce2105d348971236a774fa",
+      "sha256": "71c7a9437f87ca1796fe5acb83923c693d30d1204f656c793562837f0fb48987",
+      "bytes": 2414,
+      "transformation": "Public derivative; local workspace/home prefixes redacted. Original digest retained."
+    },
+    {
+      "path": "lean/filter/Consumer.lean",
+      "source": "swarm-2026-10-25/holdout/filter-fusion/Consumer.lean",
+      "original_sha256": "8a88d774e0966f94e26cd07db54575051f68705251ddb927ea88865e40b78040",
+      "sha256": "8a88d774e0966f94e26cd07db54575051f68705251ddb927ea88865e40b78040",
+      "bytes": 365,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "lean/filter/check.json",
+      "source": "swarm-2026-10-25/holdout/filter-fusion/check-receipt.json",
+      "original_sha256": "e6140f9cf5097e6dfa77610be8a42edc4b5b832635fb60ffe5f8ad6332db6c75",
+      "sha256": "d0cac669df63340888eedf8120088dd9c5623ae99c99b88e6460e634fe9713db",
+      "bytes": 6216,
+      "transformation": "Public derivative; local workspace/home prefixes redacted. Original digest retained."
+    },
+    {
+      "path": "lean/filter/check.log.txt",
+      "source": "swarm-2026-10-25/holdout/filter-fusion/check.log",
+      "original_sha256": "556472c39b05680aa515de4891f024a09587aca31a6aa2dd591703816cc11359",
+      "sha256": "4b324afa195576898db108adedc6c2fa8c40b0478bd693e760fd8dd524c6d5c9",
+      "bytes": 1167,
+      "transformation": "Public derivative; local workspace/home prefixes redacted. Original digest retained."
+    },
+    {
+      "path": "lean/filter/version-retry.json",
+      "source": "swarm-2026-10-25/holdout/filter-fusion/version-retry.json",
+      "original_sha256": "bb92979f0c9fe2baccbf1da7db185b3314c0823d164776e6869b67d9fe41402a",
+      "sha256": "a12d51bb21673e0664074c62c3c39e4d0d1c444eb17b30aa057acd131f00b398",
+      "bytes": 781,
+      "transformation": "Public derivative; local workspace/home prefixes redacted. Original digest retained."
+    },
+    {
+      "path": "lean/hashmap/HashMapInsert.lean",
+      "source": "swarm-2026-10-25/round-1/component-extract/HashMapInsert.lean",
+      "original_sha256": "cc74407201a409ffb64a3ce3ebef9aec3ebe495d5d5e640477e7d321ffe35f1d",
+      "sha256": "cc74407201a409ffb64a3ce3ebef9aec3ebe495d5d5e640477e7d321ffe35f1d",
+      "bytes": 668,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "lean/hashmap/Consumer.lean",
+      "source": "swarm-2026-10-25/round-1/component-extract/Consumer.lean",
+      "original_sha256": "dd713ed39628a754093cd2918d0008833ff37b69243fed438751d65eb929f306",
+      "sha256": "dd713ed39628a754093cd2918d0008833ff37b69243fed438751d65eb929f306",
+      "bytes": 468,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "lean/hashmap/check.json",
+      "source": "swarm-2026-10-25/round-1/component-extract/evidence/inspection-finish.json",
+      "original_sha256": "00c1dadeeecb76e04bc117d67e85414df5f66d612ea3d1629f9a5ccbd3e05237",
+      "sha256": "00c1dadeeecb76e04bc117d67e85414df5f66d612ea3d1629f9a5ccbd3e05237",
+      "bytes": 3542,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "lean/hashmap/build.log.txt",
+      "source": "swarm-2026-10-25/round-1/component-extract/evidence/final-build.log",
+      "original_sha256": "3e52814e5866626c3fb97119be80239e03e9d83e0107630fcedf2f0b817223fd",
+      "sha256": "4568768dd1b3aac710a0e0a0fcafaa9a8d412b08c8b8eb2d4348afc0abb04334",
+      "bytes": 468,
+      "transformation": "Public derivative; local workspace/home prefixes redacted. Original digest retained."
+    },
+    {
+      "path": "lean/hashmap/LICENSE",
+      "source": "swarm-2026-10-25/round-1/component-extract/LICENSE",
+      "original_sha256": "67fea334e08f06d3ab876499adbee41873a42d4cd86e8136a502420b9b655844",
+      "sha256": "67fea334e08f06d3ab876499adbee41873a42d4cd86e8136a502420b9b655844",
+      "bytes": 9161,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "lean/reuse/Use.lean",
+      "source": "workflow-2026-10-25/consumer-result/Use.lean",
+      "original_sha256": "f2316413effe5aa3c82eca633bc41bc602ac705ae742a01831ab538ffbd0e529",
+      "sha256": "f2316413effe5aa3c82eca633bc41bc602ac705ae742a01831ab538ffbd0e529",
+      "bytes": 1661,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "lean/reuse/check.json",
+      "source": "workflow-2026-10-25/consumer-result/root-check.json",
+      "original_sha256": "d3d9b5723c82e7f659e4d105d9c14d122158be813794f0d4df2a1cb58cdac09f",
+      "sha256": "9aba7d7bf851cab45fd78e71ef12fc75c149b26ef339cd72970c17121686586e",
+      "bytes": 1149,
+      "transformation": "Public derivative; local workspace/home prefixes redacted. Original digest retained."
+    },
+    {
+      "path": "lean/reuse/Pattern.lean",
+      "source": "workflow-2026-10-25/consumer-result/Pattern.lean",
+      "original_sha256": "e1cb64f0aa795cac9e7081094c2d1375af0e7318494a0fd1f4014b120afedb3d",
+      "sha256": "e1cb64f0aa795cac9e7081094c2d1375af0e7318494a0fd1f4014b120afedb3d",
+      "bytes": 447,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "lean/reuse/HashMapInsert.lean",
+      "source": "workflow-2026-10-25/consumer-result/HashMapInsert.lean",
+      "original_sha256": "cc74407201a409ffb64a3ce3ebef9aec3ebe495d5d5e640477e7d321ffe35f1d",
+      "sha256": "cc74407201a409ffb64a3ce3ebef9aec3ebe495d5d5e640477e7d321ffe35f1d",
+      "bytes": 668,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "lean/reuse/LICENSE",
+      "source": "workflow-2026-10-25/consumer-result/LICENSE",
+      "original_sha256": "67fea334e08f06d3ab876499adbee41873a42d4cd86e8136a502420b9b655844",
+      "sha256": "67fea334e08f06d3ab876499adbee41873a42d4cd86e8136a502420b9b655844",
+      "bytes": 9161,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "tla/three-process/check.json",
+      "source": "expanded-swarm-2026-10-26/consumer-tla/receipt.json",
+      "original_sha256": "05ec78b09b1f27e32cc25ce6b3eea8a480421c8a8085bff474ca607dbd82402d",
+      "sha256": "f1d229eee05cfcdb123edf12ef7490f23e97b5e5ae3d6582f74a5d2df8f17d32",
+      "bytes": 3394,
+      "transformation": "Public derivative; local workspace/home prefixes redacted. Original digest retained."
+    },
+    {
+      "path": "tla/three-process/stdout.txt",
+      "source": "expanded-swarm-2026-10-26/consumer-tla/tlc.stdout.utf8.txt",
+      "original_sha256": "3addf1d534fcd054d6cda2b046162ab2b1929735d05a6f3614c9a5048f1b477f",
+      "sha256": "91a7748a1436fd45d01afdd482f199c8446a23e6b7c3da39e86ba856f2d8291b",
+      "bytes": 2142,
+      "transformation": "Public derivative; local workspace/home prefixes redacted. Original digest retained."
+    },
+    {
+      "path": "tla/three-process/stderr.txt",
+      "source": "expanded-swarm-2026-10-26/consumer-tla/tlc.stderr.utf8.txt",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "tla/three-process/DijkstraMutex.tla",
+      "source": "expanded-swarm-2026-10-26/consumer-tla/DijkstraMutex.tla",
+      "original_sha256": "b0033a7059170cda363091b64da3e01ba78822ed348592a3c979575fb10dff6d",
+      "sha256": "b0033a7059170cda363091b64da3e01ba78822ed348592a3c979575fb10dff6d",
+      "bytes": 18106,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "tla/three-process/MC.tla",
+      "source": "expanded-swarm-2026-10-26/consumer-tla/MC.tla",
+      "original_sha256": "26c461baaf6dcc8ee544712cdaf416eccb65d6f8fc8006b8b5031ddf8645004b",
+      "sha256": "26c461baaf6dcc8ee544712cdaf416eccb65d6f8fc8006b8b5031ddf8645004b",
+      "bytes": 580,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "tla/three-process/MC.cfg",
+      "source": "expanded-swarm-2026-10-26/consumer-tla/MC.cfg",
+      "original_sha256": "f8f70d3fcc4d1c11aff39578579e1f3b615010179ddc2aa8c55eb4546cd06902",
+      "sha256": "f8f70d3fcc4d1c11aff39578579e1f3b615010179ddc2aa8c55eb4546cd06902",
+      "bytes": 401,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "tla/three-process/LICENSE.md",
+      "source": "expanded-swarm-2026-10-26/consumer-tla/LICENSE.md",
+      "original_sha256": "9fce60dd2b6c2be72803e96fc67f0a34b91b073ead999cea21d00c33b8bce147",
+      "sha256": "9fce60dd2b6c2be72803e96fc67f0a34b91b073ead999cea21d00c33b8bce147",
+      "bytes": 1243,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "tla/two-process/check.json",
+      "source": "expanded-swarm-2026-10-26/tla/local-check/result.json",
+      "original_sha256": "fcac719bad6c721fde18252a3f16bd5a00d749bbe488f59d18a25c06ac03c036",
+      "sha256": "d49b1db3df29d886d42a3b9d62c0b964a2f9f8b52a58821b1624f1b332855b8c",
+      "bytes": 2425,
+      "transformation": "Public derivative; local workspace/home prefixes redacted. Original digest retained."
+    },
+    {
+      "path": "tla/two-process/DijkstraMutex.tla",
+      "source": "expanded-swarm-2026-10-26/tla/local-check/DijkstraMutex.tla",
+      "original_sha256": "b0033a7059170cda363091b64da3e01ba78822ed348592a3c979575fb10dff6d",
+      "sha256": "b0033a7059170cda363091b64da3e01ba78822ed348592a3c979575fb10dff6d",
+      "bytes": 18106,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "tla/two-process/MC.tla",
+      "source": "expanded-swarm-2026-10-26/tla/local-check/MC.tla",
+      "original_sha256": "849abcbacd1830754c894528dcb703e5b103c4094e971e280ece738865ffa355",
+      "sha256": "849abcbacd1830754c894528dcb703e5b103c4094e971e280ece738865ffa355",
+      "bytes": 562,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "tla/two-process/MC.cfg",
+      "source": "expanded-swarm-2026-10-26/tla/local-check/MC.cfg",
+      "original_sha256": "1528c2a04cef8a8e51d4f6c805a799d674ab745436b9895692e99c71f26c0b1f",
+      "sha256": "1528c2a04cef8a8e51d4f6c805a799d674ab745436b9895692e99c71f26c0b1f",
+      "bytes": 383,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "tla/two-process/stdout.txt",
+      "source": "expanded-swarm-2026-10-26/tla/local-check/tlc.stdout.txt",
+      "original_sha256": "20f221842a7ba34bd28c7f0067f4ee863431b19da7da26557845c2f20c895fd8",
+      "sha256": "e7c41f9126a200ca8cee538f0331744ab73c64284af94b73233bf9a6067e8eea",
+      "bytes": 2061,
+      "transformation": "Public derivative; local workspace/home prefixes redacted. Original digest retained."
+    },
+    {
+      "path": "tla/two-process/stderr.txt",
+      "source": "expanded-swarm-2026-10-26/tla/local-check/tlc.stderr.txt",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "tla/checker.json",
+      "source": "expanded-swarm-2026-10-26/tools/tlc-receipt.json",
+      "original_sha256": "6d46be1cfb207fb7ead84458ecfb04dc98500fe1f756a9c428dbb802f9aa7d1a",
+      "sha256": "6d46be1cfb207fb7ead84458ecfb04dc98500fe1f756a9c428dbb802f9aa7d1a",
+      "bytes": 601,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "lean/pattern/Pattern.lean",
+      "source": "swarm-2026-10-25/round-1/pattern-generalise/Pattern.lean",
+      "original_sha256": "e1cb64f0aa795cac9e7081094c2d1375af0e7318494a0fd1f4014b120afedb3d",
+      "sha256": "e1cb64f0aa795cac9e7081094c2d1375af0e7318494a0fd1f4014b120afedb3d",
+      "bytes": 447,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "lean/pattern/Concrete.lean",
+      "source": "swarm-2026-10-25/round-1/pattern-generalise/Concrete.lean",
+      "original_sha256": "d3bdb70f259f33145074a15ec74c249fc22cc2a5a73ff214bfedfa7a7928bd01",
+      "sha256": "d3bdb70f259f33145074a15ec74c249fc22cc2a5a73ff214bfedfa7a7928bd01",
+      "bytes": 858,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "lean/pattern/Consumer.lean",
+      "source": "swarm-2026-10-25/round-1/pattern-generalise/Consumer.lean",
+      "original_sha256": "2c7e49b4d4b4e251b0e6b8423fdb2db8d495f67552b38a7f98bd6c6bcdea6600",
+      "sha256": "2c7e49b4d4b4e251b0e6b8423fdb2db8d495f67552b38a7f98bd6c6bcdea6600",
+      "bytes": 465,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "lean/pattern/NegativePremises.lean",
+      "source": "swarm-2026-10-25/round-1/pattern-generalise/NegativePremises.lean",
+      "original_sha256": "8ccc7544cd8b1f7caaf5d40c31ac91fae64326a8ea0282cbd3598d3b247cbfae",
+      "sha256": "8ccc7544cd8b1f7caaf5d40c31ac91fae64326a8ea0282cbd3598d3b247cbfae",
+      "bytes": 716,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "lean/pattern/Negative.lean",
+      "source": "swarm-2026-10-25/round-1/pattern-generalise/Negative.lean",
+      "original_sha256": "96cbea5032cbeb18db84a6886546e6c5e596160cdaa211a9e5c926642be52cff",
+      "sha256": "96cbea5032cbeb18db84a6886546e6c5e596160cdaa211a9e5c926642be52cff",
+      "bytes": 343,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "lean/pattern/manifest.json",
+      "source": "swarm-2026-10-25/round-1/pattern-generalise/manifest.json",
+      "original_sha256": "fc6e668ea4242a027e243ca02280ca25ef7f07ed8055a9e6d1941ed9421658a7",
+      "sha256": "7d9111fefb3716c900013f88093abbe38c9e5f9c80a628bdf27ea7f99227f532",
+      "bytes": 6659,
+      "transformation": "Public derivative; local workspace/home prefixes redacted. Original digest retained."
+    },
+    {
+      "path": "lean/pattern/SETUP.historical.md",
+      "source": "swarm-2026-10-25/round-1/pattern-generalise/SETUP.md",
+      "original_sha256": "f5834a10cbcb60323a87ceced83d8820ae324fe0e57406edaa9581aaf7fec67c",
+      "sha256": "4d00d2aa40018bdc83eb412d350488054aec6c9a46c5f72d3f9f4d9e48eb8bf8",
+      "bytes": 1336,
+      "transformation": "Public derivative; local workspace/home prefixes redacted. Original digest retained."
+    },
+    {
+      "path": "lean/pattern/logs/Pattern.json",
+      "source": "swarm-2026-10-25/round-1/pattern-generalise/logs/Pattern.json",
+      "original_sha256": "c622af92b630ae71283318b6454d8f5d18e5e9f5916965a4e5b2181dad5ee13f",
+      "sha256": "b50dc48decc258f2c424046ff64bc9d9e81fe30aa215c1fa59352926aedea9a6",
+      "bytes": 897,
+      "transformation": "Public derivative; local workspace/home prefixes redacted. Original digest retained."
+    },
+    {
+      "path": "lean/pattern/logs/Concrete.json",
+      "source": "swarm-2026-10-25/round-1/pattern-generalise/logs/Concrete.json",
+      "original_sha256": "fb57f2803f229e29663d287165151f00643eebfd9fce283ac3f2162948483767",
+      "sha256": "03ec124e7fde088754b1d77ba13ca8611b7c82a0cfed8d06387e53c1e219b57e",
+      "bytes": 3486,
+      "transformation": "Public derivative; local workspace/home prefixes redacted. Original digest retained."
+    },
+    {
+      "path": "lean/pattern/logs/Consumer.json",
+      "source": "swarm-2026-10-25/round-1/pattern-generalise/logs/Consumer.json",
+      "original_sha256": "ea92605e181e7a1c28ac82d3c1024c99edc01e0fd172b3fb03efa129cc9e8aac",
+      "sha256": "35695d9f78d9d3b4a3003326aa267975a7b79ee1925dc94879b7ad25ad8ebc28",
+      "bytes": 473,
+      "transformation": "Public derivative; local workspace/home prefixes redacted. Original digest retained."
+    },
+    {
+      "path": "lean/pattern/logs/NegativePremises.json",
+      "source": "swarm-2026-10-25/round-1/pattern-generalise/logs/NegativePremises.json",
+      "original_sha256": "f410e9a5ff090c1f7516eca59b87ef83da5c1b23a28877b0784695e9697cf23c",
+      "sha256": "7b3e2bb10dcca97383f107c9ca014a9fabeeba2fb0e553087bcb3f43fe5f6710",
+      "bytes": 609,
+      "transformation": "Public derivative; local workspace/home prefixes redacted. Original digest retained."
+    },
+    {
+      "path": "lean/pattern/logs/Negative.json",
+      "source": "swarm-2026-10-25/round-1/pattern-generalise/logs/Negative.json",
+      "original_sha256": "9fdb3bbe3f9e8cc74a6cad45295e4ffedba87264d75d3ced0cb9229a6ed72b83",
+      "sha256": "b16f04f8b336add4780d0ac2e73e179358eb5b4fb95063999fac3d8a365eb270",
+      "bytes": 1048,
+      "transformation": "Public derivative; local workspace/home prefixes redacted. Original digest retained."
+    },
+    {
+      "path": "lean/pattern/logs/toolchain.json",
+      "source": "swarm-2026-10-25/round-1/pattern-generalise/logs/toolchain.json",
+      "original_sha256": "13e76b3c358511d8ede4db45b24062c02886753238c67030e08320772a0e9644",
+      "sha256": "75585fd876123f2ac18d5e5adabda73736f3b178791148b70f4211dcc0d4cab4",
+      "bytes": 299,
+      "transformation": "Public derivative; local workspace/home prefixes redacted. Original digest retained."
+    },
+    {
+      "path": "lean/LICENSE.upstream",
+      "source": "swarm-2026-10-25/round-1/pattern-generalise/upstream/LICENSE",
+      "original_sha256": "7ef159fd8db5a7a9e8051aac48997353f26d744e25f730a0594a806c126d2114",
+      "sha256": "7ef159fd8db5a7a9e8051aac48997353f26d744e25f730a0594a806c126d2114",
+      "bytes": 9159,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "cedar/patterns.json",
+      "source": "expanded-swarm-2026-10-26/cedar/patterns.json",
+      "original_sha256": "949c1eb5484c5c682bbe5e3fbc9d07778432eb0139252095114f69f9a087f22f",
+      "sha256": "949c1eb5484c5c682bbe5e3fbc9d07778432eb0139252095114f69f9a087f22f",
+      "bytes": 2373,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "fiat-crypto/patterns.json",
+      "source": "expanded-swarm-2026-10-26/fiat-crypto/patterns.json",
+      "original_sha256": "bef201fd21751bbfe94c0d6097c2261f8943a19c03789e0801b4627710452577",
+      "sha256": "bef201fd21751bbfe94c0d6097c2261f8943a19c03789e0801b4627710452577",
+      "bytes": 4845,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "storage/patterns.json",
+      "source": "expanded-swarm-2026-10-26/storage/patterns.json",
+      "original_sha256": "7963502d0bd8d5528acd0c0d22af0c9d028fa74265e51358c2af37ce4d471f95",
+      "sha256": "7963502d0bd8d5528acd0c0d22af0c9d028fa74265e51358c2af37ce4d471f95",
+      "bytes": 4113,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "perennial/patterns.json",
+      "source": "expanded-swarm-2026-10-26/perennial/patterns.json",
+      "original_sha256": "2e9599f8e024bfa748bd20221132fdedb4a965dd896af0e563f9ded08e69acbf",
+      "sha256": "2e9599f8e024bfa748bd20221132fdedb4a965dd896af0e563f9ded08e69acbf",
+      "bytes": 8672,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "everparse/patterns.json",
+      "source": "expanded-swarm-2026-10-26/everparse/patterns.json",
+      "original_sha256": "2f5f73c3400914500a0e2cd836511ac3502786249cc91ff03eca8ab9f00fcb19",
+      "sha256": "2f5f73c3400914500a0e2cd836511ac3502786249cc91ff03eca8ab9f00fcb19",
+      "bytes": 5486,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "cedar/check.json",
+      "source": "expanded-swarm-2026-10-26/cedar/derived-evidence.json",
+      "original_sha256": "7ab8997ec376e717b57253d6bc19640f2ab69091c57b81a81b45d69c30a7ebfd",
+      "sha256": "7ab8997ec376e717b57253d6bc19640f2ab69091c57b81a81b45d69c30a7ebfd",
+      "bytes": 2258,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "everparse/check.json",
+      "source": "expanded-swarm-2026-10-26/everparse/evidence.json",
+      "original_sha256": "7d5d84d4521ce128f040729ec4600cf3284a546c1c6b0caa2258da8bc7b3cbe7",
+      "sha256": "7d5d84d4521ce128f040729ec4600cf3284a546c1c6b0caa2258da8bc7b3cbe7",
+      "bytes": 2530,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "everparse/compilation-only.json",
+      "source": "expanded-swarm-2026-10-26/everparse/compile-only-evidence.json",
+      "original_sha256": "d78f312cd7e1c990bb880426ac0d1d90abfd70218abfdc5855dfbb41cf42a448",
+      "sha256": "d78f312cd7e1c990bb880426ac0d1d90abfd70218abfdc5855dfbb41cf42a448",
+      "bytes": 2554,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "storage/check.json",
+      "source": "expanded-swarm-2026-10-26/storage/derived-evidence.json",
+      "original_sha256": "9ea726b8606546de7ced9efb1001b3d3a29191da9e0b3dbf8e70202cf4aff9bc",
+      "sha256": "9ea726b8606546de7ced9efb1001b3d3a29191da9e0b3dbf8e70202cf4aff9bc",
+      "bytes": 2885,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "fiat-crypto/check.json",
+      "source": "expanded-swarm-2026-10-26/fiat-crypto/evidence.json",
+      "original_sha256": "53aa915123a3697802d409cc72f99fad2edaa74fee787b6bc249de7e4a342868",
+      "sha256": "53aa915123a3697802d409cc72f99fad2edaa74fee787b6bc249de7e4a342868",
+      "bytes": 2211,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "cedar/LICENSE.upstream",
+      "source": "expanded-swarm-2026-10-26/cedar/source-bytes/LICENSE",
+      "original_sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+      "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+      "bytes": 10142,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "everparse/LICENSE.upstream",
+      "source": "expanded-swarm-2026-10-26/everparse/inputs/LICENSE",
+      "original_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "perennial/LICENSE.upstream",
+      "source": "expanded-swarm-2026-10-26/perennial/seed-source/LICENSE",
+      "original_sha256": "042d905c3e11164d3281d10035a5243952a5297fce5edbb4594c6adaf88ebad3",
+      "sha256": "042d905c3e11164d3281d10035a5243952a5297fce5edbb4594c6adaf88ebad3",
+      "bytes": 1056,
+      "transformation": "byte copy"
+    },
+    {
+      "path": "storage/LICENSE.upstream",
+      "source": "expanded-swarm-2026-10-26/storage/captures/source/LICENSE.txt",
+      "original_sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
+      "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
+      "bytes": 1141,
+      "transformation": "byte copy"
+    }
+  ]
+}

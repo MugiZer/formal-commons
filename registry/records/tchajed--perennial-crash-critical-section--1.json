@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "tchajed/perennial-crash-critical-section",
+  "record_version": 1,
+  "kind": "theorem",
+  "title": "Perennial crash-aware locked critical section",
+  "summary": "The crash-lock specification composes lock acquisition, a WPC-governed critical section and release while preserving the declared normal and crash postconditions.",
+  "tags": [
+    "crash-safety",
+    "mutex",
+    "concurrency",
+    "weakest-precondition",
+    "iris"
+  ],
+  "proof_system": "Rocq with Iris, Perennial crash logic and Goose",
+  "source": {
+    "repository": "https://github.com/tchajed/perennial",
+    "revision": "b84d676ee32389225ff13927a72383eb79d1d337",
+    "path": "src/goose_lang/lib/lock/crash_lock.v",
+    "symbol": "with_lock_spec",
+    "statement": "Lemma with_lock_spec Φ Φc (R Rcrash : iProp Σ) lk e : to_val e = None → is_crash_lock lk R Rcrash ∗ (Φc ∧ (R -∗ WPC e @ ⊤ {{ λ v, (Φc ∧ Φ #()) ∗ R }} {{ Φc ∗ Rcrash }})) -∗ WPC (with_lock lk e) @ ⊤ {{ Φ }} {{ Φc }}."
+  },
+  "assumptions": [
+    "The statement is in the crash-lock proof section with heapGS Σ, stagedG Σ and lock namespace Nlock. The expression must satisfy to_val e = None. The is_crash_lock predicate stores crash_borrow R Rcrash in the mutex invariant. The critical section must establish Φc ∧ Φ #() and restore R on normal completion, or establish Φc ∗ Rcrash on a crash."
+  ],
+  "limitations": [],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/tchajed/perennial/blob/b84d676ee32389225ff13927a72383eb79d1d337/LICENSE",
+    "attribution": "Tej Chajed; repository owner and pinned commit author"
+  },
+  "owners": [
+    "tchajed"
+  ],
+  "project": "tchajed/perennial",
+  "updated": "2026-10-28",
+  "reuse": "Import Perennial.goose_lang.lib.lock.crash_lock from the pinned repository and provide the underlying Iris/Perennial crash-logic and Goose modules. Establish is_crash_lock lk R Rcrash and the stated WPC for e, then apply with_lock_spec. The lower-level use_crash_locked lemma exposes the crash borrow around an arbitrary non-value expression; with_lock_spec additionally sequences acquire and release."
+}

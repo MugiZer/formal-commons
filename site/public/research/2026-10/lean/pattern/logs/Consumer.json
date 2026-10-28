@@ -1,0 +1,16 @@
+{
+  "command": [
+    "<user-home>/Documents/Codex/2026-10-23/ohara/work/toolchains/lean-4.35.0-windows/bin/lean.exe",
+    "Consumer.lean"
+  ],
+  "env": {
+    "LEAN_PATH": "<user-home>\\OneDrive\\Documents\\ChatGPT\\library\\outputs\\ohara-ingest-artifact\\evaluation\\swarm-2026-10-25\\round-1\\pattern-generalise"
+  },
+  "elapsed_ms": 2880.3293000000003,
+  "exit_status": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "",
+  "stderr": "",
+  "expected_exit_status": 0
+}

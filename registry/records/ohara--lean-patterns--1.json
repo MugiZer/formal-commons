@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "id": "ohara/lean-patterns",
+  "record_version": 1,
+  "kind": "project",
+  "title": "Ohara Lean proof examples",
+  "summary": "Small Lean proofs and consumers for commuting involutions, list transformations and HashMap updates.",
+  "tags": [
+    "lean",
+    "proof patterns",
+    "examples"
+  ],
+  "proof_system": "Lean 4.35.0",
+  "source": {
+    "repository": "https://github.com/MugiZer/ohara",
+    "revision": "72cc2fbc2f72da2736ba14876a6cce266a217256",
+    "path": "site/public/research/2026-10/lean/README.md",
+    "symbol": null,
+    "statement": null
+  },
+  "assumptions": [],
+  "limitations": [],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/MugiZer/ohara/blob/72cc2fbc2f72da2736ba14876a6cce266a217256/LICENSE",
+    "attribution": "Ohara contributors. Upstream Lean notices remain with the examples."
+  },
+  "owners": [
+    "MugiZer"
+  ],
+  "project": "ohara/lean-patterns",
+  "updated": "2026-10-28",
+  "reuse": "Download the named sources and use leanprover/lean4:v4.35.0. Compile local dependencies before the importing consumer.",
+  "project_details": {
+    "status": "active",
+    "issues": "https://github.com/MugiZer/ohara/issues",
+    "contributing": "https://github.com/MugiZer/ohara/blob/72cc2fbc2f72da2736ba14876a6cce266a217256/CONTRIBUTING.md",
+    "opportunities": [],
+    "contents": [
+      "An abstract commuting-involutions proof and two concrete applications.",
+      "List and HashMap consumers with retained check logs."
+    ],
+    "documentation": "https://ohara.mugizer.workers.dev/research-results/",
+    "setup": "LEAN_PATH=. lean -o Pattern.olean Pattern.lean\nLEAN_PATH=. lean -o Concrete.olean Concrete.lean\nLEAN_PATH=. lean Consumer.lean"
+  }
+}

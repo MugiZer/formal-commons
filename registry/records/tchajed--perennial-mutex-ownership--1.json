@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "tchajed/perennial-mutex-ownership",
+  "record_version": 1,
+  "kind": "theorem",
+  "title": "Perennial mutex ownership transfer",
+  "summary": "The Goose mutex specifications transfer the protected Iris proposition to the holder on acquisition and require it back, together with the lock ownership token, on release.",
+  "tags": [
+    "mutex",
+    "concurrency",
+    "resource-ownership",
+    "separation-logic",
+    "iris"
+  ],
+  "proof_system": "Rocq with Iris and Goose",
+  "source": {
+    "repository": "https://github.com/tchajed/perennial",
+    "revision": "b84d676ee32389225ff13927a72383eb79d1d337",
+    "path": "src/goose_lang/lib/lock/lock.v",
+    "symbol": "wp_Mutex__Lock",
+    "statement": "Lemma wp_Mutex__Lock lk R : {{{ is_lock lk R }}} Mutex__Lock lk {{{ RET #(); locked lk ∗ R }}}."
+  },
+  "assumptions": [
+    "The statement is in the Goose-language proof section with heapGS Σ and lock namespace N; R is an iProp Σ. The companion wp_Mutex__Unlock requires is_lock lk R ∗ locked lk ∗ ▷ R and returns True."
+  ],
+  "limitations": [],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/tchajed/perennial/blob/b84d676ee32389225ff13927a72383eb79d1d337/LICENSE",
+    "attribution": "Tej Chajed; repository owner and pinned commit author"
+  },
+  "owners": [
+    "tchajed"
+  ],
+  "project": "tchajed/perennial",
+  "updated": "2026-10-28",
+  "reuse": "Import Perennial.goose_lang.lib.lock.lock in the pinned repository. Establish is_lock lk R for the lock invariant, then apply wp_Mutex__Lock to obtain locked lk and R. The paired wp_Mutex__Unlock closes the invariant when given locked lk and ▷ R. These lemmas use the enclosing Goose language and Iris proof-mode context."
+}

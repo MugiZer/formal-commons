@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "fiat-crypto/carry-mulmod-congruence",
+  "record_version": 1,
+  "kind": "theorem",
+  "title": "Carried limb multiplication preserves the modular product",
+  "summary": "For equal n-limb inputs, the generated carry_mulmod operation preserves the product under the weighted positional interpretation modulo s minus the coefficient evaluation.",
+  "tags": [
+    "cryptography",
+    "limbs",
+    "arithmetic",
+    "code-generation",
+    "Coq"
+  ],
+  "proof_system": "Coq",
+  "source": {
+    "repository": "https://github.com/mit-plv/fiat-crypto",
+    "revision": "1e721c6f18c43b90922e7bc57fd64848e5cff2be",
+    "path": "src/Arithmetic/ModOps.v",
+    "symbol": "eval_carry_mulmod",
+    "statement": "forall (f g : list Z) (Hf : length f = n) (Hg : length g = n), (eval weight n (carry_mulmod f g)) mod (s - Associational.eval c) = (eval weight n f * eval weight n g) mod (s - Associational.eval c)."
+  },
+  "assumptions": [
+    "Section mod_ops context: 0 < limbwidth_den <= limbwidth_num; s - Associational.eval c <> 0; s <> 0; n <> 0; length c = len_c; length idxs = len_idxs. Inputs f and g have length n. The carry schedule is the context value idxs."
+  ],
+  "limitations": [],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/mit-plv/fiat-crypto/blob/1e721c6f18c43b90922e7bc57fd64848e5cff2be/LICENSE-MIT",
+    "attribution": "Upstream repository owner: mit-plv. License expression declared in coq-fiat-crypto.opam at the pinned revision; see the three license files at the repository root."
+  },
+  "owners": [
+    "mit-plv"
+  ],
+  "project": "mit-plv/fiat-crypto",
+  "updated": "2026-10-28",
+  "reuse": "When synthesizing a limb operation from an arithmetic specification, state the result as a weighted positional congruence for fixed-length inputs, and prove the carry schedule equivalent to the abstract modular operation using the existing evaluation and chained-carry lemmas."
+}

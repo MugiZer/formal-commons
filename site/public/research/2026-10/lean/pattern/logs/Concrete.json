@@ -1,0 +1,18 @@
+{
+  "command": [
+    "<user-home>/Documents/Codex/2026-10-23/ohara/work/toolchains/lean-4.35.0-windows/bin/lean.exe",
+    "-o",
+    "Concrete.olean",
+    "Concrete.lean"
+  ],
+  "env": {
+    "LEAN_PATH": "<user-home>\\OneDrive\\Documents\\ChatGPT\\library\\outputs\\ohara-ingest-artifact\\evaluation\\swarm-2026-10-25\\round-1\\pattern-generalise"
+  },
+  "elapsed_ms": 2430.1717,
+  "exit_status": 0,
+  "signal": null,
+  "error": null,
+  "stdout": "List.reverse.{u} {α : Type u} (as : List α) : List α\nList.reverse_reverse.{u_1} {α : Type u_1} (as : List α) : as.reverse.reverse = as\ndef List.reverse.{u} : {α : Type u} → List α → List α :=\nfun {α} as => as.reverseAux []\ndef List.reverseAux.{u} : {α : Type u} → List α → List α → List α :=\nfun {α} x x_1 => List.brecOn (motive := fun x => List α → List α) x List.reverseAux._f x_1\ntheorem List.reverse_reverse.{u_1} : ∀ {α : Type u_1} (as : List α), as.reverse.reverse = as :=\nfun {α} as =>\n  id (Eq.mpr (id (congrArg (fun _a => _a = as) List.reverseAux_reverseAux_nil)) (Eq.refl ([].reverseAux as)))\ntheorem List.reverseAux_reverseAux_nil.{u_1} : ∀ {α : Type u_1} {as bs : List α},\n  (as.reverseAux bs).reverseAux [] = bs.reverseAux as :=\nfun {α} {as bs} =>\n  List.rec (motive := fun {as} => ∀ {bs : List α}, (as.reverseAux bs).reverseAux [] = bs.reverseAux as)\n    (fun {bs} => Eq.refl (([].reverseAux bs).reverseAux []))\n    (fun a as ih {bs} =>\n      of_eq_true\n        (Eq.trans (congrFun' (congrArg Eq fun {bs} => ih) (bs.reverseAux (a :: as)))\n          (eq_self (bs.reverseAux (a :: as)))))\n    as\ntheorem List.map_reverse.{u_1, u_2} : ∀ {α : Type u_1} {β : Type u_2} {f : α → β} {l : List α},\n  List.map f l.reverse = (List.map f l).reverse :=\nfun {α} {β} {f} {l} =>\n  List.rec (of_eq_true (Eq.trans (congr (congrArg Eq List.map_nil) (congrArg List.reverse List.map_nil)) (eq_self [])))\n    (fun head tail tail_ih =>\n      of_eq_true\n        (Eq.trans\n          (congr\n            (congrArg Eq\n              (Eq.trans (Eq.trans (congrArg (List.map f) List.reverse_cons) List.map_append)\n                (congr (congrArg HAppend.hAppend tail_ih)\n                  (Eq.trans List.map_cons (congrArg (List.cons (f head)) List.map_nil)))))\n            (Eq.trans (congrArg List.reverse List.map_cons) List.reverse_cons))\n          (eq_self ((List.map f tail).reverse ++ [f head]))))\n    l\ntheorem List.map_map.{u_1, u_2, u_3} : ∀ {β : Type u_1} {γ : Type u_2} {α : Type u_3} {g : β → γ} {f : α → β}\n  {l : List α}, List.map g (List.map f l) = List.map (g ∘ f) l :=\nfun {β} {γ} {α} {g} {f} {l} =>\n  List.rec\n    (of_eq_true\n      (Eq.trans (congr (congrArg Eq (Eq.trans (congrArg (List.map g) List.map_nil) List.map_nil)) List.map_nil)\n        (eq_self [])))\n    (fun head tail tail_ih =>\n      of_eq_true\n        (Eq.trans\n          (congr\n            (congrArg Eq\n              (Eq.trans (Eq.trans (congrArg (List.map g) List.map_cons) List.map_cons)\n                (congrArg (List.cons (g (f head))) tail_ih)))\n            List.map_cons)\n          (eq_self (g (f head) :: List.map (g ∘ f) tail))))\n    l\n'List.reverse_reverse' depends on axioms: [propext]\n'OharaPattern.reverse_involutive' depends on axioms: [propext]\n'OharaPattern.map_not_involutive' depends on axioms: [propext]\n'OharaPattern.reverse_map_not_involutive' depends on axioms: [propext]\n",
+  "stderr": "",
+  "expected_exit_status": 0
+}

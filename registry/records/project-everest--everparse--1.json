@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "id": "project-everest/everparse",
+  "record_version": 1,
+  "kind": "project",
+  "title": "EverParse",
+  "summary": "EverParse contains formal parser specifications and Pulse validators in LowParse. The selected dependent-length unit composes a header parser with a payload parser sized by the parsed header.",
+  "tags": [
+    "formal-parsing",
+    "parser-combinators",
+    "F*",
+    "Pulse"
+  ],
+  "proof_system": "F* and Pulse",
+  "source": {
+    "repository": "https://github.com/project-everest/everparse",
+    "revision": "0d740eace6c18c383c0a9b276c49e089e77bd59c",
+    "path": "README.md",
+    "symbol": null,
+    "statement": null
+  },
+  "assumptions": [],
+  "limitations": [],
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/project-everest/everparse/blob/0d740eace6c18c383c0a9b276c49e089e77bd59c/LICENSE",
+    "attribution": "See the repository root LICENSE, which applies Apache License 2.0."
+  },
+  "owners": [
+    "project-everest"
+  ],
+  "project": "project-everest/everparse",
+  "updated": "2026-10-28",
+  "reuse": "In a provisioned checkout, run `make lowparse`. The lowparse target is defined in the root Makefile; deps.Makefile provisions F*, Z3, KaRaMeL and Opam dependencies.",
+  "project_details": {
+    "status": "active",
+    "issues": "https://github.com/project-everest/everparse/issues",
+    "contributing": "https://github.com/project-everest/everparse/issues",
+    "opportunities": [],
+    "contents": [
+      "lib/everparse/lowparse",
+      "lib/everparse/3d",
+      "lib/everparse/cbor",
+      "lib/everparse/cddl",
+      "src/ASN1"
+    ],
+    "documentation": "https://github.com/project-everest/everparse/blob/0d740eace6c18c383c0a9b276c49e089e77bd59c/README.md",
+    "setup": "Run `make lowparse` in a provisioned checkout with the repository's F* and Z3 dependencies. The pinned CI command uses Z3 5.3.0; deps.Makefile describes the dependency setup."
+  }
+}
