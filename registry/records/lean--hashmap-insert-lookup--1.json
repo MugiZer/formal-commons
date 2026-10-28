@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "lean/hashmap-insert-lookup",
+  "record_version": 1,
+  "kind": "theorem",
+  "title": "HashMap insert and optional lookup",
+  "summary": "Insert a value into Lean's Std.HashMap and retrieve it at an equivalent key; lookups at other keys retain their previous result.",
+  "tags": [
+    "hashmap",
+    "insert",
+    "lookup",
+    "data structures"
+  ],
+  "proof_system": "Lean 4.35.0",
+  "source": {
+    "repository": "https://github.com/leanprover/lean4",
+    "revision": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+    "path": "src/Std/Data/HashMap/Lemmas.lean",
+    "symbol": "Std.HashMap.getElem?_insert",
+    "statement": "{α : Type u} {β : Type v} [BEq α] [Hashable α] {m : Std.HashMap α β} [EquivBEq α] [LawfulHashable α] {k a : α} {v : β} : (m.insert k v)[a]? = if k == a then some v else m[a]?"
+  },
+  "assumptions": [
+    "BEq α defines an equivalence relation (EquivBEq α).",
+    "Hashable α respects that equivalence (LawfulHashable α).",
+    "The map is Std.HashMap, whose underlying DHashMap bundles its well-formedness invariant."
+  ],
+  "limitations": [],
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/leanprover/lean4/blob/eb6cafb7290e8bd5f2937522d8d804f58f02bafc/LICENSE",
+    "attribution": "Copyright (c) 2024 Lean FRO, LLC. Original HashMap definitions and theorem by Markus Himmel. Lean 4 contributors. The separately named OharaHashMap.lookup_insert wrapper was added locally for this intake pilot."
+  },
+  "owners": [
+    "leanprover"
+  ],
+  "project": "lean/core",
+  "updated": "2026-10-28",
+  "reuse": "Use leanprover/lean4:v4.35.0 at commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc. Import Std.Data.HashMap.Lemmas and apply Std.HashMap.getElem?_insert. The accompanying local HashMapInsert.lean package re-exports the same contract as OharaHashMap.lookup_insert; Consumer.lean demonstrates insertion, replacement and an unchanged lookup."
+}

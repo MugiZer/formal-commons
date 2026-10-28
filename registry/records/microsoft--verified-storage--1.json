@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "microsoft/verified-storage",
+  "record_version": 1,
+  "kind": "project",
+  "title": "Microsoft verified-storage",
+  "summary": "A repository containing CapybaraKV, a persistent-memory key-value store with Verus specifications and proofs for list operations, journaled state updates, and recovery.",
+  "tags": [
+    "formal-verification",
+    "persistent-storage",
+    "crash-consistency",
+    "verus",
+    "key-value-store"
+  ],
+  "proof_system": "Verus",
+  "source": {
+    "repository": "https://github.com/microsoft/verified-storage",
+    "revision": "41cab95051229ebd457b4eed7fc111e3e7c9099c",
+    "path": "capybaraKV/README.md",
+    "symbol": "CapybaraKV",
+    "statement": "This directory contains the current version of the verified key-value store called CapybaraKV."
+  },
+  "assumptions": [],
+  "limitations": [],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/microsoft/verified-storage/blob/41cab95051229ebd457b4eed7fc111e3e7c9099c/LICENSE.txt",
+    "attribution": "Microsoft Corporation"
+  },
+  "owners": [
+    "microsoft"
+  ],
+  "project": "microsoft/verified-storage",
+  "updated": "2026-10-28",
+  "reuse": "Install Verus compatible with the pinned vstd dependency, use the Rust nightly specified by capybaraKV/capybarakv/rust-toolchain.toml, then verify from capybaraKV/capybarakv with cargo verus verify --no-default-features on Linux/WSL without PMDK; follow the README's PMDK setup and plain cargo verus verify command on platforms with the optional PMDK dependencies.",
+  "project_details": {
+    "status": "active",
+    "issues": "https://github.com/microsoft/verified-storage/issues",
+    "contributing": "https://github.com/microsoft/verified-storage",
+    "opportunities": [],
+    "contents": [
+      "CapybaraKV verified persistent-memory key-value store; Verus verification and recovery code; persistent-memory abstractions and concurrent specifications."
+    ],
+    "documentation": "https://github.com/microsoft/verified-storage/blob/41cab95051229ebd457b4eed7fc111e3e7c9099c/capybaraKV/README.md",
+    "setup": "Install Verus; use nightly-2026-07-12; in capybaraKV/capybarakv run cargo verus verify --no-default-features when the optional PMDK dependencies are not installed. The repository pins vstd =0.0.0-2026-09-20-0158. The README describes PMDK setup for the default pmem feature."
+  }
+}

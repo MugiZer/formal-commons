@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "id": "lean/cslib",
+  "record_version": 2,
+  "kind": "project",
+  "title": "CSLib: Lean Computer Science Library",
+  "summary": "A Lean library of computer science definitions, algorithms and proofs, with modules for languages, computability, logic and probability.",
+  "tags": [
+    "computer science",
+    "formal languages",
+    "semantics",
+    "software verification"
+  ],
+  "proof_system": "Lean 4",
+  "source": {
+    "repository": "https://github.com/leanprover/cslib",
+    "revision": "6ff325e870ed89f86be10515f0e7297fa5a32845",
+    "path": "README.md",
+    "symbol": null,
+    "statement": null
+  },
+  "assumptions": [],
+  "limitations": [],
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/leanprover/cslib/blob/6ff325e870ed89f86be10515f0e7297fa5a32845/LICENSE",
+    "attribution": "CSLib contributors."
+  },
+  "owners": [
+    "leanprover",
+    "CSLib contributors"
+  ],
+  "project": "lean/cslib",
+  "updated": "2026-10-25",
+  "reuse": "Add the dependency below to lakefile.toml, then run lake update cslib. This revision uses leanprover/lean4:v4.36.0-rc1, as recorded in its lean-toolchain file.",
+  "project_details": {
+    "status": "active",
+    "issues": "https://github.com/leanprover/cslib/issues",
+    "contributing": "https://github.com/leanprover/cslib/blob/6ff325e870ed89f86be10515f0e7297fa5a32845/CONTRIBUTING.md",
+    "opportunities": [],
+    "contents": [
+      "Algorithms and computability.",
+      "Programming languages and logics.",
+      "Cryptography, probability and machine learning.",
+      "Shared foundations and Lean tactics."
+    ],
+    "documentation": "https://github.com/leanprover/cslib/tree/6ff325e870ed89f86be10515f0e7297fa5a32845/Cslib",
+    "setup": "[[require]]\nname = \"cslib\"\nscope = \"leanprover\"\nrev = \"6ff325e870ed89f86be10515f0e7297fa5a32845\""
+  }
+}

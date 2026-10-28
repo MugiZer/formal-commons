@@ -109,7 +109,6 @@
       "additionalProperties": false
     },
     "assumptions": {
-      "minItems": 1,
       "maxItems": 30,
       "type": "array",
       "items": {
@@ -120,7 +119,6 @@
       }
     },
     "limitations": {
-      "minItems": 1,
       "maxItems": 30,
       "type": "array",
       "items": {
@@ -207,6 +205,16 @@
           "format": "uri"
         },
         "opportunities": {
+          "maxItems": 30,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000,
+            "pattern": "^[^\\u0000-\\u0008\\u000b-\\u001f]*$"
+          }
+        },
+        "contents": {
           "minItems": 1,
           "maxItems": 30,
           "type": "array",
@@ -216,6 +224,17 @@
             "maxLength": 2000,
             "pattern": "^[^\\u0000-\\u0008\\u000b-\\u001f]*$"
           }
+        },
+        "documentation": {
+          "type": "string",
+          "maxLength": 500,
+          "format": "uri"
+        },
+        "setup": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000,
+          "pattern": "^[^\\u0000-\\u0008\\u000b-\\u001f]*$"
         }
       },
       "required": [

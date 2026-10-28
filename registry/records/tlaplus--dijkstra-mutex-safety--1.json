@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "tlaplus/dijkstra-mutex-safety",
+  "record_version": 1,
+  "kind": "behavioral_model",
+  "title": "Dijkstra mutual exclusion safety model",
+  "summary": "A PlusCal-derived TLA+ state-transition model for Dijkstra's mutual exclusion algorithm. The generated four-process configuration checks the invariant that no two distinct processes are simultaneously at control point cs.",
+  "tags": [
+    "tla+",
+    "behavioral-model",
+    "mutual-exclusion",
+    "pluscal",
+    "safety-invariant"
+  ],
+  "proof_system": "TLA+ with TLC",
+  "source": {
+    "repository": "https://github.com/tlaplus/Examples",
+    "revision": "0cab2b3fbfefc6d48a9f84a432f5bb5498738d46",
+    "path": "specifications/dijkstra-mutex/DijkstraMutex.toolbox/Safety-4-processors/DijkstraMutex.tla",
+    "symbol": "MutualExclusion",
+    "statement": "MutualExclusion == \\A i, j \\in Proc :\n                     (i # j) => ~ /\\ pc[i] = \"cs\"\n                                  /\\ pc[j] = \"cs\""
+  },
+  "assumptions": [
+    "Proc is the finite set of process values supplied by MC.tla (p1 through p4 in the packaged configuration).",
+    "Spec uses Init, stuttering steps over Next, and weak fairness for each P(self); fairness is part of the behavior specification, while MutualExclusion is a state invariant."
+  ],
+  "limitations": [],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/tlaplus/Examples/blob/0cab2b3fbfefc6d48a9f84a432f5bb5498738d46/LICENSE.md",
+    "attribution": "The dijkstra-mutex manifest attributes the specification to Leslie Lamport. The repository LICENSE.md names the TLA+ project and other contributors."
+  },
+  "owners": [
+    "Leslie Lamport"
+  ],
+  "project": "tlaplus/examples",
+  "updated": "2026-10-28",
+  "reuse": "Download a retained two-process or three-process model/configuration bundle. Keep DijkstraMutex.tla unchanged. With tla2tools 1.7.4 and the recorded checksum, run java -Xmx512m -cp tla2tools-1.7.4.jar tlc2.TLC -workers 1 -config MC.cfg MC.tla. Choose the finite Proc set in the generated MC model and configuration for each new instance."
+}

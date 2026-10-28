@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "lean/list-map-map",
+  "record_version": 1,
+  "kind": "theorem",
+  "title": "Fuse successive mappings over a list",
+  "summary": "Mapping f over a Lean list and then mapping g produces exactly the list obtained by mapping the composition g ∘ f once. Use the equality to combine transformation pipelines or rewrite nested list mappings.",
+  "tags": [
+    "list",
+    "mapping",
+    "composition",
+    "fusion",
+    "equality"
+  ],
+  "proof_system": "Lean 4.35.0",
+  "source": {
+    "repository": "https://github.com/leanprover/lean4",
+    "revision": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+    "path": "src/Init/Data/List/Lemmas.lean",
+    "symbol": "List.map_map",
+    "statement": "∀ {α : Type u} {β : Type v} {γ : Type w} {g : β → γ} {f : α → β} {l : List α}, List.map g (List.map f l) = List.map (g ∘ f) l"
+  },
+  "assumptions": [
+    "α, β and γ are Lean types; f : α → β and g : β → γ are pure total functions; l : List α."
+  ],
+  "limitations": [],
+  "license": {
+    "spdx": "Apache-2.0",
+    "url": "https://github.com/leanprover/lean4/blob/eb6cafb7290e8bd5f2937522d8d804f58f02bafc/LICENSE",
+    "attribution": "Lean 4 contributors. Lemmas.lean: Copyright (c) 2014 Parikshit Khanna; authors Parikshit Khanna, Jeremy Avigad, Leonardo de Moura, Floris van Doorn, Mario Carneiro, Kim Morrison."
+  },
+  "owners": [
+    "leanprover"
+  ],
+  "project": "lean/core",
+  "updated": "2026-10-28",
+  "reuse": "Use leanprover/lean4:v4.35.0 at commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc. Import Init.Data.List.Lemmas. For f : α → β, g : β → γ and xs : List α, `exact List.map_map` proves `List.map g (List.map f xs) = List.map (g ∘ f) xs`. Use the theorem as a rewrite with `rw [List.map_map]`."
+}

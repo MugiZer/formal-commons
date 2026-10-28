@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "fiat-crypto/wordbyword-addmod-validity",
+  "record_version": 1,
+  "kind": "theorem",
+  "title": "Word-by-word Montgomery addition preserves validity and modular sum",
+  "summary": "Under the pinned WordByWordMontgomery section hypotheses and valid n-limb operands, addmod returns a valid representation and its decoded value is congruent to the sum of the decoded inputs modulo m.",
+  "tags": [
+    "cryptography",
+    "modular-arithmetic",
+    "Montgomery",
+    "representation-invariant"
+  ],
+  "proof_system": "Coq",
+  "source": {
+    "repository": "https://github.com/mit-plv/fiat-crypto",
+    "revision": "1e721c6f18c43b90922e7bc57fd64848e5cff2be",
+    "path": "src/Arithmetic/WordByWordMontgomery.v",
+    "symbol": "addmod_correct",
+    "statement": "(forall a (_ : valid a) b (_ : valid b), eval (from_montgomerymod (addmod a b)) mod m = (eval (from_montgomerymod a) + eval (from_montgomerymod b)) mod m) /\\ (forall a (_ : valid a) b (_ : valid b), valid (addmod a b))."
+  },
+  "assumptions": [
+    "Section modops context: r = 2^bitwidth; (r * r') mod m = 1; (m * m') mod r = (-1) mod r; 0 < bitwidth; 1 < m; n <> 0; m < r^n. Inputs satisfy valid a and valid b, where valid x := small x /\\ 0 <= eval x < m."
+  ],
+  "limitations": [],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/mit-plv/fiat-crypto/blob/1e721c6f18c43b90922e7bc57fd64848e5cff2be/LICENSE-MIT",
+    "attribution": "Upstream repository owner: mit-plv. License expression declared in coq-fiat-crypto.opam at the pinned revision; see the three license files at the repository root."
+  },
+  "owners": [
+    "mit-plv"
+  ],
+  "project": "mit-plv/fiat-crypto",
+  "updated": "2026-10-28",
+  "reuse": "Use the paired contract shape when verifying an arithmetic operation over a bounded limb representation: state modular semantic preservation and output validity together, then discharge value preservation through the positional evaluator and range preservation through the operation's bound lemmas."
+}

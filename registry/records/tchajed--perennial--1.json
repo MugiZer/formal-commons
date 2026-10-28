@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "id": "tchajed/perennial",
+  "record_version": 1,
+  "kind": "project",
+  "title": "Perennial",
+  "summary": "A Rocq and Iris framework for verifying concurrent, crash-safe systems, including recovery procedures, with Goose as a source language and Grove for distributed-system reasoning.",
+  "tags": [
+    "formal-verification",
+    "concurrency",
+    "crash-safety",
+    "iris",
+    "rocq",
+    "goose"
+  ],
+  "proof_system": "Rocq with Iris and Goose",
+  "source": {
+    "repository": "https://github.com/tchajed/perennial",
+    "revision": "b84d676ee32389225ff13927a72383eb79d1d337",
+    "path": "README.md",
+    "symbol": "Perennial",
+    "statement": "Perennial verifies correctness of systems with concurrency and crash-safety requirements, including recovery procedures."
+  },
+  "assumptions": [],
+  "limitations": [],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/tchajed/perennial/blob/b84d676ee32389225ff13927a72383eb79d1d337/LICENSE",
+    "attribution": "Tej Chajed; repository owner and pinned commit author"
+  },
+  "owners": [
+    "tchajed"
+  ],
+  "project": "tchajed/perennial",
+  "updated": "2026-10-28",
+  "reuse": "Clone the full repository, initialize recursive submodules, install a supported Rocq release, and run make. For the selected lock developments, the relevant source files are src/goose_lang/lib/lock/lock.v and src/goose_lang/lib/lock/crash_lock.v; they depend on the surrounding Perennial, Iris, stdpp and Goose modules.",
+  "project_details": {
+    "status": "unknown",
+    "issues": "https://github.com/tchajed/perennial/issues",
+    "contributing": "https://github.com/tchajed/perennial/blob/b84d676ee32389225ff13927a72383eb79d1d337/CONTRIBUTING.md",
+    "opportunities": [],
+    "contents": [
+      "Concurrent and crash-safe program logic; Goose language and proofs; Grove distributed-system verification; verified example systems."
+    ],
+    "documentation": "https://github.com/tchajed/perennial/blob/b84d676ee32389225ff13927a72383eb79d1d337/README.md",
+    "setup": "Install Rocq, initialize submodules with git submodule update --init --recursive, then run make from the repository root. The README describes development against Rocq master and compatibility with the latest Rocq. The captured tree does not retain complete dependency pins."
+  }
+}

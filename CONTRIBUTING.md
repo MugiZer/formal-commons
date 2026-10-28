@@ -16,6 +16,16 @@ npm test
 
 If modifying a previously published artifact, add a new file with a larger record version. Keep old files unchanged. Do not add executable code to a metadata submission. Original Lean additions receive a separate trusted review and check process; fork PRs do not execute arbitrary submitted proofs.
 
+## Catalogue copy and evidence
+
+Write overviews for people choosing and using a project. Explain its purpose, contents, setup and useful upstream links. Keep exact theorem hypotheses beside the formal statement.
+
+Use Ohara in current copy. Empty assumptions, limitations and contribution-opportunity arrays are valid. Do not add generic cautions such as "a project link does not establish verification" or "we have not independently reproduced the build" to fill a section. Record check results and missing verification in Evidence, without repeating them in the overview or reuse instructions.
+
+Attribute upstream results to their source commit, actual run, selected jobs and covered targets. Keep upstream verification, Ohara checks and community reports separate. A workflow definition records a method; a completed check records its actual scope. A consumer build records that consumer's scope. Human and expert review labels require the identified review.
+
+People and agents use the same versioned catalogue data. Publish a new record version for changed facts or copy. Preserve historical files and digests.
+
 ## Maintainer publication review
 
 1. Inspect the pinned source and license. Compare the formal statement with the summary, boundary cases, hypotheses and limitations.

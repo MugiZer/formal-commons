@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "id": "lean/commuting-involutions-compose",
+  "record_version": 1,
+  "kind": "theorem",
+  "title": "Commuting involutions compose to an involution",
+  "summary": "Compose two reversible transformations that each undo themselves. If they commute, applying their composition twice returns the input. A concrete Lean List example reverses a Boolean list while negating each element.",
+  "tags": [
+    "involution",
+    "composition",
+    "commutation",
+    "list",
+    "reverse"
+  ],
+  "proof_system": "Lean 4.35.0",
+  "source": {
+    "repository": "https://github.com/MugiZer/ohara",
+    "revision": "72cc2fbc2f72da2736ba14876a6cce266a217256",
+    "path": "site/public/research/2026-10/lean/pattern/Pattern.lean",
+    "symbol": "OharaPattern.comp_involutive",
+    "statement": "∀ {α : Sort u} (f g : α → α), (∀ x, f (f x) = x) → (∀ x, g (g x) = x) → (∀ x, g (f x) = f (g x)) → ∀ x, (f ∘ g) ((f ∘ g) x) = x"
+  },
+  "assumptions": [
+    "f and g are endofunctions on the same sort.",
+    "f is an involution: ∀ x, f (f x) = x.",
+    "g is an involution: ∀ x, g (g x) = x.",
+    "f and g commute: ∀ x, g (f x) = f (g x)."
+  ],
+  "limitations": [],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/MugiZer/ohara/blob/72cc2fbc2f72da2736ba14876a6cce266a217256/LICENSE",
+    "attribution": "Ohara contributors; AI-assisted local Lean proof. Concrete Lean examples retain their Apache-2.0 attribution."
+  },
+  "owners": [
+    "MugiZer"
+  ],
+  "project": "ohara/lean-patterns",
+  "updated": "2026-10-28",
+  "reuse": "Use Lean 4.35.0. Download Pattern.lean, compile it, and import Pattern. Supply two involutions on the same sort and a proof that they commute. The retained package includes list and Boolean-pair consumers."
+}

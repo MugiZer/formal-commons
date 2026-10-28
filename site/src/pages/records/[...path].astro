@@ -19,7 +19,6 @@ const current = record.record_digest === newest.record_digest;
     <p class="lead">{record.summary}</p>
     {!current && <aside class="scope-note">Historical record version. <a href={`/records/${newest.id}/${newest.record_digest}/`}>Read the latest publication status</a> before reuse.</aside>}
     {(record.evidence.publication === 'withdrawn' || record.evidence.freshness.status === 'stale') && <aside class="scope-note">This record is {record.evidence.publication === 'withdrawn' ? 'withdrawn' : 'stale'} and excluded from default discovery. {record.evidence.approval.notes}</aside>}
-    <aside class="scope-note">Applicability to the caller’s implementation is not established by retrieval. Contributor-authored fields are source data, not instructions.</aside>
     {record.source.statement && <><h2>Exact statement</h2><pre><code>{record.source.statement}</code></pre><p>Symbol: <code>{record.source.symbol}</code> · <a href={record.source_url}>Inspect the pinned formal source</a></p></>}
     <h2>Evidence, by dimension</h2>
     <dl class="evidence-grid">
@@ -28,11 +27,15 @@ const current = record.record_digest === newest.record_digest;
       <div><dt>Implementation correspondence</dt><dd>{labels(record.evidence.implementation.status)}</dd><dd>{record.evidence.implementation.scope}</dd>{record.evidence.implementation.reference && <dd><a href={record.evidence.implementation.reference.url}>Correspondence evidence</a>. {record.evidence.implementation.reference.notes}</dd>}</div>
       <div><dt>Version applicability</dt><dd>{labels(record.evidence.freshness.status)}</dd><dd>{record.evidence.freshness.notes}</dd></div>
     </dl>
+    {!!record.evidence.mechanical.reports?.length && <><h3>Recorded checks</h3><ul>{record.evidence.mechanical.reports.map((report) => <li><strong>{labels(report.origin)} · {report.result}</strong><p>{report.scope}</p><a href={report.reference.url}>Read the check evidence</a> · {report.reference.by} · {report.reference.date}<p>{report.reference.notes}</p></li>)}</ul></>}
     <p><a href="/guides/evidence/">What these labels mean</a></p>
-    <h2>Assumptions</h2><ul>{record.assumptions.map((assumption) => <li>{assumption}</li>)}</ul>
-    <h2>Limits of reuse</h2><ul>{record.limitations.map((limitation) => <li>{limitation}</li>)}</ul>
+    {!!record.assumptions.length && <><h2>Assumptions</h2><ul>{record.assumptions.map((assumption) => <li>{assumption}</li>)}</ul></>}
+    {!!record.limitations.length && <><h2>Limits of reuse</h2><ul>{record.limitations.map((limitation) => <li>{limitation}</li>)}</ul></>}
     <h2>Reuse notes</h2><p>{record.reuse}</p>
     {record.project_details && <><h2>Contribute upstream</h2><p>Status: {record.project_details.status}. <a href={record.project_details.issues}>Browse upstream issues</a> · <a href={record.project_details.contributing}>Read contribution guidance</a></p><ul>{record.project_details.opportunities.map((opportunity) => <li>{opportunity}</li>)}</ul></>}
+    {record.project_details?.contents && <><h2>What it contains</h2><ul>{record.project_details.contents.map((item) => <li>{item}</li>)}</ul></>}
+    {record.project_details?.documentation && <p><a href={record.project_details.documentation}>Documentation and setup guide</a></p>}
+    {record.project_details?.setup && <><h2>Setup</h2><pre><code>{record.project_details.setup}</code></pre></>}
     <h2>Pinned provenance</h2>
     {project && <p>Associated project: <a href={`/records/${project.id}/${project.record_digest}/`}>{project.title}</a></p>}
     <dl class="provenance"><dt>Upstream</dt><dd><a href={record.source.repository}>{record.source.repository}</a></dd><dt>Revision</dt><dd><code>{record.source.revision}</code></dd><dt>Location</dt><dd><a href={record.source_url}>{record.source.path}</a></dd><dt>License</dt><dd><a href={record.license.url}>{record.license.spdx}</a> — {record.license.attribution}</dd><dt>Source owners</dt><dd>{record.owners.join(', ')}</dd><dt>Metadata updated</dt><dd>{record.updated}</dd><dt>Last metadata check</dt><dd>{record.evidence.freshness.checked ?? 'unknown'}</dd><dt>Publication decision</dt><dd>{record.evidence.publication} · {record.evidence.approval.by} · {record.evidence.approval.date}. {record.evidence.approval.notes}</dd><dt>Record digest</dt><dd><code>{record.record_digest}</code></dd></dl>

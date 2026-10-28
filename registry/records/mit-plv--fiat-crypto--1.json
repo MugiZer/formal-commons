@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "mit-plv/fiat-crypto",
+  "record_version": 1,
+  "kind": "project",
+  "title": "Fiat-Crypto",
+  "summary": "A Coq framework that synthesizes correct-by-construction code for cryptographic primitives, including big-integer modular arithmetic. Its proof development builds compilers for C, Rust, Zig, Go, and Bedrock2.",
+  "tags": [
+    "cryptography",
+    "modular-arithmetic",
+    "code-generation",
+    "Coq"
+  ],
+  "proof_system": "Coq 9.0+; Rocq standard library 9.1+",
+  "source": {
+    "repository": "https://github.com/mit-plv/fiat-crypto",
+    "revision": "1e721c6f18c43b90922e7bc57fd64848e5cff2be",
+    "path": "README.md",
+    "symbol": null,
+    "statement": null
+  },
+  "assumptions": [],
+  "limitations": [],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/mit-plv/fiat-crypto/blob/1e721c6f18c43b90922e7bc57fd64848e5cff2be/LICENSE-MIT",
+    "attribution": "Upstream repository owner: mit-plv. The pinned coq-fiat-crypto.opam declares MIT OR Apache-2.0 OR BSD-1-Clause; the repository root contains LICENSE-MIT, LICENSE-APACHE, and LICENSE-BSD-1."
+  },
+  "owners": [
+    "mit-plv"
+  ],
+  "project": "mit-plv/fiat-crypto",
+  "updated": "2026-10-28",
+  "reuse": "Use the pinned Coq development and its synthesis compiler to generate modular arithmetic implementations for cryptographic code. The build is repository-wide and uses its declared Coq/Rocq and opam dependencies.",
+  "project_details": {
+    "status": "active",
+    "issues": "https://github.com/mit-plv/fiat-crypto/issues",
+    "contributing": "https://github.com/mit-plv/fiat-crypto",
+    "opportunities": [],
+    "contents": [
+      "Coq arithmetic synthesis and correctness proofs",
+      "Standalone synthesis compilers and generated outputs for C, Rust, Zig, Go, and Bedrock2"
+    ],
+    "documentation": "https://github.com/mit-plv/fiat-crypto/blob/1e721c6f18c43b90922e7bc57fd64848e5cff2be/README.md",
+    "setup": "Clone the repository recursively to initialize its Git submodules. The README requires Coq 9.0 or later with Rocq standard library 9.1 or later. The opam package pins OCaml and Coq dependencies. Run `make` for the full development; `make standalone-ocaml` builds the OCaml code generator. The package build target invokes `make -j%{jobs}% EXTERNAL_DEPENDENCIES=1 SKIP_COQSCRIPTS_INCLUDE=1 coq standalone-ocaml`."
+  }
+}

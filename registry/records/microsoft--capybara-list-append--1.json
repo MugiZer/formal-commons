@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "microsoft/capybara-list-append",
+  "record_version": 1,
+  "kind": "specification",
+  "title": "CapybaraKV persistent list append",
+  "summary": "ListTable::append specifies a journaled update to a CapybaraKV persistent list under table, journal, tentative-list, and permission-factory preconditions. Its contract preserves table and journal validity; success appends the new element and bounds journal mutation to the table range, while length and logical-range rejection preserve state and capacity.",
+  "tags": [
+    "persistent-storage",
+    "journal",
+    "crash-consistency",
+    "verus",
+    "list-append",
+    "recovery"
+  ],
+  "proof_system": "Verus",
+  "source": {
+    "repository": "https://github.com/microsoft/verified-storage",
+    "revision": "41cab95051229ebd457b4eed7fc111e3e7c9099c",
+    "path": "capybaraKV/capybarakv/src/kv2/lists/append_v.rs",
+    "symbol": "ListTable::append",
+    "statement": "On the Ok(new_list_addr) result, the source postcondition is: final(self)@ == (ListTableView { tentative: Some(old(self)@.tentative.unwrap().append(list_addr, new_list_addr, new_element)), used_slots: final(self)@.used_slots, ..old(self)@ })."
+  },
+  "assumptions": [
+    "The method requires old(self).valid(old(journal)@); old(journal).valid(); old(self)@.tentative is Some; old(self)@.tentative.unwrap().m.contains_key(list_addr); perm_factory.id() == old(journal)@.powerpm_id; and old(self).perm_factory_permits_states_equivalent_for_me(old(journal)@, *perm_factory)."
+  ],
+  "limitations": [],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/microsoft/verified-storage/blob/41cab95051229ebd457b4eed7fc111e3e7c9099c/LICENSE.txt",
+    "attribution": "Microsoft Corporation"
+  },
+  "owners": [
+    "microsoft"
+  ],
+  "project": "microsoft/verified-storage",
+  "updated": "2026-10-28",
+  "reuse": "Use the exact pinned CapybaraKV source and Verus version compatible with its vstd pin. Establish the method preconditions for a valid ListTable and Journal, a present tentative list, and a permission factory matching the journal's powerpm_id; then use the success and error postconditions of ListTable::append. Its update is tied to ListTableSnapshot::append and the durable/modified append cases, with the list recovery mapping updated by ListRecoveryMapping::append. This is a source-indexed method in the CapybaraKV crate, not a standalone module."
+}

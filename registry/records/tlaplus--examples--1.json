@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "id": "tlaplus/examples",
+  "record_version": 1,
+  "kind": "project",
+  "title": "TLA+ Examples",
+  "summary": "A collection of TLA+ specifications and models covering applications in several fields. The repository serves as an example library, a corpus for TLA+ tooling development and testing, and a set of formal specification case studies.",
+  "tags": [
+    "tla+",
+    "specifications",
+    "models",
+    "model-checking"
+  ],
+  "proof_system": "TLA+",
+  "source": {
+    "repository": "https://github.com/tlaplus/Examples",
+    "revision": "0cab2b3fbfefc6d48a9f84a432f5bb5498738d46",
+    "path": "README.md",
+    "symbol": null,
+    "statement": null
+  },
+  "assumptions": [],
+  "limitations": [],
+  "license": {
+    "spdx": "MIT",
+    "url": "https://github.com/tlaplus/Examples/blob/0cab2b3fbfefc6d48a9f84a432f5bb5498738d46/LICENSE.md",
+    "attribution": "The repository license names the TLA+ project and other contributors."
+  },
+  "owners": [
+    "TLA+ project contributors"
+  ],
+  "project": "tlaplus/examples",
+  "updated": "2026-10-28",
+  "reuse": "Browse README.md to choose a specification and verification tool. Each specification directory carries a manifest; run a model with its included configuration using the tool indicated in the README or manifest.",
+  "project_details": {
+    "status": "active",
+    "issues": "https://github.com/tlaplus/Examples/issues",
+    "contributing": "https://github.com/tlaplus/Examples/blob/0cab2b3fbfefc6d48a9f84a432f5bb5498738d46/CONTRIBUTING.md",
+    "opportunities": [],
+    "contents": [
+      "TLA+ specifications",
+      "Model files and configurations",
+      "Per-specification manifests"
+    ],
+    "documentation": "https://github.com/tlaplus/Examples/blob/0cab2b3fbfefc6d48a9f84a432f5bb5498738d46/README.md",
+    "setup": "Use the README to find specifications, supported verification tools and model features. Follow the selected specification's model configuration and manifest."
+  }
+}

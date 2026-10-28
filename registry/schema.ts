@@ -2,6 +2,7 @@ import { z } from 'zod';
 
 const text = z.string().min(1).max(2000).regex(/^[^\u0000-\u0008\u000b-\u001f]*$/u);
 export const httpsUrl = z.url().max(500).refine((value) => {
+  if (!URL.canParse(value)) return false;
   const url = new URL(value);
   return url.protocol === 'https:' && !url.username && !url.password;
 }, 'Only HTTPS URLs without credentials are allowed');
@@ -26,8 +27,8 @@ export const recordSchema = z.strictObject({
     symbol: text.max(200).nullable(),
     statement: text.nullable(),
   }),
-  assumptions: list,
-  limitations: list,
+  assumptions: z.array(text).max(30),
+  limitations: z.array(text).max(30),
   license: z.strictObject({ spdx: text.max(100), url: httpsUrl, attribution: text }),
   owners: list,
   project: z.string().regex(/^[a-z0-9-]+\/[a-z0-9-]+$/),
@@ -37,7 +38,10 @@ export const recordSchema = z.strictObject({
     status: z.enum(['active', 'maintenance', 'archived', 'unknown']),
     issues: httpsUrl,
     contributing: httpsUrl,
-    opportunities: list,
+    opportunities: z.array(text).max(30),
+    contents: list.optional(),
+    documentation: httpsUrl.optional(),
+    setup: text.optional(),
   }).optional(),
 }).superRefine((record, ctx) => {
   if (record.kind === 'project' && !record.project_details) ctx.addIssue({ code: 'custom', message: 'Projects require contribution details', path: ['project_details'] });
@@ -59,6 +63,13 @@ export const decisionSchema = z.strictObject({
     source_revision: sha.nullable(),
     proof_digest: digest.nullable(),
     axioms: z.array(text).max(20).nullable(),
+    reports: z.array(z.strictObject({
+      origin: z.enum(['upstream', 'ohara', 'community']),
+      result: z.enum(['pass', 'fail', 'inconclusive']),
+      scope: text,
+      source_revision: sha,
+      reference,
+    })).max(20).optional(),
   }),
   semantic: z.strictObject({ status: z.enum(['unreviewed', 'maintainer_reviewed', 'qualified_expert_reviewed']), reference: reference.nullable(), qualification: text.nullable() }),
   implementation: z.strictObject({ status: z.enum(['none', 'claimed', 'independently_evidenced']), reference: reference.nullable(), scope: text }),

@@ -29,6 +29,7 @@ export function buildCatalogue(rawRecords: unknown[], rawDecisions: unknown, sou
     const record = records.find((r) => r.id === decision.id && r.record_version === decision.record_version);
     if (!record || hash(record) !== decision.record_digest) throw new Error(`Approval digest mismatch: ${key}`);
     if (decision.mechanical.status === 'checked_at_pinned_revision' && decision.mechanical.source_revision !== record.source.revision) throw new Error(`Check revision mismatch: ${key}`);
+    if (decision.mechanical.reports?.some((report) => report.source_revision !== record.source.revision)) throw new Error(`Report revision mismatch: ${key}`);
     if (record.kind === 'verified_component' && decision.publication === 'accepted' && decision.implementation.status !== 'independently_evidenced') throw new Error(`Verified components need an evidenced implementation: ${key}`);
     approvals.set(key, decision);
   }

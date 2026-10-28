@@ -138,5 +138,1089 @@
       "reference": null,
       "scope": "No independently evidenced correspondence to a caller implementation."
     }
+  },
+  {
+    "id": "isabelle/sel4",
+    "record_version": 2,
+    "record_digest": "a0f9b800c6020be07969cd875340700fa23e1f426127ed1528124abd25ab1830",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Source-pinned metadata and retained check evidence reviewed for publication. Semantic assessment remains unreviewed."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-25",
+      "notes": "Source metadata and upstream CI results inspected on 25 October 2026."
+    },
+    "mechanical": {
+      "status": "upstream_reported",
+      "reference": {
+        "by": "seL4/l4v",
+        "date": "2026-10-24",
+        "url": "https://github.com/seL4/l4v/actions/runs/40084305451",
+        "notes": "Passed upstream Proofs run at this source commit. Successful proof jobs include ARM, ARM_HYP, AARCH64, X64 and RISCV64, with platform-specific jobs listed in the run. MCS jobs were skipped."
+      },
+      "checker": "Isabelle/HOL via upstream l4v proof jobs",
+      "source_revision": "3ba5789a044aba2d41afe0b108649132c506f81b",
+      "proof_digest": null,
+      "axioms": null
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
+  },
+  {
+    "id": "lean/core",
+    "record_version": 2,
+    "record_digest": "56c8dba6f1c7ffbcd24561e052e8acb69188e484407f5817d688d1fba17f8b32",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Source-pinned metadata and retained check evidence reviewed for publication. Semantic assessment remains unreviewed."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-25",
+      "notes": "Source metadata and upstream CI results inspected on 25 October 2026."
+    },
+    "mechanical": {
+      "status": "upstream_reported",
+      "reference": {
+        "by": "leanprover/lean4",
+        "date": "2026-10-12",
+        "url": "https://github.com/leanprover/lean4/actions/runs/38273603295",
+        "notes": "Passed upstream CI for the v4.35.0 source commit. Build matrix, Linux release build and tests completed successfully; individual job results are available in the run."
+      },
+      "checker": "Lean 4.35.0 upstream release CI",
+      "source_revision": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+      "proof_digest": null,
+      "axioms": null
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
+  },
+  {
+    "id": "lean/cslib",
+    "record_version": 2,
+    "record_digest": "4759115e76c7774c7b20ea529552a8718215df9379404d7f1d13530a0cc0ebf0",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Source-pinned metadata and retained check evidence reviewed for publication. Semantic assessment remains unreviewed."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-25",
+      "notes": "Source metadata and upstream CI results inspected on 25 October 2026."
+    },
+    "mechanical": {
+      "status": "upstream_reported",
+      "reference": {
+        "by": "leanprover/cslib",
+        "date": "2026-10-23",
+        "url": "https://github.com/leanprover/cslib/actions/runs/40003829780",
+        "notes": "Passed Lean Action CI at this source commit. The ci-checks job ran Lean build/test checks, lake exe mk_all --check and checkInitImports."
+      },
+      "checker": "Lean 4.36.0-rc1 via leanprover/lean-action@v1",
+      "source_revision": "6ff325e870ed89f86be10515f0e7297fa5a32845",
+      "proof_digest": null,
+      "axioms": null
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
+  },
+  {
+    "id": "lean/list-mem-filter",
+    "record_version": 2,
+    "record_digest": "6893a1e94ecdcf5c6b4a6ae193f6a3bd032d776b79b5452c5aa36c622fde04bc",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Source-pinned metadata and retained check evidence reviewed for publication. Semantic assessment remains unreviewed."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-25",
+      "notes": "Source metadata and upstream CI results inspected on 25 October 2026."
+    },
+    "mechanical": {
+      "status": "upstream_reported",
+      "reference": {
+        "by": "leanprover/lean4",
+        "date": "2026-10-12",
+        "url": "https://github.com/leanprover/lean4/actions/runs/38273603295",
+        "notes": "Lean's upstream v4.35.0 core-library build and tests passed at the recorded commit. The theorem is defined in Init.Data.List.Lemmas."
+      },
+      "checker": "Lean 4.35.0 upstream release CI",
+      "source_revision": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+      "proof_digest": null,
+      "axioms": null,
+      "reports": [
+        {
+          "origin": "ohara",
+          "result": "pass",
+          "scope": "Contracts and Consumer modules built with Lean 4.35.0 using List.mem_filter; axiom inspection recorded propext for List.mem_filter, Ohara.keep_mem, Ohara.keep_origin and Consumer.selected_was_submitted.",
+          "source_revision": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+          "reference": {
+            "by": "Ohara automated Lean check",
+            "date": "2026-10-23",
+            "url": "https://github.com/MugiZer/ohara/blob/fdb7aed936ff0dfe8c986f1581db8a8ebccf74b5/evidence/lean-check-linux.json",
+            "notes": "Checker: Lean 4.35.0, x86_64-unknown-linux-gnu. Consumer package digest: 8e0738dfc2eb1167cd190ad3b7b97f778ee9c248b4f36f5c30ceddee0c07bfd9. This report records the consumer build and imported theorem's axiom inspection."
+          }
+        }
+      ]
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
+  },
+  {
+    "id": "lean/core",
+    "record_version": 3,
+    "record_digest": "db665b1200e90ad6f5d61a4d1c7e52a016bc11649b51c71042e4b3404a20ce72",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Source-pinned metadata and retained check evidence reviewed for publication. Semantic assessment remains unreviewed."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-25",
+      "notes": "Source metadata and upstream CI results inspected on 25 October 2026."
+    },
+    "mechanical": {
+      "status": "upstream_reported",
+      "reference": {
+        "by": "leanprover/lean4",
+        "date": "2026-10-12",
+        "url": "https://github.com/leanprover/lean4/actions/runs/38273603295",
+        "notes": "Passed upstream CI for the v4.35.0 source commit. Build matrix, Linux release build and tests completed successfully; individual job results are available in the run."
+      },
+      "checker": "Lean 4.35.0 upstream release CI",
+      "source_revision": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+      "proof_digest": null,
+      "axioms": null
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
+  },
+  {
+    "id": "lean/list-map-map",
+    "record_version": 1,
+    "record_digest": "45eac37a7c6ef3a9583d1eb625d15ab1e327712f81c625d192574e175f782e09",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Accepted as a source-pinned index with the recorded evidence scope. No human semantic review is asserted."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-28",
+      "notes": "Pinned retained sources and check artifacts reviewed for this publication."
+    },
+    "mechanical": {
+      "status": "upstream_reported",
+      "reference": {
+        "by": "Lean upstream Windows release build",
+        "date": "2026-10-12",
+        "url": "https://github.com/leanprover/lean4/actions/runs/38273603295/job/114894001179",
+        "notes": "The retained job excerpt identifies the exact source commit, Init.Data.List.Lemmas and Std.Data.HashMap.Lemmas builds, and 4,220 passing tests."
+      },
+      "checker": "Lean 4.35.0",
+      "source_revision": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+      "proof_digest": null,
+      "axioms": null,
+      "reports": [
+        {
+          "origin": "ohara",
+          "result": "pass",
+          "scope": "Local Lean consumer passed; upstream module build passed.",
+          "source_revision": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+          "reference": {
+            "by": "Ohara retained evidence review",
+            "date": "2026-10-28",
+            "url": "https://ohara.mugizer.workers.dev/research/2026-10/lean/map/check.json",
+            "notes": "Local Lean consumer passed; upstream module build passed."
+          }
+        }
+      ]
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
+  },
+  {
+    "id": "lean/list-filter-fusion",
+    "record_version": 1,
+    "record_digest": "a137b5a721fb12fe7545c572a0278e5b6fc802c3227783498e7a1174a4a7de19",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Accepted as a source-pinned index with the recorded evidence scope. No human semantic review is asserted."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-28",
+      "notes": "Pinned retained sources and check artifacts reviewed for this publication."
+    },
+    "mechanical": {
+      "status": "upstream_reported",
+      "reference": {
+        "by": "Lean upstream Windows release build",
+        "date": "2026-10-12",
+        "url": "https://github.com/leanprover/lean4/actions/runs/38273603295/job/114894001179",
+        "notes": "The retained job excerpt identifies the exact source commit, Init.Data.List.Lemmas and Std.Data.HashMap.Lemmas builds, and 4,220 passing tests."
+      },
+      "checker": "Lean 4.35.0",
+      "source_revision": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+      "proof_digest": null,
+      "axioms": null,
+      "reports": [
+        {
+          "origin": "ohara",
+          "result": "pass",
+          "scope": "Fresh Lean consumer passed; version probe corrected separately.",
+          "source_revision": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+          "reference": {
+            "by": "Ohara retained evidence review",
+            "date": "2026-10-28",
+            "url": "https://ohara.mugizer.workers.dev/research/2026-10/lean/filter/check.json",
+            "notes": "Fresh Lean consumer passed; version probe corrected separately."
+          }
+        }
+      ]
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
+  },
+  {
+    "id": "lean/hashmap-insert-lookup",
+    "record_version": 1,
+    "record_digest": "b03c7f6eb1fb2349db1f0db599272c3dd133a07e025ae9df87e64044bd3ec75c",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Accepted as a source-pinned index with the recorded evidence scope. No human semantic review is asserted."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-28",
+      "notes": "Pinned retained sources and check artifacts reviewed for this publication."
+    },
+    "mechanical": {
+      "status": "upstream_reported",
+      "reference": {
+        "by": "Lean upstream Windows release build",
+        "date": "2026-10-12",
+        "url": "https://github.com/leanprover/lean4/actions/runs/38273603295/job/114894001179",
+        "notes": "The retained job excerpt identifies the exact source commit, Init.Data.List.Lemmas and Std.Data.HashMap.Lemmas builds, and 4,220 passing tests."
+      },
+      "checker": "Lean 4.35.0",
+      "source_revision": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+      "proof_digest": null,
+      "axioms": null,
+      "reports": [
+        {
+          "origin": "ohara",
+          "result": "pass",
+          "scope": "Upstream theorem and local wrapper/consumer checks passed.",
+          "source_revision": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+          "reference": {
+            "by": "Ohara retained evidence review",
+            "date": "2026-10-28",
+            "url": "https://ohara.mugizer.workers.dev/research/2026-10/lean/hashmap/check.json",
+            "notes": "Upstream theorem and local wrapper/consumer checks passed."
+          }
+        }
+      ]
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
+  },
+  {
+    "id": "cedar-policy/sound-policy-slice",
+    "record_version": 1,
+    "record_digest": "38ab9a44246ef0a722bdd405bda9f89c99c0bd4502cc1edc9767ca4f10c21d36",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Accepted as a source-pinned index with the recorded evidence scope. No human semantic review is asserted."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-28",
+      "notes": "Pinned retained sources and check artifacts reviewed for this publication."
+    },
+    "mechanical": {
+      "status": "upstream_reported",
+      "reference": {
+        "by": "Cedar upstream Lean module build",
+        "date": "2026-10-23",
+        "url": "https://github.com/cedar-policy/cedar-spec/actions/runs/40010447089/job/120609148419",
+        "notes": "Successful upstream compilation explicitly names Cedar.Thm.PolicySlice, Cedar.Thm.Authorization.PolicySlice and Cedar.Slice.PolicySlice."
+      },
+      "checker": "Lean compilation via the pinned Cedar build",
+      "source_revision": "301bdd22df134786a8a1312e24138afcd3f8bffe",
+      "proof_digest": null,
+      "axioms": null,
+      "reports": [
+        {
+          "origin": "upstream",
+          "result": "pass",
+          "scope": "Upstream compilation at exact SHA covers the selected policy-slicing modules.",
+          "source_revision": "301bdd22df134786a8a1312e24138afcd3f8bffe",
+          "reference": {
+            "by": "Ohara retained evidence review",
+            "date": "2026-10-28",
+            "url": "https://ohara.mugizer.workers.dev/research/2026-10/cedar/patterns.json",
+            "notes": "Upstream compilation at exact SHA covers the selected policy-slicing modules."
+          }
+        }
+      ]
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
+  },
+  {
+    "id": "fiat-crypto/wordbyword-addmod-validity",
+    "record_version": 1,
+    "record_digest": "abe3f756cf8c2df91510efd15ee9cc15cac856215c00fa9842df306fae749d56",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Accepted as a source-pinned index with the recorded evidence scope. No human semantic review is asserted."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-28",
+      "notes": "Pinned retained sources and check artifacts reviewed for this publication."
+    },
+    "mechanical": {
+      "status": "not_checked_by_us",
+      "reference": null,
+      "checker": null,
+      "source_revision": null,
+      "proof_digest": null,
+      "axioms": null,
+      "reports": [
+        {
+          "origin": "upstream",
+          "result": "inconclusive",
+          "scope": "Matching CI build step summaries; selected job log unavailable, target/configuration coverage inconclusive.",
+          "source_revision": "1e721c6f18c43b90922e7bc57fd64848e5cff2be",
+          "reference": {
+            "by": "Ohara retained evidence review",
+            "date": "2026-10-28",
+            "url": "https://ohara.mugizer.workers.dev/research/2026-10/fiat-crypto/patterns.json",
+            "notes": "Matching CI build step summaries; selected job log unavailable, target/configuration coverage inconclusive."
+          }
+        }
+      ]
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
+  },
+  {
+    "id": "fiat-crypto/carry-mulmod-congruence",
+    "record_version": 1,
+    "record_digest": "e2825d9712e6622a83592f4725454d849ff63371cfa809498138eaa69f7ab376",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Accepted as a source-pinned index with the recorded evidence scope. No human semantic review is asserted."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-28",
+      "notes": "Pinned retained sources and check artifacts reviewed for this publication."
+    },
+    "mechanical": {
+      "status": "not_checked_by_us",
+      "reference": null,
+      "checker": null,
+      "source_revision": null,
+      "proof_digest": null,
+      "axioms": null,
+      "reports": [
+        {
+          "origin": "upstream",
+          "result": "inconclusive",
+          "scope": "Matching CI build step summaries; selected job log unavailable, target/configuration coverage inconclusive.",
+          "source_revision": "1e721c6f18c43b90922e7bc57fd64848e5cff2be",
+          "reference": {
+            "by": "Ohara retained evidence review",
+            "date": "2026-10-28",
+            "url": "https://ohara.mugizer.workers.dev/research/2026-10/fiat-crypto/patterns.json",
+            "notes": "Matching CI build step summaries; selected job log unavailable, target/configuration coverage inconclusive."
+          }
+        }
+      ]
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
+  },
+  {
+    "id": "microsoft/capybara-list-append",
+    "record_version": 1,
+    "record_digest": "e0a321d058dc98aced7d4966f342e5bea86bacaf0b0e9f07dcd6ac7502841a13",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Accepted as a source-pinned index with the recorded evidence scope. No human semantic review is asserted."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-28",
+      "notes": "Pinned retained sources and check artifacts reviewed for this publication."
+    },
+    "mechanical": {
+      "status": "not_checked_by_us",
+      "reference": null,
+      "checker": null,
+      "source_revision": null,
+      "proof_digest": null,
+      "axioms": null,
+      "reports": [
+        {
+          "origin": "upstream",
+          "result": "inconclusive",
+          "scope": "Matching CodeQL analysis succeeded; no selected Verus check is established.",
+          "source_revision": "41cab95051229ebd457b4eed7fc111e3e7c9099c",
+          "reference": {
+            "by": "Ohara retained evidence review",
+            "date": "2026-10-28",
+            "url": "https://ohara.mugizer.workers.dev/research/2026-10/storage/patterns.json",
+            "notes": "Matching CodeQL analysis succeeded; no selected Verus check is established."
+          }
+        }
+      ]
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
+  },
+  {
+    "id": "tchajed/perennial-mutex-ownership",
+    "record_version": 1,
+    "record_digest": "1e6f60cd1f0d26271c9dde5b1034fbf3b7cedd077c0f5557bad9af7c6d9cafc4",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Accepted as a source-pinned index with the recorded evidence scope. No human semantic review is asserted."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-28",
+      "notes": "Pinned retained sources and check artifacts reviewed for this publication."
+    },
+    "mechanical": {
+      "status": "not_checked_by_us",
+      "reference": null,
+      "checker": null,
+      "source_revision": null,
+      "proof_digest": null,
+      "axioms": null,
+      "reports": [
+        {
+          "origin": "upstream",
+          "result": "inconclusive",
+          "scope": "Both build jobs succeeded in an overall failed run; empty step arrays and missing logs leave theorem coverage inconclusive.",
+          "source_revision": "b84d676ee32389225ff13927a72383eb79d1d337",
+          "reference": {
+            "by": "Ohara retained evidence review",
+            "date": "2026-10-28",
+            "url": "https://ohara.mugizer.workers.dev/research/2026-10/perennial/patterns.json",
+            "notes": "Both build jobs succeeded in an overall failed run; empty step arrays and missing logs leave theorem coverage inconclusive."
+          }
+        }
+      ]
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
+  },
+  {
+    "id": "tchajed/perennial-crash-critical-section",
+    "record_version": 1,
+    "record_digest": "118e9930b558a724d1aabcd72e18c70caef64c94c84b82ecf9b4fae5c2aba941",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Accepted as a source-pinned index with the recorded evidence scope. No human semantic review is asserted."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-28",
+      "notes": "Pinned retained sources and check artifacts reviewed for this publication."
+    },
+    "mechanical": {
+      "status": "not_checked_by_us",
+      "reference": null,
+      "checker": null,
+      "source_revision": null,
+      "proof_digest": null,
+      "axioms": null,
+      "reports": [
+        {
+          "origin": "upstream",
+          "result": "inconclusive",
+          "scope": "Both build jobs succeeded in an overall failed run; empty step arrays and missing logs leave theorem coverage inconclusive.",
+          "source_revision": "b84d676ee32389225ff13927a72383eb79d1d337",
+          "reference": {
+            "by": "Ohara retained evidence review",
+            "date": "2026-10-28",
+            "url": "https://ohara.mugizer.workers.dev/research/2026-10/perennial/patterns.json",
+            "notes": "Both build jobs succeeded in an overall failed run; empty step arrays and missing logs leave theorem coverage inconclusive."
+          }
+        }
+      ]
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
+  },
+  {
+    "id": "project-everest/lowparse-dependent-length",
+    "record_version": 1,
+    "record_digest": "d3b1da1639f7510ae11b6037dff5cb604b165618fe690b1d349aea1626f35de5",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Accepted as a source-pinned index with the recorded evidence scope. No human semantic review is asserted."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-28",
+      "notes": "Pinned retained sources and check artifacts reviewed for this publication."
+    },
+    "mechanical": {
+      "status": "upstream_reported",
+      "reference": {
+        "by": "EverParse upstream test-lowparse verification",
+        "date": "2026-10-25",
+        "url": "https://github.com/project-everest/everparse/actions/runs/40171202516/job/121102226785",
+        "notes": "Selected Spec.DepLen and PulseParse.DepLen modules verified with all VCs discharged. The separate admitted build remains compilation-only. Exact F* revision is not recorded."
+      },
+      "checker": "F* verification in the upstream test-lowparse job",
+      "source_revision": "0d740eace6c18c383c0a9b276c49e089e77bd59c",
+      "proof_digest": null,
+      "axioms": null,
+      "reports": [
+        {
+          "origin": "upstream",
+          "result": "pass",
+          "scope": "Upstream non-admitted F* check discharged the selected LowParse module obligations; separate admitted build retained as compilation-only.",
+          "source_revision": "0d740eace6c18c383c0a9b276c49e089e77bd59c",
+          "reference": {
+            "by": "Ohara retained evidence review",
+            "date": "2026-10-28",
+            "url": "https://ohara.mugizer.workers.dev/research/2026-10/everparse/patterns.json",
+            "notes": "Upstream non-admitted F* check discharged the selected LowParse module obligations; separate admitted build retained as compilation-only."
+          }
+        }
+      ]
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
+  },
+  {
+    "id": "tlaplus/dijkstra-mutex-safety",
+    "record_version": 1,
+    "record_digest": "8bc153e7e712c66a74b4fe495400f7fe0c42162b331dfaf703d9365083fb0fbc",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Accepted as a source-pinned index with the recorded evidence scope. No human semantic review is asserted."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-28",
+      "notes": "Pinned retained sources and check artifacts reviewed for this publication."
+    },
+    "mechanical": {
+      "status": "not_checked_by_us",
+      "reference": null,
+      "checker": null,
+      "source_revision": null,
+      "proof_digest": null,
+      "axioms": null,
+      "reports": [
+        {
+          "origin": "ohara",
+          "result": "pass",
+          "scope": "Local complete two-process and independent three-process finite safety checks. Current four-process CI smoke exploration is incomplete; historical output remains unmatched.",
+          "source_revision": "0cab2b3fbfefc6d48a9f84a432f5bb5498738d46",
+          "reference": {
+            "by": "Ohara retained evidence review",
+            "date": "2026-10-28",
+            "url": "https://ohara.mugizer.workers.dev/research/2026-10/tla/three-process/check.json",
+            "notes": "Local complete two-process and independent three-process finite safety checks. Current four-process CI smoke exploration is incomplete; historical output remains unmatched."
+          }
+        }
+      ]
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
+  },
+  {
+    "id": "lean/commuting-involutions-compose",
+    "record_version": 1,
+    "record_digest": "f2670e226054969b30addd2d7211288ac6de8de4da1e8057b865b8eb1cad4431",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Accepted as a source-pinned index with the recorded evidence scope. No human semantic review is asserted."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-28",
+      "notes": "Pinned retained sources and check artifacts reviewed for this publication."
+    },
+    "mechanical": {
+      "status": "checked_at_pinned_revision",
+      "reference": {
+        "by": "Ohara retained evidence review",
+        "date": "2026-10-25",
+        "url": "https://ohara.mugizer.workers.dev/research/2026-10/lean/pattern/logs/Pattern.json",
+        "notes": "Retained successful local proof check and axiom inspection. The five published source files match the original package digests. Publication reuses that check without another compiler run."
+      },
+      "checker": "Lean 4.35.0, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+      "source_revision": "72cc2fbc2f72da2736ba14876a6cce266a217256",
+      "proof_digest": "e5e77099cf9a19ba4245bcb67d1ff0cc61ab76cb60882c5bdd85aaba8fafecf6",
+      "axioms": [],
+      "reports": [
+        {
+          "origin": "ohara",
+          "result": "pass",
+          "scope": "Retained Lean 4.35.0 proof check passed for the unchanged published source bytes. comp_involutive has no axiom dependencies; the list instance uses propext.",
+          "source_revision": "72cc2fbc2f72da2736ba14876a6cce266a217256",
+          "reference": {
+            "by": "Ohara retained evidence review",
+            "date": "2026-10-28",
+            "url": "https://ohara.mugizer.workers.dev/research/2026-10/lean/pattern/logs/Pattern.json",
+            "notes": "Retained Lean 4.35.0 proof check passed for the unchanged published source bytes. comp_involutive has no axiom dependencies; the list instance uses propext."
+          }
+        }
+      ]
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
+  },
+  {
+    "id": "ohara/lean-patterns",
+    "record_version": 1,
+    "record_digest": "fd7a8d2d217ea684b66a8c7d22d0493fd26de094ed03906cd18604b93645e064",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Accepted as a source-pinned index with the recorded evidence scope. No human semantic review is asserted."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-28",
+      "notes": "Pinned retained sources and check artifacts reviewed for this publication."
+    },
+    "mechanical": {
+      "status": "not_checked_by_us",
+      "reference": null,
+      "checker": null,
+      "source_revision": null,
+      "proof_digest": null,
+      "axioms": null,
+      "reports": []
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
+  },
+  {
+    "id": "cedar-policy/cedar-spec",
+    "record_version": 1,
+    "record_digest": "0abb88df50a6318662b0a7b0a86d0feb05e98a36364667b7c0a64d36ecc5f2f7",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Accepted as a source-pinned index with the recorded evidence scope. No human semantic review is asserted."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-28",
+      "notes": "Pinned retained sources and check artifacts reviewed for this publication."
+    },
+    "mechanical": {
+      "status": "not_checked_by_us",
+      "reference": null,
+      "checker": null,
+      "source_revision": null,
+      "proof_digest": null,
+      "axioms": null,
+      "reports": []
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
+  },
+  {
+    "id": "mit-plv/fiat-crypto",
+    "record_version": 1,
+    "record_digest": "855aae214073deab4d5799e86b4931558d202cad4b448601b76f466871671d29",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Accepted as a source-pinned index with the recorded evidence scope. No human semantic review is asserted."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-28",
+      "notes": "Pinned retained sources and check artifacts reviewed for this publication."
+    },
+    "mechanical": {
+      "status": "not_checked_by_us",
+      "reference": null,
+      "checker": null,
+      "source_revision": null,
+      "proof_digest": null,
+      "axioms": null,
+      "reports": []
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
+  },
+  {
+    "id": "microsoft/verified-storage",
+    "record_version": 1,
+    "record_digest": "996d83a73589b28ebe7e15670975193b4bff5dd545025b3b4cdec82ac3126ff5",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Accepted as a source-pinned index with the recorded evidence scope. No human semantic review is asserted."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-28",
+      "notes": "Pinned retained sources and check artifacts reviewed for this publication."
+    },
+    "mechanical": {
+      "status": "not_checked_by_us",
+      "reference": null,
+      "checker": null,
+      "source_revision": null,
+      "proof_digest": null,
+      "axioms": null,
+      "reports": []
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
+  },
+  {
+    "id": "tchajed/perennial",
+    "record_version": 1,
+    "record_digest": "231daf924c602925358f3ce04e219d3196466b07fb529de1e1f0e4a90740ed5c",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Accepted as a source-pinned index with the recorded evidence scope. No human semantic review is asserted."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-28",
+      "notes": "Pinned retained sources and check artifacts reviewed for this publication."
+    },
+    "mechanical": {
+      "status": "not_checked_by_us",
+      "reference": null,
+      "checker": null,
+      "source_revision": null,
+      "proof_digest": null,
+      "axioms": null,
+      "reports": []
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
+  },
+  {
+    "id": "project-everest/everparse",
+    "record_version": 1,
+    "record_digest": "b62614f0aa3934d71512834741cb46c0d0c2c0fa7ec7ed9ec7b8002718cfc134",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Accepted as a source-pinned index with the recorded evidence scope. No human semantic review is asserted."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-28",
+      "notes": "Pinned retained sources and check artifacts reviewed for this publication."
+    },
+    "mechanical": {
+      "status": "not_checked_by_us",
+      "reference": null,
+      "checker": null,
+      "source_revision": null,
+      "proof_digest": null,
+      "axioms": null,
+      "reports": []
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
+  },
+  {
+    "id": "tlaplus/examples",
+    "record_version": 1,
+    "record_digest": "d39aaa1fe12391ac3164618fe82136b1373b89cc254fc85229069923b9a73edc",
+    "publication": "accepted",
+    "approval": {
+      "by": "Codex automated curation, user-authorized",
+      "date": "2026-10-28",
+      "url": "https://github.com/MugiZer/ohara/pull/3",
+      "notes": "Accepted as a source-pinned index with the recorded evidence scope. No human semantic review is asserted."
+    },
+    "freshness": {
+      "status": "pinned",
+      "checked": "2026-10-28",
+      "notes": "Pinned retained sources and check artifacts reviewed for this publication."
+    },
+    "mechanical": {
+      "status": "not_checked_by_us",
+      "reference": null,
+      "checker": null,
+      "source_revision": null,
+      "proof_digest": null,
+      "axioms": null,
+      "reports": []
+    },
+    "semantic": {
+      "status": "unreviewed",
+      "reference": null,
+      "qualification": null
+    },
+    "implementation": {
+      "status": "none",
+      "reference": null,
+      "scope": "Target implementation: not recorded."
+    }
   }
 ]
