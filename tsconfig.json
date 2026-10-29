@@ -9,7 +9,9 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "noEmit": true,
+    "jsx": "react-jsx",
+    "paths": { "@/*": ["./site/src/*"] },
     "types": ["node"]
   },
-  "include": ["registry/**/*.ts", "scripts/**/*.ts", "mcp/**/*.ts", "tests/**/*.ts"]
+  "include": ["registry/**/*.ts", "scripts/**/*.ts", "mcp/**/*.ts", "community/**/*.ts", "site/src/**/*.tsx", "site/src/lib/**/*.ts", "tests/**/*.ts"]
 }

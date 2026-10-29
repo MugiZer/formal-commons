@@ -5,7 +5,7 @@
   "compatibility_date": "2026-10-23",
   "compatibility_flags": ["nodejs_compat"],
   "workers_dev": true,
-  "assets": { "directory": "site/dist", "binding": "ASSETS", "run_worker_first": ["/mcp", "/health", "/registry.json"] },
+  "assets": { "directory": "site/dist", "binding": "ASSETS", "not_found_handling": "404-page", "run_worker_first": ["/mcp", "/health", "/registry.json", "/api/*", "/contributions/*", "/people/*"] },
   "ratelimits": [{ "name": "SEARCH_LIMITER", "namespace_id": "1001", "simple": { "limit": 60, "period": 60 } }],
   "observability": { "enabled": true, "head_sampling_rate": 0.1 }
 }
