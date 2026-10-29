@@ -1,0 +1,28 @@
+---
+import '@fontsource/source-sans-pro/400.css';
+import '@fontsource/source-sans-pro/600.css';
+import '@fontsource/source-sans-pro/700.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
+import '../styles/app.css';
+import App from '../components/app';
+import snapshot from '../../../generated/catalogue.json';
+const {title='Catalogue',record,docTitle} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Formal statements and verification projects with pinned sources, assumptions and review evidence."/>
+    <title>{title} · Ohara</title>
+    <script is:inline>
+      try {
+        const mode=localStorage.getItem('ohara.theme')||'system';
+        document.documentElement.classList.toggle('dark',mode==='dark'||(mode==='system'&&matchMedia('(prefers-color-scheme: dark)').matches));
+        matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{if((localStorage.getItem('ohara.theme')||'system')==='system')document.documentElement.classList.toggle('dark',matchMedia('(prefers-color-scheme: dark)').matches);});
+      } catch {}
+    </script>
+  </head>
+  <body><App snapshot={snapshot} route={Astro.url.pathname} record={record} docTitle={docTitle} client:load><slot/></App><noscript><p class="notice">Interactive account and filtering controls require JavaScript. <a href="/registry.json">Read the published catalogue as JSON</a>.</p></noscript></body>
+</html>

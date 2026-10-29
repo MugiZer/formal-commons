@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=24.11.0" },
+  "engines": {
+    "node": ">=24.11.0"
+  },
   "scripts": {
     "registry:build": "tsx scripts/build-registry.ts",
     "schema": "tsx scripts/schema.ts",
@@ -19,20 +21,37 @@
     "smoke": "tsx scripts/smoke.ts"
   },
   "dependencies": {
-    "@astrojs/starlight": "0.42.7",
+    "@astrojs/mdx": "8.1.1",
+    "@astrojs/react": "7.1.1",
+    "@fontsource/ibm-plex-mono": "5.3.0",
+    "@fontsource/source-sans-pro": "5.3.0",
     "@modelcontextprotocol/sdk": "1.32.1",
     "@modelcontextprotocol/server": "2.3.1",
+    "@primer/octicons-react": "19.42.0",
+    "@tailwindcss/vite": "4.3.3",
     "agents": "0.30.1",
     "astro": "7.4.2",
+    "better-auth": "1.7.12",
+    "class-variance-authority": "0.7.1",
+    "cn": "0.5.0",
+    "radix-ui": "1.8.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "tailwindcss": "4.3.3",
     "zod": "4.6.7"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "5.20261025.1",
     "@types/node": "24.10.1",
     "tsx": "4.23.15",
     "typescript": "6.0.3",
-    "wrangler": "4.152.0"
+    "wrangler": "4.152.0",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0"
   },
   "overrides": {
-    "miniflare": { "undici": "7.30.1" }
+    "miniflare": {
+      "undici": "7.30.1"
+    }
   }
 }

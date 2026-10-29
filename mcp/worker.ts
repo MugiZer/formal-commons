@@ -1,3 +1,4 @@
+// Initialize the shared Zod entry before the MCP SDK's eager schemas.
 import { createMcpHandler } from 'agents/mcp/server';
 import { catalogue, createServer } from './server.ts';
 
@@ -10,9 +11,20 @@ const jsonError = (code: string, status: number) => Response.json({ error: { cod
 
 export async function handleRequest(request: Request, env: Env, context: Parameters<typeof mcp>[2]) {
   const url = new URL(request.url);
+  if (url.pathname.startsWith('/api/')) {
+    if (url.pathname === '/api/config' && request.method === 'GET')
+      return Response.json({ github: false, local: false, available: false });
+    return Response.json({ error: 'Community storage is not configured on this deployment.' }, { status: 503 });
+  }
   if (url.pathname === '/health') return Response.json({ status: 'ok', snapshot_id: catalogue.snapshot_id, source_commit: catalogue.source_commit, records: catalogue.records.length });
   if (url.pathname === '/registry.json') return Response.json(catalogue, { headers: { 'Cache-Control': 'public, max-age=60', ETag: `"${catalogue.snapshot_id}"` } });
-  if (url.pathname !== '/mcp') return env.ASSETS.fetch(request);
+  if (url.pathname !== '/mcp') {
+    // Dynamic community identities share the static application shell.
+    if (/^\/(contributions|people)\/[\w-]+\/?$/.test(url.pathname) && !url.pathname.startsWith('/contributions/new')) {
+      return env.ASSETS.fetch(new Request(new URL('/community/',url),request));
+    }
+    return env.ASSETS.fetch(request);
+  }
   if (!['POST', 'OPTIONS'].includes(request.method)) return jsonError('METHOD_NOT_ALLOWED', 405);
   const allowed = await env.SEARCH_LIMITER.limit({ key: request.headers.get('CF-Connecting-IP') ?? 'local' });
   if (!allowed.success) return Response.json({ error: { code: 'RATE_LIMITED' } }, { status: 429, headers: { 'Retry-After': '60' } });

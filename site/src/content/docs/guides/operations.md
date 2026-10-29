@@ -1,9 +1,12 @@
 ---
 title: Operations and limits
 description: Publication, trust boundaries, corrections, and rollback.
+tableOfContents: false
 ---
 
-The repository is the canonical registry. Validated records and maintainer decisions produce a deterministic snapshot bundled with the Worker and Starlight site. Requests do not depend on GitHub availability, a database, or live upstream builds.
+The repository is the canonical published registry. Validated records and maintainer decisions produce a deterministic snapshot bundled with the Worker and Astro site. Published discovery does not depend on GitHub availability, community storage or live upstream builds.
+
+Accounts and pending community work use separate D1 storage. Drafts stay private to their author. Submitted proposals, discussions and verification reports are public. Community approval does not replace the repository's validation, independent review or publication gates.
 
 Publication builds and checks the entire release before deployment. A failed validation or build does not replace the running Worker. Cloudflare version rollback restores code and static assets together. Operators should compare `/health` and `/registry.json` after each release and rehearse the rollback procedure in `docs/OPERATIONS.md`.
 

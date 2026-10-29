@@ -6,7 +6,7 @@
 
 An open formal knowledge catalogue for coding agents and people. Discover a precise statement, inspect its pinned evidence and assumptions, then establish applicability to your own implementation.
 
-The beta has three read-only MCP tools, an Astro Starlight site, a strict GitHub registry, digest-bound publication decisions, contribution forms, and a small actual Lean reuse example. It does not adapt proofs to arbitrary code, certify semantic intent, or independently verify whole upstream projects.
+The beta has three read-only MCP tools, an Astro and React site, a strict GitHub registry, digest-bound publication decisions, contribution forms, and a small actual Lean reuse example. It does not adapt proofs to arbitrary code, certify semantic intent, or independently verify whole upstream projects. Community accounts and submissions are not enabled; contributions remain available through GitHub.
 
 ## Run locally
 
@@ -85,7 +85,7 @@ reviews/        protected digest-bound publication decisions
 schemas/        generated record and decision JSON Schemas
 scripts/        validation, snapshot, review, Lean and smoke commands
 mcp/            Cloudflare stateless MCP service and shared search
-site/           accessible Astro Starlight catalogue and guides
+site/           Astro and React catalogue and guides
 examples/       pinned Lean contract and importing consumer
 evidence/       observed checks and preserved historical reports
 .github/        proposal forms, review ownership and safe workflows
@@ -93,7 +93,7 @@ evidence/       observed checks and preserved historical reports
 
 ## Attribution and prior art
 
-The service follows the maintained [Cloudflare MCP Worker example](https://github.com/cloudflare/agents/tree/main/examples/mcp-worker) and [Starlight](https://starlight.astro.build/). MCP v2 server and legacy-compatible client versions match the Agents release's peer requirements. The Lean action and GitHub Actions are pinned to inspected commit SHAs.
+The service follows the maintained [Cloudflare MCP Worker example](https://github.com/cloudflare/agents/tree/main/examples/mcp-worker). Interface attribution is recorded in [THIRD-PARTY.md](THIRD-PARTY.md). MCP v2 server and legacy-compatible client versions match the Agents release's peer requirements. The Lean action and GitHub Actions are pinned to inspected commit SHAs.
 
 CSLib, Mathlib, LeanExplore, proof archives, and verified software communities already provide shared formal knowledge. This project adds curated discovery, evidence scope, and a community registry; it does not claim to invent proof libraries or theorem search. Large developments remain upstream. Every record carries source attribution and licensing; seL4's documentation and proof files have different licenses.
 

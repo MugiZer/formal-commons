@@ -1,0 +1,8 @@
+---
+import AppLayout from '../layouts/AppLayout.astro';
+export function getStaticPaths() {
+  return ['', 'artifacts', 'projects', 'contributions', 'contributions/new', 'contribute', 'workspace', 'review', 'settings', 'sign-in', 'sign-up', 'connect', 'docs', 'community'].map(page=>({params:{page:page||undefined}}));
+}
+const title=Astro.params.page==='contributions/new'?'New contribution':Astro.params.page?.split('/').pop()?.replaceAll('-',' ')??'Artifacts';
+---
+<AppLayout title={title.charAt(0).toUpperCase()+title.slice(1)}/>

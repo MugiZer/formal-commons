@@ -1,20 +1,24 @@
 ---
-title: Read the evidence before reusing
+title: Evidence labels
 description: Mechanical checks, semantic review, implementation correspondence, and freshness are separate claims.
 ---
 
-An accepted catalogue record is approved for discovery. Acceptance alone is not a correctness certificate. Bootstrap entries are automated metadata curation and have no identified human semantic review.
+Evidence entries identify who performed a check, its result, the source revision and its scope. Catalogue acceptance records the publication decision separately.
 
 | Dimension | Labels | What to inspect |
 | --- | --- | --- |
-| Mechanical | Not checked by us; upstream reported; checked at pinned revision | Exact checker version, source revision, check log, package digest, and inspected axioms. |
+| Mechanical | No check recorded; upstream checks recorded; checked at this revision | Checker version, source revision, result, check log, package digest, and inspected axioms. |
 | Semantic | Unreviewed; maintainer reviewed; qualified expert reviewed | The identified reviewer, exact scope and version, and qualification for an expert claim. |
 | Implementation correspondence | None; claimed; independently evidenced | Which implementation and version the argument actually connects to the statement. |
-| Freshness | Pinned; stale; unknown | The last metadata check and the precise version the evidence describes. Pinned does not mean newest. |
+| Freshness | Pinned; stale; unknown | The last metadata check and the precise version the evidence describes. |
 
-Passing Lean checks establishes that the checked proposition follows in the stated proof environment. It does not establish that the proposition captures the intended requirement. A well-typed but weak specification can omit important cases.
+## Where checks come from
 
-Our maintained Lean example reuses `List.mem_filter`, imports the resulting contract in a second module, and prints the axioms of every exposed theorem. The checker rejects placeholders and unexpected axioms. Its report applies only to that package digest and pinned toolchain. It does not upgrade every upstream catalogue entry.
+- **Upstream verification:** proof builds and CI results published by the source project, linked to their recorded commit and covered jobs.
+- **Ohara checks:** builds or inspections performed for Ohara, with their own scope and report.
+- **Community verification:** attributed member reports accepted through review and attached to the exact record version.
+
+The `List.mem_filter` record includes Lean's upstream release CI and Ohara's [consumer-build and axiom-inspection report](https://github.com/MugiZer/ohara/blob/fdb7aed936ff0dfe8c986f1581db8a8ebccf74b5/evidence/lean-check-linux.json). The latter records the Contracts and Consumer modules built with Lean 4.35.0 and the inspected axioms of their exposed theorems.
 
 ## Different kinds of formal knowledge
 
