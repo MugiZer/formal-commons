@@ -14,9 +14,10 @@ const proofSystems = [...new Set(records.map((r) => r.proof_system))].sort();
   </form>
   <p class="catalogue-count" aria-live="polite" aria-atomic="true">{records.length} {records.length === 1 ? 'record' : 'records'}</p>
   <div class="record-list">
-    {records.map((record) => <article class="record-row" data-record data-search={`${record.title} ${record.summary} ${record.tags.join(' ')}`.toLowerCase()} data-proof={record.proof_system} data-evidence={record.evidence.mechanical.status}>
+    {records.map((record) => <article class="record-row" data-record data-search={`${record.title} ${record.source.symbol ?? ''} ${record.summary} ${record.tags.join(' ')}`.toLowerCase()} data-proof={record.proof_system} data-evidence={record.evidence.mechanical.status}>
       <div class="record-meta"><span>{record.kind.replaceAll('_', ' ')}</span><span>{record.proof_system}</span><span>v{record.record_version}</span></div>
       <h2><a href={`/records/${record.id}/${record.record_digest}/`}>{record.title}</a></h2>
+      {record.source.symbol && <p class="record-symbol"><code>{record.source.symbol}</code></p>}
       <p>{record.summary}</p>
       <div class="record-tags">{record.tags.map((tag) => <span>{tag}</span>)}</div>
       <p class="evidence-line"><strong>{record.evidence.mechanical.status.replaceAll('_', ' ')}</strong> · Semantic: {record.evidence.semantic.status.replaceAll('_', ' ')} · Correspondence: {record.evidence.implementation.status.replaceAll('_', ' ')}</p>

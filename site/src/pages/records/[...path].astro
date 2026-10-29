@@ -15,11 +15,12 @@ const current = record.record_digest === newest.record_digest;
 ---
 <StarlightPage frontmatter={{ title: record.title, description: record.summary, pagefind: current && discoverable(record) }}>
   <div class="sl-markdown-content">
+    {record.source.symbol && <p class="record-symbol"><code>{record.source.symbol}</code></p>}
     <p class="record-meta">{labels(record.kind)} · {record.proof_system} · record v{record.record_version} · {record.id}</p>
     <p class="lead">{record.summary}</p>
     {!current && <aside class="scope-note">Historical record version. <a href={`/records/${newest.id}/${newest.record_digest}/`}>Read the latest publication status</a> before reuse.</aside>}
     {(record.evidence.publication === 'withdrawn' || record.evidence.freshness.status === 'stale') && <aside class="scope-note">This record is {record.evidence.publication === 'withdrawn' ? 'withdrawn' : 'stale'} and excluded from default discovery. {record.evidence.approval.notes}</aside>}
-    {record.source.statement && <><h2>Exact statement</h2><pre><code>{record.source.statement}</code></pre><p>Symbol: <code>{record.source.symbol}</code> · <a href={record.source_url}>Inspect the pinned formal source</a></p></>}
+    {record.source.statement && <><h2>Exact statement</h2><pre><code>{record.source.statement}</code></pre><p><a href={record.source_url}>Inspect the pinned formal source</a></p></>}
     <h2>Evidence, by dimension</h2>
     <dl class="evidence-grid">
       <div><dt>Mechanical check</dt><dd>{labels(record.evidence.mechanical.status)}</dd><dd>{record.evidence.mechanical.checker ?? 'Checker / independent log: unknown'}</dd>{record.evidence.mechanical.reference && <dd><a href={record.evidence.mechanical.reference.url}>Check evidence</a> · {record.evidence.mechanical.reference.by} · {record.evidence.mechanical.reference.date}. {record.evidence.mechanical.reference.notes}</dd>}</div>
